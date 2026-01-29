@@ -724,11 +724,11 @@ export const marketsData: {
     enabledFeatures: {
       incentives: true,
     },
-    subgraphUrl: 'https://metisapi.0xgraph.xyz/subgraphs/name/aave/protocol-v3-metis', // todo fix
+    subgraphUrl: '',
     addresses: {
       LENDING_POOL_ADDRESS_PROVIDER: AaveV3Mantle.POOL_ADDRESSES_PROVIDER,
       LENDING_POOL: AaveV3Mantle.POOL,
-      WETH_GATEWAY: '0x0', // not applicable for Mantle?
+      WETH_GATEWAY: AaveV3Mantle.WETH_GATEWAY,
       WALLET_BALANCE_PROVIDER: AaveV3Mantle.WALLET_BALANCE_PROVIDER,
       UI_POOL_DATA_PROVIDER: AaveV3Mantle.UI_POOL_DATA_PROVIDER,
       UI_INCENTIVE_DATA_PROVIDER: AaveV3Mantle.UI_INCENTIVE_DATA_PROVIDER,
