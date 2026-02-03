@@ -75,11 +75,9 @@ export const testnetConfig: Record<string, BaseNetworkConfig> = {
   [ChainId.sepolia]: {
     name: 'Ethereum Sepolia',
     publicJsonRPCUrl: [
-      'https://eth-sepolia.public.blastapi.io',
-      'https://rpc.sepolia.org',
-      'https://rpc2.sepolia.org',
-      'https://rpc.sepolia.online',
-      'https://www.sepoliarpc.space',
+      'https://ethereum-sepolia-rpc.publicnode.com',
+      'https://sepolia.gateway.tenderly.co',
+      'https://1rpc.io/sepolia',
     ],
     baseUniswapAdapter: '0x0',
     baseAssetSymbol: 'ETH',
