@@ -36,6 +36,20 @@ export const createProtocolDataSlice: StateCreator<
 > = (set, get) => {
   const initialMarket = availableMarkets[0];
   const initialMarketData = marketsData[initialMarket];
+
+  // Debug: Log initial market selection
+  console.log('[ProtocolDataSlice] Initial market setup:', {
+    market: initialMarket,
+    chainId: initialMarketData.chainId,
+    addresses: {
+      UI_POOL_DATA_PROVIDER: initialMarketData.addresses.UI_POOL_DATA_PROVIDER,
+      LENDING_POOL_ADDRESS_PROVIDER: initialMarketData.addresses.LENDING_POOL_ADDRESS_PROVIDER,
+      LENDING_POOL: initialMarketData.addresses.LENDING_POOL,
+    },
+    marketTitle: initialMarketData.marketTitle,
+    v3: initialMarketData.v3,
+  });
+
   return {
     currentMarket: initialMarket,
     currentMarketData: marketsData[initialMarket],
@@ -43,8 +57,25 @@ export const createProtocolDataSlice: StateCreator<
     currentNetworkConfig: getNetworkConfig(initialMarketData.chainId),
     jsonRpcProvider: (chainId) => getProvider(chainId ?? get().currentChainId),
     setCurrentMarket: (market, omitQueryParameterUpdate) => {
-      if (!availableMarkets.includes(market as CustomMarket)) return;
+      if (!availableMarkets.includes(market as CustomMarket)) {
+        console.warn('[ProtocolDataSlice] Invalid market:', market, 'Available:', availableMarkets);
+        return;
+      }
       const nextMarketData = marketsData[market];
+
+      // Debug: Log market change
+      console.log('[ProtocolDataSlice] setCurrentMarket:', {
+        market,
+        chainId: nextMarketData.chainId,
+        addresses: {
+          UI_POOL_DATA_PROVIDER: nextMarketData.addresses.UI_POOL_DATA_PROVIDER,
+          LENDING_POOL_ADDRESS_PROVIDER: nextMarketData.addresses.LENDING_POOL_ADDRESS_PROVIDER,
+          LENDING_POOL: nextMarketData.addresses.LENDING_POOL,
+        },
+        marketTitle: nextMarketData.marketTitle,
+        v3: nextMarketData.v3,
+      });
+
       localStorage.setItem('selectedMarket', market);
       if (!omitQueryParameterUpdate) {
         setQueryParameter('marketName', market);

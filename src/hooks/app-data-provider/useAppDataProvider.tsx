@@ -73,6 +73,20 @@ export const AppDataProvider: React.FC<PropsWithChildren> = ({ children }) => {
 
   const currentMarketData = useRootStore((state) => state.currentMarketData);
 
+  // Debug: Log current market data
+  console.log('[AppDataProvider] Current market data:', {
+    market: currentMarketData.market,
+    marketTitle: currentMarketData.marketTitle,
+    chainId: currentMarketData.chainId,
+    v3: currentMarketData.v3,
+    addresses: {
+      UI_POOL_DATA_PROVIDER: currentMarketData.addresses.UI_POOL_DATA_PROVIDER,
+      LENDING_POOL_ADDRESS_PROVIDER: currentMarketData.addresses.LENDING_POOL_ADDRESS_PROVIDER,
+      LENDING_POOL: currentMarketData.addresses.LENDING_POOL,
+    },
+    currentAccount,
+  });
+
   const { data, isPending } = useMarketsData({
     client,
     marketData: currentMarketData,
@@ -82,6 +96,15 @@ export const AppDataProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const marketAddress = currentMarketData.addresses.LENDING_POOL.toLowerCase();
 
   const sdkMarket = data?.find((item) => item.address.toLowerCase() === marketAddress);
+
+  // Debug: Log SDK market data
+  console.log('[AppDataProvider] SDK market data:', {
+    marketAddress,
+    sdkMarketFound: !!sdkMarket,
+    sdkMarketAddress: sdkMarket?.address,
+    allMarketsInData: data?.map((m) => m.address),
+    isPending,
+  });
 
   const totalBorrows = sdkMarket?.borrowReserves.reduce((acc, reserve) => {
     const value = reserve.borrowInfo?.total?.usd ?? 0;
@@ -106,6 +129,20 @@ export const AppDataProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const { data: formattedPoolReserves, isPending: formattedPoolReservesLoading } =
     usePoolFormattedReserves(currentMarketData);
   const baseCurrencyData = reservesData?.baseCurrencyData;
+
+  // Debug: Log reserves data state
+  console.log('[AppDataProvider] Reserves data state:', {
+    market: currentMarketData.market,
+    reservesDataLoading,
+    formattedPoolReservesLoading,
+    reservesDataExists: !!reservesData,
+    rawReservesCount: reservesData?.reservesData?.length ?? 0,
+    formattedReservesExists: !!formattedPoolReserves,
+    formattedReservesCount: formattedPoolReserves?.length ?? 0,
+    baseCurrencyData: baseCurrencyData,
+    reserveSymbols: formattedPoolReserves?.map((r) => r.symbol),
+  });
+
   // user hooks
 
   const eModes = formattedPoolReserves ? formatEmodes(formattedPoolReserves) : {};
@@ -121,6 +158,23 @@ export const AppDataProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const isUserDataLoading = userReservesDataLoading || userSummaryLoading;
 
   const loading = isPending || isReservesLoading || (!!currentAccount && isUserDataLoading);
+
+  // Debug: Log final provider state
+  console.log('[AppDataProvider] Final state:', {
+    market: currentMarketData.market,
+    loading,
+    isReservesLoading,
+    isUserDataLoading,
+    sdkMarketFound: !!sdkMarket,
+    supplyReservesCount: supplyReserves.length,
+    borrowReservesCount: borrowReserves.length,
+    eModeCategoriesCount: eModeCategories.length,
+    formattedReservesCount: formattedPoolReserves?.length ?? 0,
+    eModesKeys: Object.keys(eModes),
+    userReservesCount: userReserves?.length ?? 0,
+    hasUserSummary: !!userSummary,
+    marketReferencePriceInUsd: baseCurrencyData?.marketReferenceCurrencyPriceInUsd || '0',
+  });
 
   return (
     <AppDataContext.Provider
