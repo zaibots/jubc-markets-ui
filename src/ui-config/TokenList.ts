@@ -197,8 +197,8 @@ const NETWORK_ASSETS: TokenInfo[] = [
 ];
 
 export const TOKEN_LIST: TokenList = {
-  name: 'Aave Labs Default',
-  timestamp: '2024-01-22T15:47:25.037Z',
+  name: 'Zaibatsu Default',
+  timestamp: '2026-01-22T15:47:25.037Z',
   version: {
     major: 11,
     minor: 12,
@@ -206,9 +206,70 @@ export const TOKEN_LIST: TokenList = {
   },
   tags: {},
   logoURI: 'ipfs://QmNa8mQkrNKp1WEEeGjFezDmDeodkWRevGFN8JCV7b4Xir',
-  keywords: ['aave', 'default'],
+  keywords: ['zaibots', 'AiFi', 'agents', 'default'],
   tokens: [
     ...NETWORK_ASSETS,
+    {
+      chainId: 1, // TODO sepolia
+      address: '0x111111111117dC0aa78b770fA6A738034120C302',
+      name: 'Test jUBC',
+      symbol: 'testUBC',
+      decimals: 18,
+      logoURI: '',
+      extensions: {
+        bridgeInfo: {
+          // '10': {
+          //   tokenAddress: '0xAd42D013ac31486B73b6b059e748172994736426',
+          // },
+          // '56': {
+          //   tokenAddress: '0x111111111117dC0aa78b770fA6A738034120C302',
+          // },
+          // '137': {
+          //   tokenAddress: '0x9c2C5fd7b07E95EE044DDeba0E97a665F142394f',
+          // },
+          // '8453': {
+          //   tokenAddress: '0xc5fecC3a29Fb57B5024eEc8a2239d4621e111CBE',
+          // },
+          // '42161': {
+          //   tokenAddress: '0x6314C31A7a1652cE482cffe247E9CB7c3f4BB9aF',
+          // },
+          // '43114': {
+          //   tokenAddress: '0xd501281565bf7789224523144Fe5D98e8B28f267',
+          // },
+        },
+      },
+    },
+    {
+      chainId: 1, // TODO sepolia
+      address: '0x111111111117dC0aa78b770fA6A738034120C302',
+      name: 'jUBC',
+      symbol: 'jUBC',
+      decimals: 18,
+      logoURI: '',
+      extensions: {
+        bridgeInfo: {
+          // '10': {
+          //   tokenAddress: '0xAd42D013ac31486B73b6b059e748172994736426',
+          // },
+          // '56': {
+          //   tokenAddress: '0x111111111117dC0aa78b770fA6A738034120C302',
+          // },
+          // '137': {
+          //   tokenAddress: '0x9c2C5fd7b07E95EE044DDeba0E97a665F142394f',
+          // },
+          // '8453': {
+          //   tokenAddress: '0xc5fecC3a29Fb57B5024eEc8a2239d4621e111CBE',
+          // },
+          // '42161': {
+          //   tokenAddress: '0x6314C31A7a1652cE482cffe247E9CB7c3f4BB9aF',
+          // },
+          // '43114': {
+          //   tokenAddress: '0xd501281565bf7789224523144Fe5D98e8B28f267',
+          // },
+        },
+      },
+    },
+
     {
       chainId: 1,
       address: '0x111111111117dC0aa78b770fA6A738034120C302',
