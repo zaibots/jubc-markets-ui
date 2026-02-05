@@ -75,44 +75,38 @@ export type MarketDataType = {
 };
 export enum CustomMarket {
   test_sepolia_v3 = 'test_sepolia_v3',
-  // proto_ubc_kernel_mainnet_v3 = 'proto_ubc_kernel_mainnet_v3',
-  // // v3 test networks, all v3.0.1
-  // proto_base_sepolia_v3 = 'proto_base_sepolia_v3',
-  // // v3 mainnets
-  // proto_mainnet_v3 = 'proto_mainnet_v3',
-  // proto_optimism_v3 = 'proto_optimism_v3',
-  // proto_avalanche_v3 = 'proto_avalanche_v3',
-  // proto_polygon_v3 = 'proto_polygon_v3',
-  // proto_arbitrum_v3 = 'proto_arbitrum_v3',
-  // proto_metis_v3 = 'proto_metis_v3',
-  // proto_base_v3 = 'proto_base_v3',
-  // proto_gnosis_v3 = 'proto_gnosis_v3',
-  // proto_bnb_v3 = 'proto_bnb_v3',
-  // proto_scroll_v3 = 'proto_scroll_v3',
-  // proto_lido_v3 = 'proto_lido_v3',
-  // proto_zksync_v3 = 'proto_zksync_v3',
-  // proto_etherfi_v3 = 'proto_etherfi_v3',
-  // proto_linea_v3 = 'proto_linea_v3',
-  // proto_sonic_v3 = 'proto_sonic_v3',
-  // proto_celo_v3 = 'proto_celo_v3',
-  // proto_soneium_v3 = 'proto_soneium_v3',
-  // proto_horizon_v3 = 'proto_horizon_v3',
-  // proto_aptos_v3 = 'proto_aptos_v3',
-  // proto_plasma_v3 = 'proto_plasma_v3',
-  // proto_ink_v3 = 'proto_ink_v3',
-  // // v2
-  // proto_mainnet = 'proto_mainnet',
-  // proto_avalanche = 'proto_avalanche',
-  // proto_fuji = 'proto_fuji',
-  // proto_polygon = 'proto_polygon',
-
-  // external
-  // permissioned_market = 'permissioned_market',
+  // Enum values kept for TypeScript compatibility - these markets are not configured
+  proto_ubc_kernel_mainnet_v3 = 'proto_ubc_kernel_mainnet_v3',
+  proto_base_sepolia_v3 = 'proto_base_sepolia_v3',
+  proto_mainnet_v3 = 'proto_mainnet_v3',
+  proto_optimism_v3 = 'proto_optimism_v3',
+  proto_avalanche_v3 = 'proto_avalanche_v3',
+  proto_polygon_v3 = 'proto_polygon_v3',
+  proto_arbitrum_v3 = 'proto_arbitrum_v3',
+  proto_metis_v3 = 'proto_metis_v3',
+  proto_base_v3 = 'proto_base_v3',
+  proto_gnosis_v3 = 'proto_gnosis_v3',
+  proto_bnb_v3 = 'proto_bnb_v3',
+  proto_scroll_v3 = 'proto_scroll_v3',
+  proto_lido_v3 = 'proto_lido_v3',
+  proto_zksync_v3 = 'proto_zksync_v3',
+  proto_etherfi_v3 = 'proto_etherfi_v3',
+  proto_linea_v3 = 'proto_linea_v3',
+  proto_sonic_v3 = 'proto_sonic_v3',
+  proto_celo_v3 = 'proto_celo_v3',
+  proto_soneium_v3 = 'proto_soneium_v3',
+  proto_horizon_v3 = 'proto_horizon_v3',
+  proto_aptos_v3 = 'proto_aptos_v3',
+  proto_plasma_v3 = 'proto_plasma_v3',
+  proto_ink_v3 = 'proto_ink_v3',
+  proto_mainnet = 'proto_mainnet',
+  proto_avalanche = 'proto_avalanche',
+  proto_fuji = 'proto_fuji',
+  proto_polygon = 'proto_polygon',
+  permissioned_market = 'permissioned_market',
 }
 
-export const marketsData: {
-  [key in keyof typeof CustomMarket]: MarketDataType;
-} = {
+export const marketsData: Record<string, MarketDataType> = {
   [CustomMarket.test_sepolia_v3]: {
     marketTitle: 'Sepolia UBC Testnet',
     market: CustomMarket.test_sepolia_v3,
@@ -120,26 +114,36 @@ export const marketsData: {
     v3: true,
     permitDisabled: true,
     enabledFeatures: {
-      faucet: true,
+      faucet: false,
       governance: false,
       staking: false,
       liquiditySwap: false,
       collateralRepay: false,
-      incentives: true,
+      incentives: false,
       debtSwitch: false,
       switch: false,
     },
     addresses: {
-      LENDING_POOL_ADDRESS_PROVIDER: '0xFFb4991C9311ea48Dc4DFaacc23E5E2Edd28fD4b',
-      LENDING_POOL: '0xa3aed0e4b813dA2eb47CD33c5b46a5D355a74F50',
-      WETH_GATEWAY: '0x5d48873246b22712425e94f49a8CB606Fc9F0889',
+      LENDING_POOL_ADDRESS_PROVIDER: '0xc183d9509425B9f1e08320AE1612C2Ee7de7EC4D',
+      LENDING_POOL: '0xAf29b85C97B28490E00A090bD1b4B552c69C7559',
+      WETH_GATEWAY: '0x730Bf3DA68B0Fd3b580Db20823b0bbE5CC58891D',
       WALLET_BALANCE_PROVIDER: '0x8202E2Ca522c5C28684E6cE23019C48Bc839fa4D',
-      // 0xF65BdDeD2FB0A454F4cDc253131bAd8C9c74eD25
-      UI_POOL_DATA_PROVIDER: '0x24b3b88E84770f246dD950569c2aeedeB4932c35',
-      UI_INCENTIVE_DATA_PROVIDER: '0x9c0Fb9573af9D0C862F10E764882166d90aAF2a4',
+      UI_POOL_DATA_PROVIDER: '0xA5728cB73986B769c8141C19D4bD3A9BF6C31A12',
+      UI_INCENTIVE_DATA_PROVIDER: '0x0932948A40a71f9217aD514f846CFfEa8900bF5B',
       COLLECTOR: '0xBF47C98efB6a1F2eb52454b4D0404D486Db841D4',
       FAUCET: '0x7CC720646eeaEA8a90cfEBeB311e2352266C94F1',
     },
+    // addresses: {
+    //   LENDING_POOL_ADDRESS_PROVIDER: '0xFFb4991C9311ea48Dc4DFaacc23E5E2Edd28fD4b',
+    //   LENDING_POOL: '0xa3aed0e4b813dA2eb47CD33c5b46a5D355a74F50',
+    //   WETH_GATEWAY: '0x5d48873246b22712425e94f49a8CB606Fc9F0889',
+    //   WALLET_BALANCE_PROVIDER: '0x8202E2Ca522c5C28684E6cE23019C48Bc839fa4D',
+    //   // 0xF65BdDeD2FB0A454F4cDc253131bAd8C9c74eD25
+    //   UI_POOL_DATA_PROVIDER: '0x24b3b88E84770f246dD950569c2aeedeB4932c35',
+    //   UI_INCENTIVE_DATA_PROVIDER: '0x9c0Fb9573af9D0C862F10E764882166d90aAF2a4',
+    //   COLLECTOR: '0xBF47C98efB6a1F2eb52454b4D0404D486Db841D4',
+    //   FAUCET: '0x7CC720646eeaEA8a90cfEBeB311e2352266C94F1',
+    // },
   },
 
   // All other markets commented out - only showing Sepolia UBC Testnet
