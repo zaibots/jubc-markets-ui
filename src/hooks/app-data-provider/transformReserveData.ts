@@ -97,6 +97,10 @@ export interface FallbackReserve {
       usd: string;
     };
     borrowingState: 'ENABLED' | 'DISABLED' | 'PAUSED';
+    utilizationRate: {
+      __typename: 'PercentValue';
+      value: string;
+    };
   };
   isolationModeConfig?: {
     __typename: 'ReserveIsolationModeConfig';
@@ -266,6 +270,10 @@ export function transformToReserve(
             usd: '0',
           },
           borrowingState: reserve.isFrozen ? 'DISABLED' : reserve.isPaused ? 'PAUSED' : 'ENABLED',
+          utilizationRate: {
+            __typename: 'PercentValue',
+            value: reserve.borrowUsageRatio,
+          },
         }
       : undefined,
     isolationModeConfig: reserve.isIsolated
