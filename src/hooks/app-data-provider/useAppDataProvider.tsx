@@ -1,10 +1,11 @@
 import type { EmodeMarketCategory, Market, MarketUserState, Reserve } from '@aave/graphql';
 import { UserReserveData } from '@aave/math-utils';
 import { client } from 'pages/_app.page';
-import React, { PropsWithChildren, useContext } from 'react';
+import React, { PropsWithChildren, useContext, useEffect, useMemo } from 'react';
 import { EmodeCategory } from 'src/helpers/types';
 import { useWeb3Context } from 'src/libs/hooks/useWeb3Context';
 import { useRootStore } from 'src/store/root';
+import { getNetworkConfig } from 'src/utils/marketsAndNetworksConfig';
 
 import { formatEmodes } from '../../store/poolSelectors';
 import {
@@ -18,6 +19,7 @@ import {
 import { usePoolReservesHumanized } from '../pool/usePoolReserves';
 import { useUserPoolReservesHumanized } from '../pool/useUserPoolReserves';
 import { FormattedUserReserves } from '../pool/useUserSummaryAndIncentives';
+import { computeAggregateMetrics, createFallbackMarket } from './transformReserveData';
 import { useMarketsData } from './useMarketsData';
 
 /**
@@ -72,6 +74,7 @@ export const AppDataProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const { currentAccount } = useWeb3Context();
 
   const currentMarketData = useRootStore((state) => state.currentMarketData);
+  const networkConfig = getNetworkConfig(currentMarketData.chainId);
 
   // Debug: Log current market data
   console.log('[AppDataProvider] Current market data:', {
@@ -97,54 +100,125 @@ export const AppDataProvider: React.FC<PropsWithChildren> = ({ children }) => {
 
   const sdkMarket = data?.find((item) => item.address.toLowerCase() === marketAddress);
 
-  // Debug: Log SDK market data
-  console.log('[AppDataProvider] SDK market data:', {
-    marketAddress,
-    sdkMarketFound: !!sdkMarket,
-    sdkMarketAddress: sdkMarket?.address,
-    allMarketsInData: data?.map((m) => m.address),
-    isPending,
-  });
-
-  const totalBorrows = sdkMarket?.borrowReserves.reduce((acc, reserve) => {
-    const value = reserve.borrowInfo?.total?.usd ?? 0;
-    return acc + Number(value);
-  }, 0);
-
-  const supplyReserves = (sdkMarket?.supplyReserves ?? []).map((reserve) => ({
-    ...reserve,
-    id: `${sdkMarket?.address}-${reserve.underlyingToken.address}`,
-  }));
-
-  const borrowReserves = (sdkMarket?.borrowReserves ?? []).map((reserve) => ({
-    ...reserve,
-    id: `${sdkMarket?.address}-${reserve.underlyingToken.address}`,
-  }));
-
-  const eModeCategories = sdkMarket?.eModeCategories ?? [];
-  const marketUserState = sdkMarket?.userState ?? undefined;
-
+  // Contract-based data (always fetched as fallback)
   const { data: reservesData, isPending: reservesDataLoading } =
     usePoolReservesHumanized(currentMarketData);
   const { data: formattedPoolReserves, isPending: formattedPoolReservesLoading } =
     usePoolFormattedReserves(currentMarketData);
   const baseCurrencyData = reservesData?.baseCurrencyData;
 
-  // Debug: Log reserves data state
-  console.log('[AppDataProvider] Reserves data state:', {
-    market: currentMarketData.market,
-    reservesDataLoading,
-    formattedPoolReservesLoading,
-    reservesDataExists: !!reservesData,
-    rawReservesCount: reservesData?.reservesData?.length ?? 0,
-    formattedReservesExists: !!formattedPoolReserves,
-    formattedReservesCount: formattedPoolReserves?.length ?? 0,
-    baseCurrencyData: baseCurrencyData,
-    reserveSymbols: formattedPoolReserves?.map((r) => r.symbol),
-  });
+  // Determine if we should use fallback (contract data) instead of SDK data
+  // Fallback is used when SDK doesn't return data for this market (custom/non-indexed markets)
+  const useContractDataFallback = !sdkMarket && !isPending && formattedPoolReserves;
+
+  // Debug logging for contract data flow
+  useEffect(() => {
+    console.group('[AppDataProvider] Data Sources Debug');
+    console.log('Market Address:', marketAddress);
+    console.log('SDK isPending:', isPending);
+    console.log('SDK data (all markets):', data);
+    console.log('SDK market (matched):', sdkMarket);
+    console.log('Contract reservesData:', reservesData);
+    console.log('Contract formattedPoolReserves:', formattedPoolReserves);
+    console.log('Using fallback mode:', useContractDataFallback);
+    console.groupEnd();
+  }, [
+    marketAddress,
+    isPending,
+    data,
+    sdkMarket,
+    reservesData,
+    formattedPoolReserves,
+    useContractDataFallback,
+  ]);
+
+  // Create fallback market data from contract calls when SDK data is unavailable
+  const fallbackMarketData = useMemo(() => {
+    if (!useContractDataFallback || !formattedPoolReserves) {
+      return null;
+    }
+    const fallback = createFallbackMarket(formattedPoolReserves, marketAddress, networkConfig);
+    console.group('[AppDataProvider] Fallback Market Created');
+    console.log('Total Market Size:', fallback.totalMarketSize);
+    console.log('Total Available Liquidity:', fallback.totalAvailableLiquidity);
+    console.log('Supply Reserves Count:', fallback.supplyReserves.length);
+    console.log('Borrow Reserves Count:', fallback.borrowReserves.length);
+    console.log('Supply Reserves:', fallback.supplyReserves);
+    console.log('Borrow Reserves:', fallback.borrowReserves);
+    console.groupEnd();
+    return fallback;
+  }, [useContractDataFallback, formattedPoolReserves, marketAddress, networkConfig]);
+
+  // Compute aggregate metrics - use SDK data if available, otherwise use fallback
+  const totalBorrows = useMemo(() => {
+    if (sdkMarket) {
+      return sdkMarket.borrowReserves.reduce((acc, reserve) => {
+        const value = reserve.borrowInfo?.total?.usd ?? 0;
+        return acc + Number(value);
+      }, 0);
+    }
+    if (formattedPoolReserves) {
+      return computeAggregateMetrics(formattedPoolReserves).totalBorrows;
+    }
+    return undefined;
+  }, [sdkMarket, formattedPoolReserves]);
+
+  // Supply reserves - use SDK data if available, otherwise use fallback
+  const supplyReserves = useMemo(() => {
+    if (sdkMarket) {
+      return sdkMarket.supplyReserves.map((reserve) => ({
+        ...reserve,
+        id: `${sdkMarket.address}-${reserve.underlyingToken.address}`,
+      }));
+    }
+    if (fallbackMarketData) {
+      return fallbackMarketData.supplyReserves.map((reserve) => ({
+        ...reserve,
+        id: `${marketAddress}-${reserve.underlyingToken.address}`,
+      }));
+    }
+    return [];
+  }, [sdkMarket, fallbackMarketData, marketAddress]);
+
+  // Borrow reserves - use SDK data if available, otherwise use fallback
+  const borrowReserves = useMemo(() => {
+    if (sdkMarket) {
+      return sdkMarket.borrowReserves.map((reserve) => ({
+        ...reserve,
+        id: `${sdkMarket.address}-${reserve.underlyingToken.address}`,
+      }));
+    }
+    if (fallbackMarketData) {
+      return fallbackMarketData.borrowReserves.map((reserve) => ({
+        ...reserve,
+        id: `${marketAddress}-${reserve.underlyingToken.address}`,
+      }));
+    }
+    return [];
+  }, [sdkMarket, fallbackMarketData, marketAddress]);
+
+  // Create a synthetic market object for fallback mode
+  const market = useMemo(() => {
+    if (sdkMarket) {
+      return sdkMarket;
+    }
+    if (fallbackMarketData) {
+      // Return a minimal Market-like object with the data we have
+      return {
+        address: marketAddress,
+        totalMarketSize: fallbackMarketData.totalMarketSize,
+        totalAvailableLiquidity: fallbackMarketData.totalAvailableLiquidity,
+        supplyReserves: fallbackMarketData.supplyReserves,
+        borrowReserves: fallbackMarketData.borrowReserves,
+      } as unknown as Market;
+    }
+    return undefined;
+  }, [sdkMarket, fallbackMarketData, marketAddress]);
+
+  const eModeCategories = sdkMarket?.eModeCategories ?? [];
+  const marketUserState = sdkMarket?.userState ?? undefined;
 
   // user hooks
-
   const eModes = formattedPoolReserves ? formatEmodes(formattedPoolReserves) : {};
 
   const { data: userReservesData, isPending: userReservesDataLoading } =
@@ -153,11 +227,42 @@ export const AppDataProvider: React.FC<PropsWithChildren> = ({ children }) => {
     useExtendedUserSummaryAndIncentives(currentMarketData);
   const userReserves = userReservesData?.userReserves;
 
-  // loading
+  // loading - in fallback mode, we wait for contract data instead of SDK
   const isReservesLoading = reservesDataLoading || formattedPoolReservesLoading;
   const isUserDataLoading = userReservesDataLoading || userSummaryLoading;
 
-  const loading = isPending || isReservesLoading || (!!currentAccount && isUserDataLoading);
+  // Loading is true when:
+  // 1. SDK is still pending AND we don't have contract data yet, OR
+  // 2. Contract data is still loading
+  const loading = useMemo(() => {
+    // If SDK data is available, use original loading logic
+    if (sdkMarket) {
+      return isPending || isReservesLoading || (!!currentAccount && isUserDataLoading);
+    }
+    // In fallback mode, wait for contract data
+    return isReservesLoading || (!!currentAccount && isUserDataLoading);
+  }, [sdkMarket, isPending, isReservesLoading, isUserDataLoading, currentAccount]);
+
+  // Debug logging for final context values
+  useEffect(() => {
+    console.group('[AppDataProvider] Final Context Values');
+    console.log('loading:', loading);
+    console.log('market:', market);
+    console.log('totalBorrows:', totalBorrows);
+    console.log('supplyReserves:', supplyReserves);
+    console.log('borrowReserves:', borrowReserves);
+    console.log('reserves (legacy):', formattedPoolReserves);
+    console.log('baseCurrencyData:', baseCurrencyData);
+    console.groupEnd();
+  }, [
+    loading,
+    market,
+    totalBorrows,
+    supplyReserves,
+    borrowReserves,
+    formattedPoolReserves,
+    baseCurrencyData,
+  ]);
 
   // Debug: Log final provider state
   console.log('[AppDataProvider] Final state:', {
@@ -180,7 +285,7 @@ export const AppDataProvider: React.FC<PropsWithChildren> = ({ children }) => {
     <AppDataContext.Provider
       value={{
         loading,
-        market: sdkMarket,
+        market,
         totalBorrows,
         supplyReserves,
         borrowReserves,
