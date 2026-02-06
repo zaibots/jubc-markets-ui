@@ -76,6 +76,20 @@ export const AppDataProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const currentMarketData = useRootStore((state) => state.currentMarketData);
   const networkConfig = getNetworkConfig(currentMarketData.chainId);
 
+  // Debug: Log current market data
+  console.log('[AppDataProvider] Current market data:', {
+    market: currentMarketData.market,
+    marketTitle: currentMarketData.marketTitle,
+    chainId: currentMarketData.chainId,
+    v3: currentMarketData.v3,
+    addresses: {
+      UI_POOL_DATA_PROVIDER: currentMarketData.addresses.UI_POOL_DATA_PROVIDER,
+      LENDING_POOL_ADDRESS_PROVIDER: currentMarketData.addresses.LENDING_POOL_ADDRESS_PROVIDER,
+      LENDING_POOL: currentMarketData.addresses.LENDING_POOL,
+    },
+    currentAccount,
+  });
+
   const { data, isPending } = useMarketsData({
     client,
     marketData: currentMarketData,
@@ -249,6 +263,23 @@ export const AppDataProvider: React.FC<PropsWithChildren> = ({ children }) => {
     formattedPoolReserves,
     baseCurrencyData,
   ]);
+
+  // Debug: Log final provider state
+  console.log('[AppDataProvider] Final state:', {
+    market: currentMarketData.market,
+    loading,
+    isReservesLoading,
+    isUserDataLoading,
+    sdkMarketFound: !!sdkMarket,
+    supplyReservesCount: supplyReserves.length,
+    borrowReservesCount: borrowReserves.length,
+    eModeCategoriesCount: eModeCategories.length,
+    formattedReservesCount: formattedPoolReserves?.length ?? 0,
+    eModesKeys: Object.keys(eModes),
+    userReservesCount: userReserves?.length ?? 0,
+    hasUserSummary: !!userSummary,
+    marketReferencePriceInUsd: baseCurrencyData?.marketReferenceCurrencyPriceInUsd || '0',
+  });
 
   return (
     <AppDataContext.Provider

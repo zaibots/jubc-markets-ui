@@ -147,67 +147,6 @@ export const marketsData: Record<string, MarketDataType> = {
   },
 
   // All other markets commented out - only showing Sepolia UBC Testnet
-
-  // [CustomMarket.proto_ubc_kernel_mainnet_v3]: {
-  //   marketTitle: 'Ethereum',
-  //   market: CustomMarket.proto_ubc_kernel_mainnet_v3,
-  //   chainId: ChainId.mainnet,
-  //   enabledFeatures: {
-  //     governance: true,
-  //     staking: true,
-  //     liquiditySwap: true,
-  //     collateralRepay: false,
-  //     incentives: true,
-  //     debtSwitch: true,
-  //     switch: true,
-  //   },
-  //   addresses: {
-  //     LENDING_POOL_ADDRESS_PROVIDER: AaveV2Ethereum.POOL_ADDRESSES_PROVIDER,
-  //     LENDING_POOL: AaveV2Ethereum.POOL,
-  //     WETH_GATEWAY: AaveV2Ethereum.WETH_GATEWAY,
-  //     REPAY_WITH_COLLATERAL_ADAPTER: AaveV2Ethereum.REPAY_WITH_COLLATERAL_ADAPTER,
-  //     SWAP_COLLATERAL_ADAPTER: AaveV2Ethereum.SWAP_COLLATERAL_ADAPTER,
-  //     WALLET_BALANCE_PROVIDER: AaveV2Ethereum.WALLET_BALANCE_PROVIDER,
-  //     UI_POOL_DATA_PROVIDER: AaveV2Ethereum.UI_POOL_DATA_PROVIDER,
-  //     UI_INCENTIVE_DATA_PROVIDER: AaveV2Ethereum.UI_INCENTIVE_DATA_PROVIDER,
-  //     COLLECTOR: AaveV2Ethereum.COLLECTOR,
-  //     V3_MIGRATOR: AaveV2Ethereum.MIGRATION_HELPER,
-  //     DEBT_SWITCH_ADAPTER: AaveV2Ethereum.DEBT_SWAP_ADAPTER,
-  //   },
-  // },
-
-  // [CustomMarket.proto_mainnet_v3]: {
-  //   marketTitle: 'Core',
-  //   market: CustomMarket.proto_mainnet_v3,
-  //   chainId: ChainId.mainnet,
-  //   v3: true,
-  //   enabledFeatures: {
-  //     governance: true,
-  //     staking: true,
-  //     liquiditySwap: true,
-  //     collateralRepay: true,
-  //     incentives: true,
-  //     withdrawAndSwitch: true,
-  //     debtSwitch: true,
-  //     switch: true,
-  //     limit: true,
-  //   },
-  //   addresses: {
-  //     LENDING_POOL_ADDRESS_PROVIDER: AaveV3Ethereum.POOL_ADDRESSES_PROVIDER,
-  //     LENDING_POOL: AaveV3Ethereum.POOL,
-  //     WETH_GATEWAY: AaveV3Ethereum.WETH_GATEWAY,
-  //     REPAY_WITH_COLLATERAL_ADAPTER: AaveV3Ethereum.REPAY_WITH_COLLATERAL_ADAPTER,
-  //     SWAP_COLLATERAL_ADAPTER: AaveV3Ethereum.SWAP_COLLATERAL_ADAPTER,
-  //     WALLET_BALANCE_PROVIDER: AaveV3Ethereum.WALLET_BALANCE_PROVIDER,
-  //     UI_POOL_DATA_PROVIDER: AaveV3Ethereum.UI_POOL_DATA_PROVIDER,
-  //     UI_INCENTIVE_DATA_PROVIDER: AaveV3Ethereum.UI_INCENTIVE_DATA_PROVIDER,
-  //     COLLECTOR: AaveV3Ethereum.COLLECTOR,
-  //     GHO_TOKEN_ADDRESS: AaveV3Ethereum.ASSETS.GHO.UNDERLYING,
-  //     WITHDRAW_SWITCH_ADAPTER: AaveV3Ethereum.WITHDRAW_SWAP_ADAPTER,
-  //     DEBT_SWITCH_ADAPTER: AaveV3Ethereum.DEBT_SWAP_ADAPTER,
-  //   },
-  // },
-  // ... remaining markets commented out
 } as const;
 
 export const findByChainId = (chainId: ChainId) => {

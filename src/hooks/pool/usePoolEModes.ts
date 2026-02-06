@@ -16,7 +16,24 @@ export const usePoolsEModes = <T = EmodeDataHumanized[]>(
       (marketData) =>
         ({
           queryKey: queryKeysFactory.poolEModes(marketData),
-          queryFn: () => uiPoolService.getEModesHumanized(marketData),
+          queryFn: async () => {
+            console.log('[usePoolsEModes] Fetching eModes for market:', marketData.market);
+            try {
+              const result = await uiPoolService.getEModesHumanized(marketData);
+              console.log('[usePoolsEModes] Query SUCCESS:', {
+                market: marketData.market,
+                eModesCount: result.length,
+                eModes: result,
+              });
+              return result;
+            } catch (error) {
+              console.error('[usePoolsEModes] Query ERROR:', {
+                market: marketData.market,
+                error,
+              });
+              throw error;
+            }
+          },
           refetchInterval: POLLING_INTERVAL,
           meta: {},
           ...opts,
@@ -26,5 +43,17 @@ export const usePoolsEModes = <T = EmodeDataHumanized[]>(
 };
 
 export const usePoolEModes = (marketData: MarketDataType) => {
-  return usePoolsEModes([marketData])[0];
+  const result = usePoolsEModes([marketData])[0];
+
+  console.log('[usePoolEModes] Hook state:', {
+    market: marketData.market,
+    status: result.status,
+    isPending: result.isPending,
+    isError: result.isError,
+    dataExists: !!result.data,
+    eModesCount: result.data?.length ?? 0,
+    error: result.error?.message,
+  });
+
+  return result;
 };

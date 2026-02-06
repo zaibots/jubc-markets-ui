@@ -16,7 +16,29 @@ export const usePoolsReservesHumanized = <T = ReservesDataHumanized>(
       (marketData) =>
         ({
           queryKey: queryKeysFactory.poolReservesDataHumanized(marketData),
-          queryFn: () => uiPoolService.getReservesHumanized(marketData),
+          queryFn: async () => {
+            console.log('[usePoolReserves] Fetching reserves for market:', {
+              market: marketData.market,
+              uiPoolDataProvider: marketData.addresses.UI_POOL_DATA_PROVIDER,
+              lendingPoolAddressProvider: marketData.addresses.LENDING_POOL_ADDRESS_PROVIDER,
+            });
+            try {
+              const result = await uiPoolService.getReservesHumanized(marketData);
+              console.log('[usePoolReserves] Query SUCCESS:', {
+                market: marketData.market,
+                reservesCount: result.reservesData?.length ?? 0,
+                reserveSymbols: result.reservesData?.map((r) => r.symbol),
+                baseCurrencyData: result.baseCurrencyData,
+              });
+              return result;
+            } catch (error) {
+              console.error('[usePoolReserves] Query ERROR:', {
+                market: marketData.market,
+                error,
+              });
+              throw error;
+            }
+          },
           refetchInterval: POLLING_INTERVAL,
           meta: {},
           ...opts,
@@ -26,5 +48,19 @@ export const usePoolsReservesHumanized = <T = ReservesDataHumanized>(
 };
 
 export const usePoolReservesHumanized = (marketData: MarketDataType) => {
-  return usePoolsReservesHumanized([marketData])[0];
+  const result = usePoolsReservesHumanized([marketData])[0];
+
+  // Debug: Log the hook result state
+  console.log('[usePoolReservesHumanized] Hook state:', {
+    market: marketData.market,
+    status: result.status,
+    isPending: result.isPending,
+    isError: result.isError,
+    isSuccess: result.isSuccess,
+    dataExists: !!result.data,
+    reservesCount: result.data?.reservesData?.length ?? 0,
+    error: result.error?.message,
+  });
+
+  return result;
 };
