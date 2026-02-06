@@ -1,7 +1,10 @@
 import type { Reserve } from '@aave/graphql';
+import { normalize } from '@aave/math-utils';
 import { NetworkConfig } from 'src/ui-config/networksConfig';
 
 import { FormattedReservesAndIncentives } from '../pool/usePoolFormattedReserves';
+
+const RAY_DECIMALS = 27;
 
 /**
  * Fallback Reserve type that matches what the UI components actually consume.
@@ -201,6 +204,18 @@ export function transformToReserve(
   const isWrappedBaseAsset =
     reserve.symbol.toLowerCase() === networkConfig.wrappedBaseAssetSymbol?.toLowerCase();
 
+  // Normalize BPS fields (baseLTVasCollateral, liquidationThreshold, liquidationBonus)
+  // These are raw BPS on the formatted reserve object; the formatted* versions are normalized
+  const normalizedLTV = reserve.formattedBaseLTVasCollateral;
+  const normalizedLiqThreshold = reserve.formattedReserveLiquidationThreshold;
+  const normalizedLiqBonus = reserve.formattedReserveLiquidationBonus;
+
+  // Normalize RAY fields for rate model (1e27 precision)
+  const normalizedBaseVariableBorrowRate = normalize(reserve.baseVariableBorrowRate, RAY_DECIMALS);
+  const normalizedOptimalUsageRatio = normalize(reserve.optimalUsageRatio, RAY_DECIMALS);
+  const normalizedVariableRateSlope1 = normalize(reserve.variableRateSlope1, RAY_DECIMALS);
+  const normalizedVariableRateSlope2 = normalize(reserve.variableRateSlope2, RAY_DECIMALS);
+
   // Map incentives from contract format to SDK format
   const incentives = mapIncentives(reserve);
 
@@ -259,15 +274,15 @@ export function transformToReserve(
       },
       maxLTV: {
         __typename: 'PercentValue',
-        value: reserve.baseLTVasCollateral,
+        value: normalizedLTV,
       },
       liquidationThreshold: {
         __typename: 'PercentValue',
-        value: reserve.reserveLiquidationThreshold,
+        value: normalizedLiqThreshold,
       },
       liquidationBonus: {
         __typename: 'PercentValue',
-        value: reserve.reserveLiquidationBonus,
+        value: normalizedLiqBonus,
       },
     },
     borrowInfo: reserve.borrowingEnabled
@@ -304,23 +319,23 @@ export function transformToReserve(
           },
           baseVariableBorrowRate: {
             __typename: 'DecimalValue',
-            value: reserve.baseVariableBorrowRate,
-            raw: reserve.baseVariableBorrowRate,
+            value: normalizedBaseVariableBorrowRate,
+            raw: normalizedBaseVariableBorrowRate,
           },
           optimalUsageRate: {
             __typename: 'PercentValue',
-            value: reserve.optimalUsageRatio,
-            raw: reserve.optimalUsageRatio,
+            value: normalizedOptimalUsageRatio,
+            raw: normalizedOptimalUsageRatio,
           },
           variableRateSlope1: {
             __typename: 'DecimalValue',
-            value: reserve.variableRateSlope1,
-            raw: reserve.variableRateSlope1,
+            value: normalizedVariableRateSlope1,
+            raw: normalizedVariableRateSlope1,
           },
           variableRateSlope2: {
             __typename: 'DecimalValue',
-            value: reserve.variableRateSlope2,
-            raw: reserve.variableRateSlope2,
+            value: normalizedVariableRateSlope2,
+            raw: normalizedVariableRateSlope2,
           },
         }
       : undefined,
