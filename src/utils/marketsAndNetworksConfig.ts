@@ -110,9 +110,13 @@ export function getSupportedChainIds(): number[] {
  * selectable markets (markets in a available network + forks when enabled)
  */
 
-export const availableMarkets = Object.keys(marketsData).filter((key) =>
+const filteredMarkets = Object.keys(marketsData).filter((key) =>
   getSupportedChainIds().includes(marketsData[key as keyof typeof CustomMarket].chainId)
 ) as CustomMarket[];
+
+// If no markets match (e.g. only testnet markets exist in prod mode), include all markets
+export const availableMarkets =
+  filteredMarkets.length > 0 ? filteredMarkets : (Object.keys(marketsData) as CustomMarket[]);
 
 const linkBuilder =
   ({ baseUrl, addressPrefix = 'address', txPrefix = 'tx' }: ExplorerLinkBuilderConfig) =>
