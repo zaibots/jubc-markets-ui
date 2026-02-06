@@ -5,7 +5,7 @@ import { Link, ROUTES } from 'src/components/primitives/Link';
 import { useRootStore } from 'src/store/root';
 import { CustomMarket, marketsData } from 'src/ui-config/marketsConfig';
 
-export const SavingsGhoProgram = () => {
+export const SavingsAienProgram = () => {
   const { breakpoints } = useTheme();
   const downToXsm = useMediaQuery(breakpoints.down('xsm'));
   const currentMarket = useRootStore((store) => store.currentMarket);
@@ -75,7 +75,7 @@ export const SavingsGhoProgram = () => {
             width={['221px', '400px']}
             textAlign={['left']}
           >
-            <Trans>stkGHO is now Savings GHO</Trans>
+            <Trans>stkAIEN is now Savings AIEN</Trans>
           </Typography>
           <Button
             variant="contained"

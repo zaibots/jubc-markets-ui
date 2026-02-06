@@ -32,7 +32,7 @@ import { SupplyInfo } from './SupplyInfo';
  * contract address it is held in. So each item in the array is essentially [underlyingAssetId + LendingPoolAddressProvider address].
  */
 const BROKEN_ASSETS = [
-  // ampl https://governance.aave.com/t/arc-fix-ui-bugs-in-reserve-overview-for-ampl/5885/5?u=sakulstra
+  // ampl https://governance.zaibots.com/t/arc-fix-ui-bugs-in-reserve-overview-for-ampl/5885/5?u=sakulstra
   AaveV2Ethereum.ASSETS.AMPL.UNDERLYING.toLowerCase(),
   AaveV2Ethereum.ASSETS.FEI.UNDERLYING.toLowerCase(),
 ];
@@ -64,7 +64,7 @@ export const ReserveConfiguration: React.FC<ReserveConfigurationProps> = ({ rese
         {reserve.isFrozen && !offboardingDiscussion ? (
           <Warning sx={{ mt: '16px', mb: '40px' }} severity="error">
             <Trans>
-              This asset is frozen due to an Aave community decision.{' '}
+              This asset is frozen due to a Zaibots community decision.{' '}
               <Link
                 href={getFrozenProposalLink(
                   reserve.underlyingToken.symbol.toLocaleLowerCase(),
@@ -96,7 +96,7 @@ export const ReserveConfiguration: React.FC<ReserveConfigurationProps> = ({ rese
                 impacted.{' '}
                 <Link
                   href={
-                    'https://governance.aave.com/t/arfc-add-mai-to-arbitrum-aave-v3-market/12759/8'
+                    'https://governance.zaibots.com/t/arfc-add-mai-to-arbitrum-aave-v3-market/12759/8'
                   }
                   sx={{ textDecoration: 'underline' }}
                 >

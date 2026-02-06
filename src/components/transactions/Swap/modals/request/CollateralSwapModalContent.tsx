@@ -9,7 +9,7 @@ import { TokenInfoWithBalance } from 'src/hooks/generic/useTokensBalance';
 import { ExtendedFormattedUser } from 'src/hooks/pool/useExtendedUserSummaryAndIncentives';
 import { useRootStore } from 'src/store/root';
 import { TOKEN_LIST, TokenInfo } from 'src/ui-config/TokenList';
-import { displayGhoForMintableMarket } from 'src/utils/ghoUtilities';
+import { displayGhoForMintableMarket } from 'src/utils/aienUtilities';
 import { useShallow } from 'zustand/shallow';
 
 import { invalidateAppStateForSwap } from '../../helpers/shared';

@@ -1,7 +1,7 @@
 import { SwapType } from '../types';
 
 export const SAFETY_MODULE_TOKENS = [
-  'stkgho',
+  'stkaien',
   'stkaave',
   'stkaavewstethbptv2',
   'stkbptv2',

@@ -309,7 +309,7 @@ export const useTransactionHistory = ({ isFilterActive }: { isFilterActive: bool
           let srcToken = findTokenFromReserves(order.sellToken);
           let destToken = findTokenFromReserves(order.buyToken);
 
-          // Fallback to TOKEN_LIST if not found in pool reserves (for non-Aave tokens)
+          // Fallback to TOKEN_LIST if not found in pool reserves (for non-Zaibots tokens)
           if (!srcToken) {
             srcToken = TOKEN_LIST.tokens.find(
               (token) =>

@@ -16,7 +16,7 @@ import { AssetCategory, isAssetInCategoryDynamic } from 'src/modules/markets/uti
 import { useRootStore } from 'src/store/root';
 import { fetchIconSymbolAndName } from 'src/ui-config/reservePatches';
 import { DASHBOARD } from 'src/utils/events';
-import { displayGhoForMintableMarket } from 'src/utils/ghoUtilities';
+import { displayGhoForMintableMarket } from 'src/utils/aienUtilities';
 import { ENABLE_TESTNET, STAGING_ENV } from 'src/utils/marketsAndNetworksConfig';
 
 import { ListWrapper } from '../../../../components/lists/ListWrapper';
@@ -325,7 +325,7 @@ export const SupplyAssetsList = () => {
               <Warning severity="warning">
                 <Trans>
                   Collateral usage is limited because of isolation mode.{' '}
-                  <Link href="https://docs.aave.com/faq/" target="_blank" rel="noopener">
+                  <Link href="https://docs.zaibots.com/faq/" target="_blank" rel="noopener">
                     Learn More
                   </Link>
                 </Trans>

@@ -159,7 +159,7 @@ export const MeritIncentivesTooltipContent = ({
 
       <Typography variant="caption" color="text.secondary">
         <Trans>
-          This is a program initiated and implemented by the Aave Chan Initiative (ACI). Aave Labs
+          This is a program initiated and implemented by the Zaibots Chan Initiative (ACI). Zaibots Labs
           does not guarantee the program and accepts no liability.
         </Trans>{' '}
         <Link
@@ -179,7 +179,7 @@ export const MeritIncentivesTooltipContent = ({
               Supply {selfConfig.token} and double your yield by{' '}
               <span>
                 <Link
-                  href="https://aave.self.xyz/"
+                  href="https://zaibots.self.xyz/"
                   sx={{ textDecoration: 'underline' }}
                   variant="caption"
                   color="text.secondary"
@@ -195,12 +195,12 @@ export const MeritIncentivesTooltipContent = ({
               Visit{' '}
               <span>
                 <Link
-                  href="https://aave.self.xyz/"
+                  href="https://zaibots.self.xyz/"
                   sx={{ textDecoration: 'underline' }}
                   variant="caption"
                   color="text.secondary"
                 >
-                  https://aave.self.xyz/
+                  https://zaibots.self.xyz/
                 </Link>
               </span>{' '}
               to get started with Self’s ZK-powered proof-of-humanity authentication.

@@ -8,7 +8,7 @@ export const AssetsBeingOffboarded: { [market: string]: { [symbol: string]: stri
 export const OffboardingWarning = ({ discussionLink }: { discussionLink: string }) => {
   return (
     <Trans>
-      This asset is planned to be offboarded due to an Aave Protocol Governance decision.{' '}
+      This asset is planned to be offboarded due to an Zaibots Protocol Governance decision.{' '}
       <Link href={discussionLink} sx={{ textDecoration: 'underline' }}>
         <Trans>More details</Trans>
       </Link>

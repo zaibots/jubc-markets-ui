@@ -11,15 +11,15 @@
  -/:             :/-  -/:             :/.     ://:         `/////////////-
 ```
 
-# Aave protocol interface :ghost:
+# Zaibots protocol interface :ghost:
 
-An open source interface for the decentralized liquidity protocol Aave
+An open source interface for the decentralized liquidity protocol Zaibots
 
 Enabling users to:
 
-- Manage and monitor their positions on the Aave Protocol, and the overall status of it
-- Manage and monitor their positions on the Aave Safety module
-- Participate in the Aave Governance
+- Manage and monitor their positions on the Zaibots Protocol, and the overall status of it
+- Manage and monitor their positions on the Zaibots Safety module
+- Participate in the Zaibots Governance
 
 ## How to use
 
@@ -72,7 +72,7 @@ Just go to `<your favorite public ipfs gateway>/ipns/app.aave.com`
 
 ## License
 
-[All Rights Reserved © Aave Labs](./LICENSE.md)
+[All Rights Reserved © Zaibots Labs](./LICENSE.md)
 
 ## Credits
 

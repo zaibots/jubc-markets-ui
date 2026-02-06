@@ -105,7 +105,7 @@ const generateSubmitVoteSignature = (
     },
     primaryType: 'SubmitVote',
     domain: {
-      name: 'Aave Voting Machine',
+      name: 'Zaibots Voting Machine',
       version: 'V1',
       chainId: votingChainId,
       verifyingContract: votingMachineAddress,

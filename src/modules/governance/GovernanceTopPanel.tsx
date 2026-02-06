@@ -51,25 +51,25 @@ export const GovernanceTopPanel = () => {
         <Box mb={4}>
           <ChainAvailabilityText wrapperSx={{ mb: 4 }} chainId={ChainId.mainnet} />
           <Box sx={{ display: 'flex', alignItems: 'center', mb: 4 }}>
-            {/* <img src={`/aave.svg`} width="32px" height="32px" alt="" /> */}
+            {/* <img src={`/zaibots.svg`} width="32px" height="32px" alt="" /> */}
             <Typography
               variant={downToXSM ? 'h2' : upToLG ? 'display1' : 'h1'}
               sx={{ ml: 2, mr: 3 }}
             >
-              <Trans>Aave Governance</Trans>
+              <Trans>Zaibots Governance</Trans>
             </Typography>
           </Box>
 
           <Typography sx={{ color: '#8E92A3', maxWidth: '824px' }}>
             <Trans>
-              Aave is a fully decentralized, community governed protocol by the AAVE token-holders.
+              Zaibots is a fully decentralized, community governed protocol by the AAVE token-holders.
               AAVE token-holders collectively discuss, propose, and vote on upgrades to the
               protocol. AAVE token-holders (Ethereum network only) can either vote themselves on new
               proposals or delagate to an address of choice. To learn more check out the Governance
             </Trans>{' '}
             <Link
               onClick={() => trackEvent(GENERAL.EXTERNAL_LINK, { Link: 'FAQ Docs Governance' })}
-              href="https://docs.aave.com/faq/governance"
+              href="https://docs.zaibots.com/faq/governance"
               sx={{ textDecoration: 'underline', color: '#8E92A3' }}
             >
               <Trans>documentation</Trans>
@@ -89,9 +89,9 @@ export const GovernanceTopPanel = () => {
         }}
       >
         <ExternalLink text="SNAPSHOTS" href="https://snapshot.org/#/aave.eth" />
-        <ExternalLink text="FORUM" href="https://governance.aave.com/" />
-        <ExternalLink text="FAQ" href="https://docs.aave.com/faq/governance" />
-        <ExternalLink text="GOVERNANCE V2" href="https://governance-v2.aave.com/" />
+        <ExternalLink text="FORUM" href="https://governance.zaibots.com/" />
+        <ExternalLink text="FAQ" href="https://docs.zaibots.com/faq/governance" />
+        <ExternalLink text="GOVERNANCE V2" href="https://governance-v2.zaibots.com/" />
       </Box>
     </TopInfoPanel>
   );

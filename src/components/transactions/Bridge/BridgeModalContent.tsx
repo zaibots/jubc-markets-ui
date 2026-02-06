@@ -32,7 +32,7 @@ import { useModalContext } from 'src/hooks/useModal';
 import { useWeb3Context } from 'src/libs/hooks/useWeb3Context';
 import { useRootStore } from 'src/store/root';
 import { GENERAL } from 'src/utils/events';
-import { GHO_SYMBOL } from 'src/utils/ghoUtilities';
+import { GHO_SYMBOL } from 'src/utils/aienUtilities';
 import { getNetworkConfig, marketsData } from 'src/utils/marketsAndNetworksConfig';
 
 import { AssetInput } from '../AssetInput';
@@ -121,7 +121,7 @@ export const BridgeModalContent = () => {
   );
 
   const getGHOToken = (tokenList: TokenInfoWithBalance[]) => {
-    return tokenList.find((token: TokenInfoWithBalance) => token.symbol === 'GHO') || tokenList[0];
+    return tokenList.find((token: TokenInfoWithBalance) => token.symbol === 'AIEN') || tokenList[0];
   };
 
   const [selectedFeeToken, setSelectedFeeToken] = useState(
@@ -318,7 +318,7 @@ export const BridgeModalContent = () => {
   const amountWithFee = (
     <TextWithTooltip text={<Trans>Amount After Fee</Trans>}>
       <Trans>
-        The total amount bridged minus CCIP fees. Paying in network token does not impact gho
+        The total amount bridged minus CCIP fees. Paying in network token does not impact aien
         amount.
       </Trans>
     </TextWithTooltip>
@@ -331,7 +331,7 @@ export const BridgeModalContent = () => {
     <>
       <Box display="flex" justifyContent="space-between" alignItems="center">
         <Typography variant="h2">
-          <Trans>Bridge GHO</Trans>
+          <Trans>Bridge AIEN</Trans>
         </Typography>
         {user && (
           <Box
@@ -424,7 +424,7 @@ export const BridgeModalContent = () => {
             ]}
             maxValue={maxAmountToBridgeFormatted}
             inputTitle={<Trans>Amount to Bridge</Trans>}
-            balanceText={<Trans>GHO balance</Trans>}
+            balanceText={<Trans>AIEN balance</Trans>}
             sx={{ width: '100%' }}
             loading={fetchingBridgeTokenBalance || loadingLimits}
             isMaxSelected={maxSelected}

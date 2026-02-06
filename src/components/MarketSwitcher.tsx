@@ -344,7 +344,7 @@ export const MarketSwitcher = () => {
       <Box>
         <Typography variant="subheader2" color="text.secondary" sx={{ px: 4, pt: 2 }}>
           <Trans>
-            {ENABLE_TESTNET || STAGING_ENV ? 'Select Aave Testnet Market' : 'Select Aave Market'}
+            {ENABLE_TESTNET || STAGING_ENV ? 'Select Zaibots Testnet Market' : 'Select Zaibots Market'}
           </Trans>
         </Typography>
       </Box>
@@ -355,7 +355,7 @@ export const MarketSwitcher = () => {
             exclusive
             onChange={(_, value) => {
               if (value === SelectedMarketVersion.V2) {
-                window.open('https://v2-market.aave.com/', '_blank', 'noopener');
+                window.open('https://v2-market.zaibots.com/', '_blank', 'noopener');
                 return;
               }
               if (value !== null) {

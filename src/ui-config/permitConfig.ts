@@ -21,7 +21,7 @@ export const permitByChainAndToken: {
     '0x2260fac5e5542a773aa44fbcfedf7c193bc2c599': false, // wbtc
     '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2': false, // weth
     '0x7f39c581f595b53c5cb19bd0b3f8da6c935e2ca0': true, // wsteth
-    '0x40d16fc0246ad3160ccc09b8d0d3a2cd28ae6c2f': true, // gho
+    '0x40d16fc0246ad3160ccc09b8d0d3a2cd28ae6c2f': true, // aien
     '0x5f98805a4e8be255a32880fdec7f6728c6568ba0': true, // lusd
     '0xdc035d45d973e3ec169d2276ddab16f1e407384f': true, // usds
     '0x14d60e7fdc0d71d8611742720e4c50e7a974020c': true, // uscc superstake underlying_tokenv
@@ -70,8 +70,8 @@ export const permitByChainAndToken: {
     '0xb490ff18e55b8881c9527fe7e358dd363780449f': true, // aone_inch_static
     '0xd4e245848d6e1220dbe62e155d89fa327e43cb06': true, // afrax
     '0xee66abd4d0f9908a48e08ae354b0f425de3e237e': true, // afrax_static
-    '0x00907f9921424583e7ffbfedf84f92b7b2be4977': true, // agho
-    '0x048459e4fb3402e58d8900af7283ad574b91d742': true, // agho_static
+    '0x00907f9921424583e7ffbfedf84f92b7b2be4977': true, // aaien
+    '0x048459e4fb3402e58d8900af7283ad574b91d742': true, // aaien_static
     '0xb76cf92076adbf1d9c39294fa8e7a67579fde357': true, // arpl
     '0x95ef7cb3494e65da4926ba330dbf540a13affd17': true, // arpl_static
     '0x4c612e3b15b96ff9a6faed838f8d07d479a8dd4c': true, // asdai
@@ -152,8 +152,8 @@ export const permitByChainAndToken: {
     '0x6533afac2e7bccb20dca161449a13a32d391fb00': true, // aarb
     '0x9b5637d7952bc9fa2d693aae51f3103760bf2693': true, // aarb_static
     '0x8437d7c167dfb82ed4cb79cd44b7a32a1dd95c77': true, // aweeth
-    '0xebe517846d0f36eced99c735cbf6131e1feb775d': true, // agho
-    '0xd9fba68d89178e3538e708939332c79efc540179': true, // agho_static
+    '0xebe517846d0f36eced99c735cbf6131e1feb775d': true, // aaien
+    '0xd9fba68d89178e3538e708939332c79efc540179': true, // aaien_static
     '0xea1132120ddcdda2f119e99fa7a27a0d036f7ac9': true, // aezeth
     '0x6b030ff3fb9956b1b69f475b77ae0d3cf2cc5afa': true, // arseth
     '0x62fc96b27a510cf4977b59ff952dc32378cc221d': true, // atbtc
@@ -225,7 +225,7 @@ export const permitByChainAndToken: {
     '0x8eb270e296023e9d92081fdf967ddd7878724424': true, // amai
     '0x8ffdf2de812095b1d19cb146e4c004587c0a0692': true, // abtcb
     '0x724dc807b04555b71ed48a6896b6f41593b8c637': true, // aausd
-    '0xf611aeb5013fd2c0511c9cd55c7dc5c1140741a6': true, // agho
+    '0xf611aeb5013fd2c0511c9cd55c7dc5c1140741a6': true, // aaien
     '0x8a9fde6925a839f6b1932d16b36ac026f8d3fbdb': true, // aeurc
   },
   [ChainId.optimism]: {
@@ -341,7 +341,7 @@ export const permitByChainAndToken: {
     '0xf3f45960f8de00d8ed614d445a5a268c6f6dec4f': true, // asdai_static
     '0xc0333cb85b59a788d8c7cae5e1fd6e229a3e5a65': true, // ausdce
     '0xf0e7ec247b918311afa054e0aedb99d74c31b809': true, // ausdce_static
-    '0x3fdcec11b4f15c79d483aedc56f37d302837cf4d': true, // agho
+    '0x3fdcec11b4f15c79d483aedc56f37d302837cf4d': true, // aaien
   },
 };
 

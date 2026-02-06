@@ -173,7 +173,7 @@ export interface FallbackIncentive {
 
 /**
  * Transforms contract-based FormattedReservesAndIncentives to SDK-compatible Reserve format.
- * Used as a fallback when the Aave SDK doesn't have data for custom/non-indexed markets.
+ * Used as a fallback when the Zaibots SDK doesn't have data for custom/non-indexed markets.
  */
 export function transformToReserve(
   reserve: FormattedReservesAndIncentives,
@@ -232,7 +232,7 @@ export function transformToReserve(
       __typename: 'Currency',
       address: reserve.aTokenAddress,
       symbol: `a${reserve.symbol}`,
-      name: `Aave ${reserve.name}`,
+      name: `Zaibots ${reserve.name}`,
       decimals: reserve.decimals,
     },
     vToken: {

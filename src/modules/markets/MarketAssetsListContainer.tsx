@@ -12,17 +12,17 @@ import { useAppDataContext } from 'src/hooks/app-data-provider/useAppDataProvide
 import { useCoingeckoCategories } from 'src/hooks/useCoinGeckoCategories';
 import MarketAssetsList from 'src/modules/markets/MarketAssetsList';
 import { useRootStore } from 'src/store/root';
-import { GHO_MINTING_MARKETS, GHO_SYMBOL } from 'src/utils/ghoUtilities';
+import { GHO_MINTING_MARKETS, GHO_SYMBOL } from 'src/utils/aienUtilities';
 import { useShallow } from 'zustand/shallow';
 
 import { GENERAL } from '../../utils/events';
 import { isAssetHidden } from '../dashboard/lists/constants';
-import { SavingsGhoBanner } from './Gho/GhoBanner';
+import { SavingsAienBanner } from './Gho/AienBanner';
 import { AssetCategory, isAssetInCategoryDynamic } from './utils/assetCategories';
 
-function shouldDisplayGhoBanner(marketTitle: string, searchTerm: string): boolean {
-  // GHO banner is only displayed on markets where new GHO is mintable (i.e. Ethereum)
-  // If GHO is listed as a reserve, then it will be displayed in the normal market asset list
+function shouldDisplayAienBanner(marketTitle: string, searchTerm: string): boolean {
+  // AIEN banner is only displayed on markets where new AIEN is mintable (i.e. Ethereum)
+  // If AIEN is listed as a reserve, then it will be displayed in the normal market asset list
   if (!GHO_MINTING_MARKETS.includes(marketTitle)) {
     return false;
   }
@@ -57,7 +57,7 @@ export const MarketAssetsListContainer = () => {
 
   const sm = useMediaQuery(breakpoints.down('sm'));
 
-  const displayGhoBanner = shouldDisplayGhoBanner(currentMarket, searchTerm);
+  const displayAienBanner = shouldDisplayAienBanner(currentMarket, searchTerm);
 
   const filteredData = supplyReserves
     // Filter out any non-active reserves
@@ -169,9 +169,9 @@ export const MarketAssetsListContainer = () => {
         )
       }
     >
-      {displayGhoBanner && (
+      {displayAienBanner && (
         <Box mb={4}>
-          <SavingsGhoBanner />
+          <SavingsAienBanner />
         </Box>
       )}
 
@@ -193,7 +193,7 @@ export const MarketAssetsListContainer = () => {
           {showFrozenMarketsToggle && (
             <Warning severity="info">
               <Trans>
-                These assets are temporarily frozen or paused by Aave community decisions, meaning
+                These assets are temporarily frozen or paused by Zaibots community decisions, meaning
                 that further supply / borrow, or rate swap of these assets are unavailable.
                 Withdrawals and debt repayments are allowed. Follow the{' '}
                 <Link
@@ -203,10 +203,10 @@ export const MarketAssetsListContainer = () => {
                       frozenMarket: currentNetworkConfig.name,
                     });
                   }}
-                  href="https://governance.aave.com"
+                  href="https://governance.zaibots.com"
                   underline="always"
                 >
-                  Aave governance forum
+                  Zaibots governance forum
                 </Link>{' '}
                 for further updates.
               </Trans>
@@ -219,7 +219,7 @@ export const MarketAssetsListContainer = () => {
       )}
 
       {/* Show no search results message if nothing hits in either list */}
-      {!loading && filteredData.length === 0 && !displayGhoBanner && (
+      {!loading && filteredData.length === 0 && !displayAienBanner && (
         <NoSearchResults
           searchTerm={searchTerm}
           subtitle={

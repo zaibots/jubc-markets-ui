@@ -8,10 +8,10 @@ type FixedToolTipProps = TextWithTooltipProps;
 
 export const FixedAPYTooltipText = (
   <Trans>
-    Interest rate that is determined by Aave Governance. This rate may be changed over time
-    depending on the need for the GHO supply to contract/expand.{' '}
+    Interest rate that is determined by Zaibots Governance. This rate may be changed over time
+    depending on the need for the AIEN supply to contract/expand.{' '}
     <Link
-      href="https://docs.gho.xyz/concepts/how-gho-works/interest-rate-discount-model#interest-rate-model"
+      href="https://docs.aien.xyz/concepts/how-aien-works/interest-rate-discount-model#interest-rate-model"
       underline="always"
     >
       <Trans>Learn more</Trans>
@@ -24,7 +24,7 @@ export const FixedAPYTooltip = (props: FixedToolTipProps) => {
     <TextWithTooltip
       event={{
         eventName: GENERAL.TOOL_TIP,
-        eventParams: { tooltip: 'GHO APY' },
+        eventParams: { tooltip: 'AIEN APY' },
       }}
       {...props}
     >

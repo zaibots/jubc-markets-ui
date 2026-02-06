@@ -122,7 +122,7 @@ export const TokenLinkDropdown = ({
           <Box>
             <Box sx={{ px: 4, pt: 3, pb: 2 }}>
               <Typography variant="secondary12" color="text.secondary">
-                <Trans>Aave aToken</Trans>
+                <Trans>Zaibots aToken</Trans>
               </Typography>
             </Box>
 
@@ -159,7 +159,7 @@ export const TokenLinkDropdown = ({
         {showVariableDebtToken && (
           <Box sx={{ px: 4, pt: 3, pb: 2 }}>
             <Typography variant="secondary12" color="text.secondary">
-              <Trans>Aave debt token</Trans>
+              <Trans>Zaibots debt token</Trans>
             </Typography>
           </Box>
         )}

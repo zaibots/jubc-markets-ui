@@ -13,7 +13,7 @@ export const KernelAirdropTooltip = () => {
     >
       <>
         <Trans>
-          {`This asset is eligible for Kernel points incentive program. Aave Labs does not
+          {`This asset is eligible for Kernel points incentive program. Zaibots Labs does not
           guarantee the program and accepts no liability.\n`}
         </Trans>
         <br />

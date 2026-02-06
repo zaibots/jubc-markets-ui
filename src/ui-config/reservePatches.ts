@@ -51,7 +51,7 @@ export const SYMBOL_MAP: { [key: string]: string } = {
 
 /**
  * Maps (potentially altered via SYMBOL_MAP) symbols to a name
- * With the next version of uipooldataprovider https://github.com/aave/aave-v3-periphery/pull/89 this list can be greatly reduced/removed.
+ * With the next version of uipooldataprovider https://github.com/zaibots/aave-v3-periphery/pull/89 this list can be greatly reduced/removed.
  */
 export const SYMBOL_NAME_MAP: { [key: string]: string } = {
   AVAX: 'Avalanche',
@@ -69,7 +69,7 @@ export const SYMBOL_NAME_MAP: { [key: string]: string } = {
   REP: 'Augur',
   SAVAX: 'Benqi Staked Avalanche',
   STETH: 'Lido Staked Ether',
-  STKAAVE: 'Stake Aave',
+  STKAAVE: 'Stake Zaibots',
   TUSD: 'TrueUSD',
   UNI: 'Uniswap',
   UNIDAIWETH: 'UNI DAI/WETH',

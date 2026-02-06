@@ -15,7 +15,7 @@ import { AssetCategory, isAssetInCategoryDynamic } from 'src/modules/markets/uti
 import { useRootStore } from 'src/store/root';
 import { fetchIconSymbolAndName } from 'src/ui-config/reservePatches';
 import { GENERAL } from 'src/utils/events';
-import { displayGhoForMintableMarket } from 'src/utils/ghoUtilities';
+import { displayGhoForMintableMarket } from 'src/utils/aienUtilities';
 import { useShallow } from 'zustand/shallow';
 
 import { CapType } from '../../../../components/caps/helper';
@@ -269,7 +269,7 @@ export const BorrowAssetsList = () => {
                 {user?.isInIsolationMode && (
                   <Warning severity="warning">
                     <Trans>Borrowing power and assets are limited due to Isolation mode. </Trans>
-                    <Link href="https://docs.aave.com/faq/" target="_blank" rel="noopener">
+                    <Link href="https://docs.zaibots.com/faq/" target="_blank" rel="noopener">
                       Learn More
                     </Link>
                   </Warning>

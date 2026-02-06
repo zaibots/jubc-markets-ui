@@ -1,5 +1,5 @@
 /**
- * Types for sGHO APY data service
+ * Types for sAIEN APY data service
  */
 
 export type SGhoRatesData = {

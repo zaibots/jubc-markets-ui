@@ -212,8 +212,8 @@ export const TOKEN_LIST: TokenList = {
     {
       chainId: 1, // TODO sepolia
       address: '0x111111111117dC0aa78b770fA6A738034120C302',
-      name: 'Test jUBC',
-      symbol: 'testUBC',
+      name: 'Test AIEN',
+      symbol: 'testAIEN',
       decimals: 18,
       logoURI: '',
       extensions: {
@@ -242,8 +242,8 @@ export const TOKEN_LIST: TokenList = {
     {
       chainId: 1, // TODO sepolia
       address: '0x111111111117dC0aa78b770fA6A738034120C302',
-      name: 'jUBC',
-      symbol: 'jUBC',
+      name: 'AIEN',
+      symbol: 'AIEN',
       decimals: 18,
       logoURI: '',
       extensions: {
@@ -13028,36 +13028,36 @@ export const TOKEN_LIST: TokenList = {
         'https://assets.coingecko.com/coins/images/877/thumb/chainlink-new-logo.png?1547034700',
     },
     {
-      name: 'Gho Token',
+      name: 'AIEN - Compute Commodity',
       address: '0x40D16FC0246aD3160Ccc09B8D0D3A2cD28aE6C2f',
-      symbol: 'GHO',
+      symbol: 'AIEN',
       decimals: 18,
       chainId: 1,
       logoURI:
         'https://assets.coingecko.com/coins/images/30663/standard/gho-token-logo.png?1720517092',
     },
     {
-      name: 'Gho Token',
+      name: 'AIEN - Compute Commodity',
       address: '0x7dff72693f6a4149b17e7c6314655f6a9f7c8b33',
-      symbol: 'GHO',
+      symbol: 'AIEN',
       decimals: 18,
       chainId: 42161,
       logoURI:
         'https://assets.coingecko.com/coins/images/30663/standard/gho-token-logo.png?1720517092',
     },
     {
-      name: 'Gho Token',
+      name: 'AIEN - Compute Commodity',
       address: '0xfc421ad3c883bf9e7c4f42de845c4e4405799e73',
-      symbol: 'GHO',
+      symbol: 'AIEN',
       decimals: 18,
       chainId: 43114,
       logoURI:
         'https://assets.coingecko.com/coins/images/30663/standard/gho-token-logo.png?1720517092',
     },
     {
-      name: 'Gho Token',
+      name: 'AIEN - Compute Commodity',
       address: '0x6bb7a212910682dcfdbd5bcbb3e28fb4e8da10ee',
-      symbol: 'GHO',
+      symbol: 'AIEN',
       decimals: 18,
       chainId: 8453,
       logoURI:
@@ -13073,9 +13073,9 @@ export const TOKEN_LIST: TokenList = {
         'https://assets.coingecko.com/coins/images/12645/standard/aave-token-round.png?1720472354',
     },
     {
-      name: 'stk GHO',
+      name: 'stk AIEN',
       address: '0x1a88Df1cFe15Af22B3c4c783D4e6F7F9e0C1885d',
-      symbol: 'stkGHO',
+      symbol: 'stkAIEN',
       decimals: 18,
       chainId: 1,
       logoURI: 'https://assets.coingecko.com/coins/images/34849/standard/staked-gho.png?1736975912',
@@ -13307,7 +13307,7 @@ export const TOKEN_LIST: TokenList = {
 export const COMMON_SWAPS = [
   'ETH',
   'DAI',
-  'GHO',
+  'AIEN',
   'USDC',
   'USDT',
   'WBTC',

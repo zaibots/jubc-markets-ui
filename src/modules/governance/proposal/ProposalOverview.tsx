@@ -138,9 +138,9 @@ export const ProposalOverview = ({ proposal, loading, error }: ProposalOverviewP
                   }
                   href={`https://hey.xyz/?url=${
                     typeof window !== 'undefined' ? window.location.href : ''
-                  }&text=Check out this proposal on aave governance - ${
+                  }&text=Check out this proposal on zaibots governance - ${
                     proposal.title
-                  }&hashtags=Aave&preview=true`}
+                  }&hashtags=Zaibots&preview=true`}
                   startIcon={
                     <LensIcon
                       color={palette.mode === 'dark' ? palette.primary.light : palette.text.primary}

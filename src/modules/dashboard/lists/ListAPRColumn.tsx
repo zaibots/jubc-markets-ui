@@ -2,7 +2,7 @@ import { ProtocolAction } from '@aave/contract-helpers';
 import { ReserveIncentiveResponse } from '@aave/math-utils/dist/esm/formatters/incentive/calculate-reserve-incentives';
 import { Box, Stack } from '@mui/material';
 import { ReactNode } from 'react';
-import { GhoRateTooltip } from 'src/components/infoTooltips/GhoRateTooltip';
+import { AienRateTooltip } from 'src/components/infoTooltips/AienRateTooltip';
 import { CustomMarket } from 'src/ui-config/marketsConfig';
 
 import { IncentivesCard } from '../../../components/incentives/IncentivesCard';
@@ -67,7 +67,7 @@ export const ListGhoAPRColumn = ({
           market={market}
           protocolAction={protocolAction}
         />
-        <GhoRateTooltip />
+        <AienRateTooltip />
       </Stack>
       {children}
     </ListColumn>

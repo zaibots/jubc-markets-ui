@@ -3,21 +3,21 @@ import { BasicModal } from 'src/components/primitives/BasicModal';
 import { ModalContextType, ModalType, useModalContext } from 'src/hooks/useModal';
 
 import { ModalWrapper } from '../FlowCommons/ModalWrapper';
-import { SavingsGhoModalWithdrawContent } from './SavingsGhoWithdrawModalContent';
+import { SavingsAienModalDepositContent } from './SavingsAienModalDepositContent';
 
-export const SavingsGhoWithdrawModal = () => {
+export const SavingsAienDepositModal = () => {
   const { type, close, args } = useModalContext() as ModalContextType<{
     underlyingAsset: string;
   }>;
 
   return (
-    <BasicModal open={type === ModalType.SavingsGhoWithdraw} setOpen={close}>
+    <BasicModal open={type === ModalType.SavingsAienDeposit} setOpen={close}>
       <ModalWrapper
-        title={<Trans>Withdraw GHO</Trans>}
+        title={<Trans>Deposit AIEN</Trans>}
         underlyingAsset={args.underlyingAsset}
         hideTitleSymbol
       >
-        {(params) => <SavingsGhoModalWithdrawContent {...params} icon="GHO" />}
+        {() => <SavingsAienModalDepositContent />}
       </ModalWrapper>
     </BasicModal>
   );

@@ -7,7 +7,7 @@ import { TextWithTooltip } from 'src/components/TextWithTooltip';
 import { TopInfoPanelItem } from 'src/components/TopInfoPanel/TopInfoPanelItem';
 import { ReserveWithId, useAppDataContext } from 'src/hooks/app-data-provider/useAppDataProvider';
 
-export const GhoReserveTopDetails = ({ reserve }: { reserve: ReserveWithId }) => {
+export const AienReserveTopDetails = ({ reserve }: { reserve: ReserveWithId }) => {
   const { loading } = useAppDataContext();
   const theme = useTheme();
   const downToSM = useMediaQuery(theme.breakpoints.down('sm'));
@@ -50,9 +50,9 @@ export const GhoReserveTopDetails = ({ reserve }: { reserve: ReserveWithId }) =>
         title={
           <TextWithTooltip text={<Trans>Price</Trans>}>
             <Trans>
-              The Aave Protocol is programmed to always use the price of 1 GHO = $1. This is
+              The Zaibots Protocol is programmed to always use the price of 1 AIEN = $1. This is
               different from using market pricing via oracles for other crypto assets. This creates
-              stabilizing arbitrage opportunities when the price of GHO fluctuates.
+              stabilizing arbitrage opportunities when the price of AIEN fluctuates.
             </Trans>
           </TextWithTooltip>
         }

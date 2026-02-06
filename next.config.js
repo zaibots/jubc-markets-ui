@@ -66,7 +66,7 @@ module.exports = withSentryConfig(
     // https://www.npmjs.com/package/@sentry/webpack-plugin#options
 
     org: 'avara-ex',
-    project: 'aave-v3',
+    project: 'zaibots-v3',
 
     // Only print logs for uploading source maps in CI
     silent: !process.env.CI,

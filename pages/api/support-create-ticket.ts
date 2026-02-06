@@ -28,7 +28,7 @@ const makeGraphQLRequest = async (query: string, variables: Record<string, unkno
   return response.json();
 };
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const allowedOrigins = ['https://app.aave.com', 'https://aave.com'];
+  const allowedOrigins = ['https://app.zaibots.com', 'https://zaibots.com'];
   const origin = req.headers.origin;
 
   const isOriginAllowed = (origin: string | undefined): boolean => {
@@ -126,7 +126,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         components: [
           {
             componentText: {
-              text: 'Support inquiry from aave.com',
+              text: 'Support inquiry from zaibots.com',
             },
           },
           {

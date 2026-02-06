@@ -87,9 +87,9 @@ const IncentivesSymbolMap: {
     symbol: 'aEURC',
     aToken: true,
   },
-  aBasGHO: {
-    tokenIconSymbol: 'GHO',
-    symbol: 'aGHO',
+  aBasAIEN: {
+    tokenIconSymbol: 'AIEN',
+    symbol: 'aAIEN',
     aToken: true,
   },
   aAvaSAVAX: {

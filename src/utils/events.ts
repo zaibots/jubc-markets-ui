@@ -165,11 +165,11 @@ export const SETTINGS = {
 };
 
 export const GHO_SUCCESS_MODAL = {
-  GHO_SHARE_TWITTER: 'Click share GHO borrow on Twitter',
-  GHO_SHARE_HEY: 'Click share GHO borrow on Hey',
-  GHO_COPY_IMAGE: 'Click copy image on GHO borrow',
-  GHO_DOWNLOAD_IMAGE: 'Click download image on GHO borrow',
-  GHO_BORROW_VIEW_TX_DETAILS: 'Click view TX details on GHO borrow',
+  GHO_SHARE_TWITTER: 'Click share AIEN borrow on Twitter',
+  GHO_SHARE_HEY: 'Click share AIEN borrow on Hey',
+  GHO_COPY_IMAGE: 'Click copy image on AIEN borrow',
+  GHO_DOWNLOAD_IMAGE: 'Click download image on AIEN borrow',
+  GHO_BORROW_VIEW_TX_DETAILS: 'Click view TX details on AIEN borrow',
   GHO_FAIL_COPY_IMAGE: 'Failed to copy image to clipboard',
 };
 export const SWITCH_MODAL = {

@@ -95,7 +95,7 @@ export class WalletBalanceService {
 
     const balances = await walletBalanceService.batchBalanceOf(
       [user],
-      [ghoTokenAddress?.toLowerCase() as string] // GHO UNDERLYING
+      [ghoTokenAddress?.toLowerCase() as string] // AIEN UNDERLYING
     );
 
     return {

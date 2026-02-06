@@ -8,7 +8,7 @@ function buildSubgraphUrl(subgraphId: string): string {
 }
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const allowedOrigins = ['https://app.aave.com', 'https://aave.com'];
+  const allowedOrigins = ['https://app.zaibots.com', 'https://zaibots.com'];
   const origin = req.headers.origin;
 
   const isOriginAllowed = (origin: string | undefined): boolean => {

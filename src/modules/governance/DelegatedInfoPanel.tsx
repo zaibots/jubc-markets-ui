@@ -173,7 +173,7 @@ export const DelegatedInfoPanel = () => {
             protocol. You can re-delegate or revoke power to self at any time.
           </Trans>
           <Link
-            href="https://docs.aave.com/developers/v/2.0/protocol-governance/governance"
+            href="https://docs.zaibots.com/developers/v/2.0/protocol-governance/governance"
             target="_blank"
             variant="description"
             color="text.secondary"

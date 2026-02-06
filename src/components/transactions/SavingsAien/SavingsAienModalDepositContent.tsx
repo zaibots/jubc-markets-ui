@@ -11,7 +11,7 @@ import { useWeb3Context } from 'src/libs/hooks/useWeb3Context';
 import { useRootStore } from 'src/store/root';
 import { stakeAssetNameFormatted, stakeConfig } from 'src/ui-config/stakeConfig';
 import { STAKE } from 'src/utils/events';
-import { GHO_SYMBOL } from 'src/utils/ghoUtilities';
+import { GHO_SYMBOL } from 'src/utils/aienUtilities';
 import { useShallow } from 'zustand/shallow';
 
 import { AssetInput } from '../AssetInput';
@@ -19,13 +19,13 @@ import { TxErrorView } from '../FlowCommons/Error';
 import { GasEstimationError } from '../FlowCommons/GasEstimationError';
 import { TxSuccessView } from '../FlowCommons/Success';
 import { DetailsNumberLine, TxModalDetails } from '../FlowCommons/TxModalDetails';
-import { SavingsGhoDepositActions } from './SavingsGhoDepositActions';
+import { SavingsAienDepositActions } from './SavingsAienDepositActions';
 
 export enum ErrorType {
   NOT_ENOUGH_BALANCE,
 }
 
-export const SavingsGhoModalDepositContent = () => {
+export const SavingsAienModalDepositContent = () => {
   const { chainId: connectedChainId } = useWeb3Context();
   const { gasLimit, mainTxState: txState, txError } = useModalContext();
   const [currentMarketData, currentNetworkConfig, currentChainId] = useRootStore(
@@ -36,7 +36,7 @@ export const SavingsGhoModalDepositContent = () => {
     ])
   );
   const { data: meritIncentives } = useMeritIncentives({
-    symbol: 'GHO',
+    symbol: 'AIEN',
     market: currentMarketData.market,
   });
   const [_amount, setAmount] = useState('');
@@ -127,7 +127,7 @@ export const SavingsGhoModalDepositContent = () => {
 
       {txError && <GasEstimationError txError={txError} />}
 
-      <SavingsGhoDepositActions
+      <SavingsAienDepositActions
         sx={{ mt: '48px' }}
         amountToStake={amount}
         isWrongNetwork={isWrongNetwork}

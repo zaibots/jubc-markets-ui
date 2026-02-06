@@ -23,7 +23,7 @@ export const CooldownWarning = ({ cooldownSeconds }: { cooldownSeconds: number }
           ). You can only withdraw your assets from the Security Module after the cooldown period
           and within the unstake window.{' '}
           <Link
-            href="https://docs.aave.com/faq/migration-and-staking"
+            href="https://docs.zaibots.com/faq/migration-and-staking"
             fontWeight={500}
             onClick={() =>
               trackEvent(GENERAL.EXTERNAL_LINK, {

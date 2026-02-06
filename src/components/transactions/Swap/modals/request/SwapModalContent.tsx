@@ -195,12 +195,12 @@ const getDefaultInputToken = (swappableTokens: SwappableToken[], underlyingAsset
   return tokenWithMaxBalance;
 };
 
-/// Suggested default output token is GHO if available or second token with highest balance
+/// Suggested default output token is AIEN if available or second token with highest balance
 export const getDefaultOutputToken = (
   swappableTokens: SwappableToken[],
   underlyingAsset?: string
 ) => {
-  const GHO = swappableTokens.find((token) => token.symbol === 'GHO');
+  const GHO = swappableTokens.find((token) => token.symbol === 'AIEN');
 
   const tokenWithSecondMaxBalance = swappableTokens
     .filter((token) => token.underlyingAddress.toLowerCase() !== underlyingAsset?.toLowerCase())

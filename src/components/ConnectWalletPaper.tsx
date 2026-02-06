@@ -3,7 +3,7 @@ import { Box, CircularProgress, Paper, PaperProps, Typography } from '@mui/mater
 import { useModal } from 'connectkit';
 import { ReactNode } from 'react';
 
-import LandingGhost from '/public/resting-gho-hat-purple.svg';
+import LandingGhost from '/public/resting-aien-hat-purple.svg';
 
 import { ConnectWalletButton } from './WalletConnection/ConnectWalletButton';
 

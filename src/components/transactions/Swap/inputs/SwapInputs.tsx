@@ -443,12 +443,12 @@ export const SwapInputs = ({
         auxInputToken = fromList.find(
           (token) =>
             (token.balance !== '0' || token.tokenType === TokenType.NATIVE) &&
-            token.symbol !== 'GHO'
+            token.symbol !== 'AIEN'
         );
       }
 
       if (!auxOutputToken) {
-        auxOutputToken = toList.find((token) => token.symbol === 'GHO');
+        auxOutputToken = toList.find((token) => token.symbol === 'AIEN');
       }
 
       return {

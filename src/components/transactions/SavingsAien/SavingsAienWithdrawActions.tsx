@@ -30,7 +30,7 @@ export interface UnStakeActionProps extends BoxProps {
   stakeUserData: GetUserStakeUIDataHumanized['stakeUserData'][0];
 }
 
-export const SavingsGhoWithdrawActions = ({
+export const SavingsAienWithdrawActions = ({
   amountToUnStake,
   isWrongNetwork,
   sx,
@@ -130,14 +130,14 @@ export const SavingsGhoWithdrawActions = ({
 
   const actionText =
     isUnstakeWindowActive && !cooldownRequired ? (
-      <Trans>Withdraw GHO</Trans>
+      <Trans>Withdraw AIEN</Trans>
     ) : (
       <Trans>Activate Cooldown</Trans>
     );
 
   const actionInProgressText =
     isUnstakeWindowActive && !cooldownRequired ? (
-      <Trans>Withdrawing GHO</Trans>
+      <Trans>Withdrawing AIEN</Trans>
     ) : (
       <Trans>Activating Cooldown</Trans>
     );

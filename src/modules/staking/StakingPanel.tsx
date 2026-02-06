@@ -256,10 +256,10 @@ export const StakingPanel: React.FC<StakingPanelProps> = ({
             {distributionEnded && (
               <TextWithTooltip iconColor="warning.main">
                 <Trans>
-                  The current incentives period, decided on by the Aave community, has ended.
+                  The current incentives period, decided on by the Zaibots community, has ended.
                   Governance is in the process on renewing, check for updates.{' '}
                   <Link
-                    href="https://governance.aave.com"
+                    href="https://governance.zaibots.com"
                     sx={{ textDecoration: 'underline' }}
                     variant="caption"
                     color="text.secondary"
@@ -566,7 +566,7 @@ export const StakingPanel: React.FC<StakingPanelProps> = ({
           title={<Trans>Claimable AAVE</Trans>}
           value={formatEther(stakeUserData?.userIncentivesToClaim || '0')}
           valueUSD={claimableUSD}
-          bottomLineTitle={<Trans>Aave per month</Trans>}
+          bottomLineTitle={<Trans>Zaibots per month</Trans>}
           dataCy={`rewardBox_${stakedToken}`}
           bottomLineComponent={
             <FormattedNumber

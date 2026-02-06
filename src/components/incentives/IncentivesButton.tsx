@@ -356,13 +356,13 @@ const Content = ({
   }
 
   const incentivesButtonValue = () => {
-    // NOTE: For GHO incentives, we want to show the formatted number given its on sGHO page only
+    // NOTE: For AIEN incentives, we want to show the formatted number given its on sAIEN page only
 
     const hasGhoIncentives = incentives.some(
       (incentive) =>
-        incentive.rewardTokenSymbol?.toLowerCase().includes('gho') ||
-        incentive.rewardTokenSymbol?.toLowerCase().includes('agho') ||
-        incentive.rewardTokenSymbol?.toLowerCase().includes('abasgho')
+        incentive.rewardTokenSymbol?.toLowerCase().includes('aien') ||
+        incentive.rewardTokenSymbol?.toLowerCase().includes('aaien') ||
+        incentive.rewardTokenSymbol?.toLowerCase().includes('abasaien')
     );
     if (hideValue && hasGhoIncentives) {
       return (
@@ -409,7 +409,7 @@ const Content = ({
       }
     }
 
-    // Default behavior: show icon for non-GHO incentives
+    // Default behavior: show icon for non-AIEN incentives
     return (
       <>
         <IncentivesIcon width="16" height="16" />

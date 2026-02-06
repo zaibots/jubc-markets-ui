@@ -47,7 +47,7 @@ export const stakeAssetNameFormatted = (stakeAssetName: Stake) => {
     case Stake.bpt:
       return 'ABPT';
     case Stake.gho:
-      return 'GHO';
+      return 'AIEN';
     case Stake.bptv2:
       return 'ABPT V2';
   }
