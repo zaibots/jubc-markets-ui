@@ -50,11 +50,11 @@ export default function SavingsGho() {
 
   const { data: stakeGeneralResult } = useGeneralStakeUiData(currentMarketData);
 
-  // Automatically switch to mainnet if not already on mainnet
-  // since sGHO only exists on Ethereum mainnet
+  // Automatically switch to the testnet market
+  // Note: sGHO functionality requires mainnet, but only testnet is available
   useEffect(() => {
-    if (currentMarket !== CustomMarket.proto_mainnet_v3) {
-      setCurrentMarket(CustomMarket.proto_mainnet_v3);
+    if (currentMarket !== CustomMarket.test_sepolia_v3) {
+      setCurrentMarket(CustomMarket.test_sepolia_v3);
     }
   }, [currentMarket, setCurrentMarket]);
 

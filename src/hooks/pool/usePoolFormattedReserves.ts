@@ -59,6 +59,27 @@ export const usePoolsFormattedReserves = (
   const poolsReservesIncentivesQueries = usePoolsReservesIncentivesHumanized(marketsData);
   const poolsEModesQueries = usePoolsEModes(marketsData);
 
+  // Debug: Log query states
+  console.log('[usePoolsFormattedReserves] Query states:', {
+    markets: marketsData.map((m) => m.market),
+    reservesQueries: poolsReservesQueries.map((q, i) => ({
+      market: marketsData[i].market,
+      status: q.status,
+      dataExists: !!q.data,
+      reservesCount: q.data?.reservesData?.length ?? 0,
+    })),
+    incentivesQueries: poolsReservesIncentivesQueries.map((q, i) => ({
+      market: marketsData[i].market,
+      status: q.status,
+      dataExists: !!q.data,
+    })),
+    eModesQueries: poolsEModesQueries.map((q, i) => ({
+      market: marketsData[i].market,
+      status: q.status,
+      dataExists: !!q.data,
+    })),
+  });
+
   return poolsReservesQueries.map((poolReservesQuery, index) => {
     const marketData = marketsData[index];
     const poolReservesIncentivesQuery = poolsReservesIncentivesQueries[index];
@@ -69,7 +90,28 @@ export const usePoolsFormattedReserves = (
       incentivesData: ReservesIncentiveDataHumanized[],
       poolsEModesData: EmodeDataHumanized[]
     ) => {
-      return formatReserves(reservesData, incentivesData, poolsEModesData, networkConfig);
+      const formatted = formatReserves(
+        reservesData,
+        incentivesData,
+        poolsEModesData,
+        networkConfig
+      );
+      console.log('[usePoolsFormattedReserves] Formatted reserves:', {
+        market: marketData.market,
+        formattedCount: formatted.length,
+        reserves: formatted.map((r) => ({
+          symbol: r.symbol,
+          name: r.name,
+          underlyingAsset: r.underlyingAsset,
+          isActive: r.isActive,
+          isFrozen: r.isFrozen,
+          supplyCap: r.supplyCap,
+          borrowCap: r.borrowCap,
+          totalLiquidity: r.totalLiquidity,
+          availableLiquidity: r.availableLiquidity,
+        })),
+      });
+      return formatted;
     };
     return combineQueries(
       [poolReservesQuery, poolReservesIncentivesQuery, poolEModesQuery] as const,
@@ -79,5 +121,18 @@ export const usePoolsFormattedReserves = (
 };
 
 export const usePoolFormattedReserves = (marketData: MarketDataType) => {
-  return usePoolsFormattedReserves([marketData])[0];
+  const result = usePoolsFormattedReserves([marketData])[0];
+
+  // Debug: Log the formatted reserves state
+  console.log('[usePoolFormattedReserves] Hook state:', {
+    market: marketData.market,
+    isPending: result.isPending,
+    hasError: !!result.error,
+    error: result.error,
+    dataExists: !!result.data,
+    reservesCount: result.data?.length ?? 0,
+    reserveSymbols: result.data?.map((r) => r.symbol),
+  });
+
+  return result;
 };

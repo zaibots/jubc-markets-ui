@@ -110,9 +110,7 @@ export enum CustomMarket {
   // permissioned_market = 'permissioned_market',
 }
 
-export const marketsData: {
-  [key in keyof typeof CustomMarket]: MarketDataType;
-} = {
+export const marketsData: Record<string, MarketDataType> = {
   [CustomMarket.test_sepolia_v3]: {
     marketTitle: 'Sepolia UBC Testnet',
     market: CustomMarket.test_sepolia_v3,
@@ -130,80 +128,19 @@ export const marketsData: {
       switch: false,
     },
     addresses: {
-      LENDING_POOL_ADDRESS_PROVIDER: '0xFFb4991C9311ea48Dc4DFaacc23E5E2Edd28fD4b',
-      LENDING_POOL: '0xa3aed0e4b813dA2eb47CD33c5b46a5D355a74F50',
-      WETH_GATEWAY: '0x5d48873246b22712425e94f49a8CB606Fc9F0889',
+      LENDING_POOL_ADDRESS_PROVIDER: '0xc183d9509425B9f1e08320AE1612C2Ee7de7EC4D',
+      LENDING_POOL: '0xAf29b85C97B28490E00A090bD1b4B552c69C7559',
+      WETH_GATEWAY: '0x730Bf3DA68B0Fd3b580Db20823b0bbE5CC58891D',
       WALLET_BALANCE_PROVIDER: '0x8202E2Ca522c5C28684E6cE23019C48Bc839fa4D',
       // 0xF65BdDeD2FB0A454F4cDc253131bAd8C9c74eD25
-      UI_POOL_DATA_PROVIDER: '0x24b3b88E84770f246dD950569c2aeedeB4932c35',
-      UI_INCENTIVE_DATA_PROVIDER: '0x9c0Fb9573af9D0C862F10E764882166d90aAF2a4',
+      UI_POOL_DATA_PROVIDER: '0xA5728cB73986B769c8141C19D4bD3A9BF6C31A12',
+      UI_INCENTIVE_DATA_PROVIDER: '0x0932948A40a71f9217aD514f846CFfEa8900bF5B',
       COLLECTOR: '0xBF47C98efB6a1F2eb52454b4D0404D486Db841D4',
       FAUCET: '0x7CC720646eeaEA8a90cfEBeB311e2352266C94F1',
     },
   },
 
   // All other markets commented out - only showing Sepolia UBC Testnet
-
-  // [CustomMarket.proto_ubc_kernel_mainnet_v3]: {
-  //   marketTitle: 'Ethereum',
-  //   market: CustomMarket.proto_ubc_kernel_mainnet_v3,
-  //   chainId: ChainId.mainnet,
-  //   enabledFeatures: {
-  //     governance: true,
-  //     staking: true,
-  //     liquiditySwap: true,
-  //     collateralRepay: false,
-  //     incentives: true,
-  //     debtSwitch: true,
-  //     switch: true,
-  //   },
-  //   addresses: {
-  //     LENDING_POOL_ADDRESS_PROVIDER: AaveV2Ethereum.POOL_ADDRESSES_PROVIDER,
-  //     LENDING_POOL: AaveV2Ethereum.POOL,
-  //     WETH_GATEWAY: AaveV2Ethereum.WETH_GATEWAY,
-  //     REPAY_WITH_COLLATERAL_ADAPTER: AaveV2Ethereum.REPAY_WITH_COLLATERAL_ADAPTER,
-  //     SWAP_COLLATERAL_ADAPTER: AaveV2Ethereum.SWAP_COLLATERAL_ADAPTER,
-  //     WALLET_BALANCE_PROVIDER: AaveV2Ethereum.WALLET_BALANCE_PROVIDER,
-  //     UI_POOL_DATA_PROVIDER: AaveV2Ethereum.UI_POOL_DATA_PROVIDER,
-  //     UI_INCENTIVE_DATA_PROVIDER: AaveV2Ethereum.UI_INCENTIVE_DATA_PROVIDER,
-  //     COLLECTOR: AaveV2Ethereum.COLLECTOR,
-  //     V3_MIGRATOR: AaveV2Ethereum.MIGRATION_HELPER,
-  //     DEBT_SWITCH_ADAPTER: AaveV2Ethereum.DEBT_SWAP_ADAPTER,
-  //   },
-  // },
-
-  // [CustomMarket.proto_mainnet_v3]: {
-  //   marketTitle: 'Core',
-  //   market: CustomMarket.proto_mainnet_v3,
-  //   chainId: ChainId.mainnet,
-  //   v3: true,
-  //   enabledFeatures: {
-  //     governance: true,
-  //     staking: true,
-  //     liquiditySwap: true,
-  //     collateralRepay: true,
-  //     incentives: true,
-  //     withdrawAndSwitch: true,
-  //     debtSwitch: true,
-  //     switch: true,
-  //     limit: true,
-  //   },
-  //   addresses: {
-  //     LENDING_POOL_ADDRESS_PROVIDER: AaveV3Ethereum.POOL_ADDRESSES_PROVIDER,
-  //     LENDING_POOL: AaveV3Ethereum.POOL,
-  //     WETH_GATEWAY: AaveV3Ethereum.WETH_GATEWAY,
-  //     REPAY_WITH_COLLATERAL_ADAPTER: AaveV3Ethereum.REPAY_WITH_COLLATERAL_ADAPTER,
-  //     SWAP_COLLATERAL_ADAPTER: AaveV3Ethereum.SWAP_COLLATERAL_ADAPTER,
-  //     WALLET_BALANCE_PROVIDER: AaveV3Ethereum.WALLET_BALANCE_PROVIDER,
-  //     UI_POOL_DATA_PROVIDER: AaveV3Ethereum.UI_POOL_DATA_PROVIDER,
-  //     UI_INCENTIVE_DATA_PROVIDER: AaveV3Ethereum.UI_INCENTIVE_DATA_PROVIDER,
-  //     COLLECTOR: AaveV3Ethereum.COLLECTOR,
-  //     GHO_TOKEN_ADDRESS: AaveV3Ethereum.ASSETS.GHO.UNDERLYING,
-  //     WITHDRAW_SWITCH_ADAPTER: AaveV3Ethereum.WITHDRAW_SWAP_ADAPTER,
-  //     DEBT_SWITCH_ADAPTER: AaveV3Ethereum.DEBT_SWAP_ADAPTER,
-  //   },
-  // },
-  // ... remaining markets commented out
 } as const;
 
 export const findByChainId = (chainId: ChainId) => {
