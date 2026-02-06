@@ -101,6 +101,30 @@ export interface FallbackReserve {
       __typename: 'PercentValue';
       value: string;
     };
+    reserveFactor: {
+      __typename: 'PercentValue';
+      value: string;
+    };
+    baseVariableBorrowRate: {
+      __typename: 'DecimalValue';
+      value: string;
+      raw: string;
+    };
+    optimalUsageRate: {
+      __typename: 'PercentValue';
+      value: string;
+      raw: string;
+    };
+    variableRateSlope1: {
+      __typename: 'DecimalValue';
+      value: string;
+      raw: string;
+    };
+    variableRateSlope2: {
+      __typename: 'DecimalValue';
+      value: string;
+      raw: string;
+    };
   };
   isolationModeConfig?: {
     __typename: 'ReserveIsolationModeConfig';
@@ -273,6 +297,30 @@ export function transformToReserve(
           utilizationRate: {
             __typename: 'PercentValue',
             value: reserve.borrowUsageRatio,
+          },
+          reserveFactor: {
+            __typename: 'PercentValue',
+            value: reserve.reserveFactor,
+          },
+          baseVariableBorrowRate: {
+            __typename: 'DecimalValue',
+            value: reserve.baseVariableBorrowRate,
+            raw: reserve.baseVariableBorrowRate,
+          },
+          optimalUsageRate: {
+            __typename: 'PercentValue',
+            value: reserve.optimalUsageRatio,
+            raw: reserve.optimalUsageRatio,
+          },
+          variableRateSlope1: {
+            __typename: 'DecimalValue',
+            value: reserve.variableRateSlope1,
+            raw: reserve.variableRateSlope1,
+          },
+          variableRateSlope2: {
+            __typename: 'DecimalValue',
+            value: reserve.variableRateSlope2,
+            raw: reserve.variableRateSlope2,
           },
         }
       : undefined,
