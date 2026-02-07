@@ -17,7 +17,7 @@ import { useShallow } from 'zustand/shallow';
 
 import { GENERAL } from '../../utils/events';
 import { isAssetHidden } from '../dashboard/lists/constants';
-import { SavingsAienBanner } from './Gho/AienBanner';
+import { SavingsAienBanner } from './Aien/AienBanner';
 import { AssetCategory, isAssetInCategoryDynamic } from './utils/assetCategories';
 
 function shouldDisplayAienBanner(marketTitle: string, searchTerm: string): boolean {

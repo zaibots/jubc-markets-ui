@@ -96,7 +96,7 @@ export const ReserveConfiguration: React.FC<ReserveConfigurationProps> = ({ rese
                 impacted.{' '}
                 <Link
                   href={
-                    'https://governance.zaibots.com/t/arfc-add-mai-to-arbitrum-aave-v3-market/12759/8'
+                    'https://governance.zaibots.com/t/arfc-add-mai-to-arbitrum-zaibots-v3-market/12759/8'
                   }
                   sx={{ textDecoration: 'underline' }}
                 >

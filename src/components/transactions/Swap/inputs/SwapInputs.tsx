@@ -329,9 +329,9 @@ export const SwapInputs = ({
   // Persist selected tokens in session storage to retain them on modal close/open but differentiating by modalType
   const getStorageKey = (swapType: SwapType, chainId: number) => {
     // if (SwapType.CollateralSwap === swapType) {
-    //   return `aave_switch_tokens_${swapType}_${chainId}_${state.sourceToken?.addressToSwap?.toLowerCase()}`;
+    //   return `zaibots_switch_tokens_${swapType}_${chainId}_${state.sourceToken?.addressToSwap?.toLowerCase()}`;
     // } else {
-    return `aave_switch_tokens_${swapType}_${chainId}`;
+    return `zaibots_switch_tokens_${swapType}_${chainId}`;
     // }
   };
 
@@ -394,7 +394,7 @@ export const SwapInputs = ({
   };
 
   const getRecentStorageKey = (swapType: SwapType, chainId: number, side: 'input' | 'output') =>
-    `aave_recent_tokens_${swapType}_${chainId}_${side}`;
+    `zaibots_recent_tokens_${swapType}_${chainId}_${side}`;
 
   const saveRecentToken = (side: 'input' | 'output', token: SwappableToken) => {
     try {

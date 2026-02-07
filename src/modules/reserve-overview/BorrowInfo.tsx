@@ -17,7 +17,7 @@ import { GENERAL } from 'src/utils/events';
 import { displayGhoForMintableMarket } from 'src/utils/aienUtilities';
 import { MarketDataType, NetworkConfig } from 'src/utils/marketsAndNetworksConfig';
 
-import { mapAaveProtocolIncentives } from '../../components/incentives/incentives.helper';
+import { mapZaibotsProtocolIncentives } from '../../components/incentives/incentives.helper';
 import { BorrowApyGraph } from './graphs/ApyGraphContainer';
 import { ReserveFactorOverview } from './ReserveFactorOverview';
 import { PanelItem } from './ReservePanels';
@@ -58,7 +58,7 @@ export const BorrowInfo = ({
     currentMarket: currentMarketData.market,
   });
 
-  const borrowProtocolIncentives = mapAaveProtocolIncentives(reserve.incentives, 'borrow');
+  const borrowProtocolIncentives = mapZaibotsProtocolIncentives(reserve.incentives, 'borrow');
   const apyValue = Number(reserve.borrowInfo?.apy.value);
 
   return (

@@ -222,16 +222,16 @@ export const getAppDataForQuote = async ({}: // user,
   // }
 
   // const factory =
-  //   AAVE_ADAPTER_FACTORY[chainId].length > 0 ? AAVE_ADAPTER_FACTORY[chainId] : API_ETH_MOCK_ADDRESS;
+  //   ZAIBOTSU_ADAPTER_FACTORY[chainId].length > 0 ? ZAIBOTSU_ADAPTER_FACTORY[chainId] : API_ETH_MOCK_ADDRESS;
   // const pool =
-  //   AAVE_POOL_ADDRESS[chainId].length > 0 ? AAVE_POOL_ADDRESS[chainId] : API_ETH_MOCK_ADDRESS;
-  // const AAVE_SWAP_TYPE_TO_COW_TYPE: Partial<Record<SwapType, AaveFlashLoanType>> = {
+  //   ZAIBOTSU_POOL_ADDRESS[chainId].length > 0 ? ZAIBOTSU_POOL_ADDRESS[chainId] : API_ETH_MOCK_ADDRESS;
+  // const ZAIBOTSU_SWAP_TYPE_TO_COW_TYPE: Partial<Record<SwapType, AaveFlashLoanType>> = {
   //   [SwapType.CollateralSwap]: AaveFlashLoanType.CollateralSwap,
   //   [SwapType.DebtSwap]: AaveFlashLoanType.DebtSwap,
   //   [SwapType.RepayWithCollateral]: AaveFlashLoanType.RepayCollateral,
   // } as const;
   // const dappId =
-  //   AAVE_DAPP_ID_PER_TYPE[AAVE_SWAP_TYPE_TO_COW_TYPE[type] ?? AaveFlashLoanType.CollateralSwap];
+  //   ZAIBOTSU_DAPP_ID_PER_TYPE[ZAIBOTSU_SWAP_TYPE_TO_COW_TYPE[type] ?? AaveFlashLoanType.CollateralSwap];
 
   // // const flashLoanSdk = new AaveCollateralSwapSdk();
   // // const { flashLoanFeeAmount, sellAmountToSign } = flashLoanSdk.calculateFlashLoanAmounts({
@@ -258,7 +258,7 @@ export const getAppDataForQuote = async ({}: // user,
   // // }
 
   // const flashloan: FlashLoanHint = {
-  //   amount, // this is actually in UNDERLYING but aave tokens are 1:1
+  //   amount, // this is actually in UNDERLYING but zaibots tokens are 1:1
   //   receiver: factory,
   //   liquidityProvider: pool,
   //   protocolAdapter: factory,

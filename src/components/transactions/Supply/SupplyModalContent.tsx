@@ -49,7 +49,7 @@ import {
   TxModalDetails,
 } from '../FlowCommons/TxModalDetails';
 import { getAssetCollateralType } from '../utils';
-import { AAVEWarning } from '../Warnings/AAVEWarning';
+import { ZAIBOTSUWarning } from '../Warnings/ZAIBOTSUWarning';
 import { IsolationModeWarning } from '../Warnings/IsolationModeWarning';
 import { SNXWarning } from '../Warnings/SNXWarning';
 import { USDTResetWarning } from '../Warnings/USDTResetWarning';
@@ -230,8 +230,8 @@ export const SupplyModalContent = React.memo(
           </Warning>
         )}
         {process.env.NEXT_PUBLIC_ENABLE_STAKING === 'true' &&
-          poolReserve.symbol === 'AAVE' &&
-          isFeatureEnabled.staking(currentMarketData) && <AAVEWarning />}
+          poolReserve.symbol === 'ZAIBOTSU' &&
+          isFeatureEnabled.staking(currentMarketData) && <ZAIBOTSUWarning />}
         {poolReserve.symbol === 'SNX' && maxAmountToSupply !== '0' && <SNXWarning />}
 
         <AssetInput

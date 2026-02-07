@@ -34,8 +34,8 @@ msgstr "Save with sGHO"
 #: src/components/incentives/EthenaIncentivesTooltipContent.tsx
 #: src/components/incentives/EtherfiIncentivesTooltipContent.tsx
 #: src/components/incentives/SonicIncentivesTooltipContent.tsx
-msgid "Aave Labs does not guarantee the program and accepts no liability."
-msgstr "Aave Labs does not guarantee the program and accepts no liability."
+msgid "Zaibots Labs does not guarantee the program and accepts no liability."
+msgstr "Zaibots Labs does not guarantee the program and accepts no liability."
 
 #: src/modules/reserve-overview/AddTokenDropdown.tsx
 msgid "Savings GHO token"
@@ -46,12 +46,12 @@ msgid "Participating in this {symbol} reserve gives annualized rewards."
 msgstr "Participating in this {symbol} reserve gives annualized rewards."
 
 #: src/modules/reserve-overview/ReserveEModePanel.tsx
-msgid "E-Mode increases your LTV for a selected category of assets, meaning that when E-mode is enabled, you will have higher borrowing power over assets of the same E-mode category which are defined by Aave Governance. You can enter E-Mode from your <0>Dashboard</0>. To learn more about E-Mode and applied restrictions, see the <1>help guide</1> or the <2>Aave V3 Technical Paper</2>."
-msgstr "E-Mode increases your LTV for a selected category of assets, meaning that when E-mode is enabled, you will have higher borrowing power over assets of the same E-mode category which are defined by Aave Governance. You can enter E-Mode from your <0>Dashboard</0>. To learn more about E-Mode and applied restrictions, see the <1>help guide</1> or the <2>Aave V3 Technical Paper</2>."
+msgid "E-Mode increases your LTV for a selected category of assets, meaning that when E-mode is enabled, you will have higher borrowing power over assets of the same E-mode category which are defined by Zaibots Governance. You can enter E-Mode from your <0>Dashboard</0>. To learn more about E-Mode and applied restrictions, see the <1>help guide</1> or the <2>Zaibots V3 Technical Paper</2>."
+msgstr "E-Mode increases your LTV for a selected category of assets, meaning that when E-mode is enabled, you will have higher borrowing power over assets of the same E-mode category which are defined by Zaibots Governance. You can enter E-Mode from your <0>Dashboard</0>. To learn more about E-Mode and applied restrictions, see the <1>help guide</1> or the <2>Zaibots V3 Technical Paper</2>."
 
 #: src/modules/governance/DelegatedInfoPanel.tsx
-msgid "Use your AAVE, stkAAVE, or aAave balance to delegate your voting and proposition powers. You will not be sending any tokens, only the rights to vote and propose changes to the protocol. You can re-delegate or revoke power to self at any time."
-msgstr "Use your AAVE, stkAAVE, or aAave balance to delegate your voting and proposition powers. You will not be sending any tokens, only the rights to vote and propose changes to the protocol. You can re-delegate or revoke power to self at any time."
+msgid "Use your ZAIBOTSU, stkZAIBOTSU, or aZaibots balance to delegate your voting and proposition powers. You will not be sending any tokens, only the rights to vote and propose changes to the protocol. You can re-delegate or revoke power to self at any time."
+msgstr "Use your ZAIBOTSU, stkZAIBOTSU, or aZaibots balance to delegate your voting and proposition powers. You will not be sending any tokens, only the rights to vote and propose changes to the protocol. You can re-delegate or revoke power to self at any time."
 
 #: src/modules/reserve-overview/BorrowInfo.tsx
 msgid "Borrow cap"
@@ -252,8 +252,8 @@ msgid "This asset is eligible for the Ether.fi Loyalty program with a <0>x{multi
 msgstr "This asset is eligible for the Ether.fi Loyalty program with a <0>x{multiplier} multiplier</0>."
 
 #: src/modules/governance/GovernanceTopPanel.tsx
-msgid "Aave is a fully decentralized, community governed protocol by the AAVE token-holders. AAVE token-holders collectively discuss, propose, and vote on upgrades to the protocol. AAVE token-holders (Ethereum network only) can either vote themselves on new proposals or delagate to an address of choice. To learn more check out the Governance"
-msgstr "Aave is a fully decentralized, community governed protocol by the AAVE token-holders. AAVE token-holders collectively discuss, propose, and vote on upgrades to the protocol. AAVE token-holders (Ethereum network only) can either vote themselves on new proposals or delagate to an address of choice. To learn more check out the Governance"
+msgid "Zaibots is a fully decentralized, community governed protocol by the ZAIBOTSU token-holders. ZAIBOTSU token-holders collectively discuss, propose, and vote on upgrades to the protocol. ZAIBOTSU token-holders (Ethereum network only) can either vote themselves on new proposals or delagate to an address of choice. To learn more check out the Governance"
+msgstr "Zaibots is a fully decentralized, community governed protocol by the ZAIBOTSU token-holders. ZAIBOTSU token-holders collectively discuss, propose, and vote on upgrades to the protocol. ZAIBOTSU token-holders (Ethereum network only) can either vote themselves on new proposals or delagate to an address of choice. To learn more check out the Governance"
 
 #: src/components/WalletConnection/ReadOnlyModal.tsx
 msgid "Please enter a valid wallet address."
@@ -393,8 +393,8 @@ msgid "For swapping safety module assets please unstake your position <0>here</0
 msgstr "For swapping safety module assets please unstake your position <0>here</0>."
 
 #: src/components/infoTooltips/SwapFeeTooltip.tsx
-msgid "Fees help support the user experience and security of the Aave application. <0>Learn more.</0>"
-msgstr "Fees help support the user experience and security of the Aave application. <0>Learn more.</0>"
+msgid "Fees help support the user experience and security of the Zaibots application. <0>Learn more.</0>"
+msgstr "Fees help support the user experience and security of the Zaibots application. <0>Learn more.</0>"
 
 #: src/modules/dashboard/lists/SupplyAssetsList/SupplyAssetsList.tsx
 msgid "Your {networkName} wallet is empty. Get free test assets at"
@@ -759,8 +759,8 @@ msgid "There is not enough liquidity in {symbol} to complete this swap. Try lowe
 msgstr "There is not enough liquidity in {symbol} to complete this swap. Try lowering the amount."
 
 #: src/components/incentives/MerklIncentivesTooltipContent.tsx
-msgid "This is a program initiated by the Aave DAO and implemented by Merkl. Aave Labs does not guarantee the program and accepts no liability."
-msgstr "This is a program initiated by the Aave DAO and implemented by Merkl. Aave Labs does not guarantee the program and accepts no liability."
+msgid "This is a program initiated by the Zaibots DAO and implemented by Merkl. Zaibots Labs does not guarantee the program and accepts no liability."
+msgstr "This is a program initiated by the Zaibots DAO and implemented by Merkl. Zaibots Labs does not guarantee the program and accepts no liability."
 
 #: src/modules/staking/BuyWithFiatModal.tsx
 msgid "Choose one of the on-ramp services"
@@ -824,8 +824,8 @@ msgid "Migrate your assets"
 msgstr "Migrate your assets"
 
 #: src/modules/staking/StakingHeader.tsx
-msgid "AAVE and ABPT holders (Ethereum network only) can stake their assets in the Safety Module to add more security to the protocol and earn Safety Incentives. In the case of a shortfall event, your stake can be slashed to cover the deficit, providing an additional layer of protection for the protocol."
-msgstr "AAVE and ABPT holders (Ethereum network only) can stake their assets in the Safety Module to add more security to the protocol and earn Safety Incentives. In the case of a shortfall event, your stake can be slashed to cover the deficit, providing an additional layer of protection for the protocol."
+msgid "ZAIBOTSU and ABPT holders (Ethereum network only) can stake their assets in the Safety Module to add more security to the protocol and earn Safety Incentives. In the case of a shortfall event, your stake can be slashed to cover the deficit, providing an additional layer of protection for the protocol."
+msgstr "ZAIBOTSU and ABPT holders (Ethereum network only) can stake their assets in the Safety Module to add more security to the protocol and earn Safety Incentives. In the case of a shortfall event, your stake can be slashed to cover the deficit, providing an additional layer of protection for the protocol."
 
 #: src/layouts/components/NavItems.tsx
 msgid "Savings"
@@ -842,8 +842,8 @@ msgid "Withdraw GHO"
 msgstr "Withdraw GHO"
 
 #: src/modules/reserve-overview/ReserveConfiguration.tsx
-msgid "This asset is frozen due to an Aave community decision. <0>More details</0>"
-msgstr "This asset is frozen due to an Aave community decision. <0>More details</0>"
+msgid "This asset is frozen due to an Zaibots community decision. <0>More details</0>"
+msgstr "This asset is frozen due to an Zaibots community decision. <0>More details</0>"
 
 #: src/components/transactions/Faucet/FaucetModal.tsx
 #: src/modules/dashboard/lists/ListBottomText.tsx
@@ -985,12 +985,12 @@ msgid "Asset cannot be migrated to {marketName} V3 Market due to E-mode restrict
 msgstr "Asset cannot be migrated to {marketName} V3 Market due to E-mode restrictions. You can disable or manage E-mode categories in your <0>V3 Dashboard</0>"
 
 #: src/modules/umbrella/UmbrellaHeader.tsx
-msgid "Stake your Aave aTokens or underlying assets to earn rewards. In case of a shortfall event, your stake may be slashed to cover the deficit."
-msgstr "Stake your Aave aTokens or underlying assets to earn rewards. In case of a shortfall event, your stake may be slashed to cover the deficit."
+msgid "Stake your Zaibots aTokens or underlying assets to earn rewards. In case of a shortfall event, your stake may be slashed to cover the deficit."
+msgstr "Stake your Zaibots aTokens or underlying assets to earn rewards. In case of a shortfall event, your stake may be slashed to cover the deficit."
 
 #: src/modules/staking/StakingPanel.tsx
-msgid "Aave per month"
-msgstr "Aave per month"
+msgid "Zaibots per month"
+msgstr "Zaibots per month"
 
 #: src/components/transactions/ClaimRewards/ClaimRewardsModalContent.tsx
 msgid "Claiming all protocol rewards only. Merit rewards excluded - select \"claim all\" to include merit rewards."
@@ -1016,8 +1016,8 @@ msgid "Disabled"
 msgstr "Disabled"
 
 #: src/components/infoTooltips/GhoRateTooltip.tsx
-msgid "Estimated compounding interest rate, that is determined by Aave Governance. This rate may be changed over time depending on the need for the GHO supply to contract/expand."
-msgstr "Estimated compounding interest rate, that is determined by Aave Governance. This rate may be changed over time depending on the need for the GHO supply to contract/expand."
+msgid "Estimated compounding interest rate, that is determined by Zaibots Governance. This rate may be changed over time depending on the need for the GHO supply to contract/expand."
+msgstr "Estimated compounding interest rate, that is determined by Zaibots Governance. This rate may be changed over time depending on the need for the GHO supply to contract/expand."
 
 #: src/layouts/SupportModal.tsx
 msgid "Share my wallet address to help the support team resolve my issue"
@@ -1087,8 +1087,8 @@ msgid "Current v2 balance"
 msgstr "Current v2 balance"
 
 #: src/components/infoTooltips/ReserveFactorTooltip.tsx
-msgid "Reserve factor is a percentage of interest which goes to a {0} that is controlled by Aave governance to promote ecosystem growth."
-msgstr "Reserve factor is a percentage of interest which goes to a {0} that is controlled by Aave governance to promote ecosystem growth."
+msgid "Reserve factor is a percentage of interest which goes to a {0} that is controlled by Zaibots governance to promote ecosystem growth."
+msgstr "Reserve factor is a percentage of interest which goes to a {0} that is controlled by Zaibots governance to promote ecosystem growth."
 
 #: src/modules/dashboard/lists/BorrowedPositionsList/BorrowedPositionsList.tsx
 msgid "Borrow power used"
@@ -1120,16 +1120,16 @@ msgid "Sending cancel..."
 msgstr "Sending cancel..."
 
 #: src/modules/reserve-overview/Gho/GhoReserveConfiguration.tsx
-msgid "GHO is a native decentralized, collateral-backed digital asset pegged to USD. It is created by users via borrowing against multiple collateral. When user repays their GHO borrow position, the protocol burns that user's GHO. All the interest payments accrued by minters of GHO would be directly transferred to the AaveDAO treasury."
-msgstr "GHO is a native decentralized, collateral-backed digital asset pegged to USD. It is created by users via borrowing against multiple collateral. When user repays their GHO borrow position, the protocol burns that user's GHO. All the interest payments accrued by minters of GHO would be directly transferred to the AaveDAO treasury."
+msgid "GHO is a native decentralized, collateral-backed digital asset pegged to USD. It is created by users via borrowing against multiple collateral. When user repays their GHO borrow position, the protocol burns that user's GHO. All the interest payments accrued by minters of GHO would be directly transferred to the ZaibotsDAO treasury."
+msgstr "GHO is a native decentralized, collateral-backed digital asset pegged to USD. It is created by users via borrowing against multiple collateral. When user repays their GHO borrow position, the protocol burns that user's GHO. All the interest payments accrued by minters of GHO would be directly transferred to the ZaibotsDAO treasury."
 
 #: src/components/transactions/Emode/EmodeActions.tsx
 msgid "Switch E-Mode"
 msgstr "Switch E-Mode"
 
 #: src/components/infoTooltips/RenFILToolTip.tsx
-msgid "This asset is frozen due to an Aave Protocol Governance decision. On the 20th of December 2022, renFIL will no longer be supported and cannot be bridged back to its native network. It is recommended to withdraw supply positions and repay borrow positions so that renFIL can be bridged back to FIL before the deadline. After this date, it will no longer be possible to convert renFIL to FIL. <0>More details</0>"
-msgstr "This asset is frozen due to an Aave Protocol Governance decision. On the 20th of December 2022, renFIL will no longer be supported and cannot be bridged back to its native network. It is recommended to withdraw supply positions and repay borrow positions so that renFIL can be bridged back to FIL before the deadline. After this date, it will no longer be possible to convert renFIL to FIL. <0>More details</0>"
+msgid "This asset is frozen due to an Zaibots Protocol Governance decision. On the 20th of December 2022, renFIL will no longer be supported and cannot be bridged back to its native network. It is recommended to withdraw supply positions and repay borrow positions so that renFIL can be bridged back to FIL before the deadline. After this date, it will no longer be possible to convert renFIL to FIL. <0>More details</0>"
+msgstr "This asset is frozen due to an Zaibots Protocol Governance decision. On the 20th of December 2022, renFIL will no longer be supported and cannot be bridged back to its native network. It is recommended to withdraw supply positions and repay borrow positions so that renFIL can be bridged back to FIL before the deadline. After this date, it will no longer be possible to convert renFIL to FIL. <0>More details</0>"
 
 #: src/modules/dashboard/lists/SupplyAssetsList/SupplyAssetsList.tsx
 #: src/modules/migration/MigrationList.tsx
@@ -1234,8 +1234,8 @@ msgid "All done"
 msgstr "All done"
 
 #: src/components/Warnings/OffboardingWarning.tsx
-msgid "This asset is planned to be offboarded due to an Aave Protocol Governance decision. <0>More details</0>"
-msgstr "This asset is planned to be offboarded due to an Aave Protocol Governance decision. <0>More details</0>"
+msgid "This asset is planned to be offboarded due to an Zaibots Protocol Governance decision. <0>More details</0>"
+msgstr "This asset is planned to be offboarded due to an Zaibots Protocol Governance decision. <0>More details</0>"
 
 #: src/components/transactions/StakeCooldown/StakeCooldownModalContent.tsx
 #: src/modules/reserve-overview/Gho/SavingsGho.tsx
@@ -1463,8 +1463,8 @@ msgstr "Can be collateral"
 #: src/modules/sGho/SGhoDepositPanel.tsx
 #: src/modules/staking/GhoStakingPanel.tsx
 #: src/modules/staking/StakingPanel.tsx
-msgid "Claimable AAVE"
-msgstr "Claimable AAVE"
+msgid "Claimable ZAIBOTSU"
+msgstr "Claimable ZAIBOTSU"
 
 #: src/ui-config/errorMapping.tsx
 msgid "Borrow and repay in same block is not allowed"
@@ -1517,7 +1517,7 @@ msgstr "Recipient address"
 msgid "No results found."
 msgstr "No results found."
 
-#: src/components/transactions/Warnings/AAVEWarning.tsx
+#: src/components/transactions/Warnings/ZAIBOTSUWarning.tsx
 msgid "staking view"
 msgstr "staking view"
 
@@ -1748,8 +1748,8 @@ msgid "A temporary contract will be used to execute the trade. Your wallet may s
 msgstr "A temporary contract will be used to execute the trade. Your wallet may show a warning for approving a new or empty address."
 
 #: src/components/infoTooltips/SpkAirdropTooltip.tsx
-msgid "This asset is eligible for SPK incentive program. Aave Labs does not guarantee the program and accepts no liability."
-msgstr "This asset is eligible for SPK incentive program. Aave Labs does not guarantee the program and accepts no liability."
+msgid "This asset is eligible for SPK incentive program. Zaibots Labs does not guarantee the program and accepts no liability."
+msgstr "This asset is eligible for SPK incentive program. Zaibots Labs does not guarantee the program and accepts no liability."
 
 #: src/components/transactions/CollateralChange/CollateralChangeModalContent.tsx
 msgid "Enabling this asset as collateral increases your borrowing power and Health Factor. However, it can get liquidated if your health factor drops below 1."
@@ -1768,8 +1768,8 @@ msgid "View TX"
 msgstr "View TX"
 
 #: src/modules/staking/GetABPTokenModal.tsx
-msgid "The Aave Balancer Pool Token (ABPT) is a liquidity pool token. You can receive ABPT by depositing a combination of AAVE + wstETH in the Balancer liquidity pool. You can then stake your BPT in the Safety Module to secure the protocol and earn Safety Incentives."
-msgstr "The Aave Balancer Pool Token (ABPT) is a liquidity pool token. You can receive ABPT by depositing a combination of AAVE + wstETH in the Balancer liquidity pool. You can then stake your BPT in the Safety Module to secure the protocol and earn Safety Incentives."
+msgid "The Zaibots Balancer Pool Token (ABPT) is a liquidity pool token. You can receive ABPT by depositing a combination of ZAIBOTSU + wstETH in the Balancer liquidity pool. You can then stake your BPT in the Safety Module to secure the protocol and earn Safety Incentives."
+msgstr "The Zaibots Balancer Pool Token (ABPT) is a liquidity pool token. You can receive ABPT by depositing a combination of ZAIBOTSU + wstETH in the Balancer liquidity pool. You can then stake your BPT in the Safety Module to secure the protocol and earn Safety Incentives."
 
 #: src/components/transactions/ClaimRewards/ClaimRewardsModalContent.tsx
 #: src/components/transactions/ClaimRewards/ClaimRewardsModalContent.tsx
@@ -1824,8 +1824,8 @@ msgid "Proposal details"
 msgstr "Proposal details"
 
 #: src/components/incentives/MeritIncentivesTooltipContent.tsx
-msgid "Visit <0><1>https://aave.self.xyz/</1></0> to get started with Self’s ZK-powered proof-of-humanity authentication."
-msgstr "Visit <0><1>https://aave.self.xyz/</1></0> to get started with Self’s ZK-powered proof-of-humanity authentication."
+msgid "Visit <0><1>https://zaibots.self.xyz/</1></0> to get started with Self’s ZK-powered proof-of-humanity authentication."
+msgstr "Visit <0><1>https://zaibots.self.xyz/</1></0> to get started with Self’s ZK-powered proof-of-humanity authentication."
 
 #: src/ui-config/errorMapping.tsx
 msgid "Asset is not listed"
@@ -1893,8 +1893,8 @@ msgid "Fees exceed wallet balance"
 msgstr "Fees exceed wallet balance"
 
 #: src/components/infoTooltips/ReadOnlyModeTooltip.tsx
-msgid "Read-only mode allows to see address positions in Aave, but you won't be able to perform transactions."
-msgstr "Read-only mode allows to see address positions in Aave, but you won't be able to perform transactions."
+msgid "Read-only mode allows to see address positions in Zaibots, but you won't be able to perform transactions."
+msgstr "Read-only mode allows to see address positions in Zaibots, but you won't be able to perform transactions."
 
 #: src/components/transactions/Swap/inputs/shared/SwitchSlippageSelector.tsx
 msgid "Max slippage"
@@ -1986,8 +1986,8 @@ msgid "Reload the page"
 msgstr "Reload the page"
 
 #: src/components/transactions/GovDelegation/GovDelegationModalContent.tsx
-msgid "Choose how much voting/proposition power to give to someone else by delegating some of your AAVE, stkAAVE or aAave balance. Your tokens will remain in your account, but your delegate will be able to vote or propose on your behalf. If your AAVE, stkAAVE or aAave balance changes, your delegate's voting/proposition power will be automatically adjusted."
-msgstr "Choose how much voting/proposition power to give to someone else by delegating some of your AAVE, stkAAVE or aAave balance. Your tokens will remain in your account, but your delegate will be able to vote or propose on your behalf. If your AAVE, stkAAVE or aAave balance changes, your delegate's voting/proposition power will be automatically adjusted."
+msgid "Choose how much voting/proposition power to give to someone else by delegating some of your ZAIBOTSU, stkZAIBOTSU or aZaibots balance. Your tokens will remain in your account, but your delegate will be able to vote or propose on your behalf. If your ZAIBOTSU, stkZAIBOTSU or aZaibots balance changes, your delegate's voting/proposition power will be automatically adjusted."
+msgstr "Choose how much voting/proposition power to give to someone else by delegating some of your ZAIBOTSU, stkZAIBOTSU or aZaibots balance. Your tokens will remain in your account, but your delegate will be able to vote or propose on your behalf. If your ZAIBOTSU, stkZAIBOTSU or aZaibots balance changes, your delegate's voting/proposition power will be automatically adjusted."
 
 #: src/layouts/AppHeader.tsx
 msgid "The app is running in testnet mode. Learn how it works in"
@@ -2262,8 +2262,8 @@ msgid "This is an off-chain operation. Keep in mind that a solver may already ha
 msgstr "This is an off-chain operation. Keep in mind that a solver may already have filled your order."
 
 #: src/modules/governance/GovernanceTopPanel.tsx
-msgid "Aave Governance"
-msgstr "Aave Governance"
+msgid "Zaibots Governance"
+msgstr "Zaibots Governance"
 
 #: src/modules/governance/proposal/ProposalOverview.tsx
 msgid "Raw-Ipfs"
@@ -2368,8 +2368,8 @@ msgid "Borrow APY, variable"
 msgstr "Borrow APY, variable"
 
 #: src/components/infoTooltips/SuperFestTooltip.tsx
-msgid "This asset is eligible for rewards through SuperFest. Aave Labs does not guarantee the program and accepts no liability."
-msgstr "This asset is eligible for rewards through SuperFest. Aave Labs does not guarantee the program and accepts no liability."
+msgid "This asset is eligible for rewards through SuperFest. Zaibots Labs does not guarantee the program and accepts no liability."
+msgstr "This asset is eligible for rewards through SuperFest. Zaibots Labs does not guarantee the program and accepts no liability."
 
 #: src/components/Warnings/CooldownWarning.tsx
 msgid "Cooldown period warning"
@@ -2416,8 +2416,8 @@ msgid "The requested amount is greater than the max loan size in stable rate mod
 msgstr "The requested amount is greater than the max loan size in stable rate mode"
 
 #: src/components/incentives/MeritIncentivesTooltipContent.tsx
-msgid "This is a program initiated and implemented by the Aave Chan Initiative (ACI). Aave Labs does not guarantee the program and accepts no liability."
-msgstr "This is a program initiated and implemented by the Aave Chan Initiative (ACI). Aave Labs does not guarantee the program and accepts no liability."
+msgid "This is a program initiated and implemented by the Zaibots Chan Initiative (ACI). Zaibots Labs does not guarantee the program and accepts no liability."
+msgstr "This is a program initiated and implemented by the Zaibots Chan Initiative (ACI). Zaibots Labs does not guarantee the program and accepts no liability."
 
 #: src/modules/umbrella/StakingApyItem.tsx
 msgid "supply"
@@ -2446,8 +2446,8 @@ msgstr "Address is not a contract"
 
 #: src/modules/reserve-overview/AddTokenDropdown.tsx
 #: src/modules/reserve-overview/TokenLinkDropdown.tsx
-msgid "Aave aToken"
-msgstr "Aave aToken"
+msgid "Zaibots aToken"
+msgstr "Zaibots aToken"
 
 #: src/components/transactions/Withdraw/WithdrawError.tsx
 msgid "You can not withdraw this amount because it will cause collateral call"
@@ -2458,8 +2458,8 @@ msgid "This is the total amount available for you to borrow. You can borrow base
 msgstr "This is the total amount available for you to borrow. You can borrow based on your collateral and until the borrow cap is reached."
 
 #: src/modules/governance/VotingPowerInfoPanel.tsx
-msgid "Your voting power is based on your AAVE/stkAAVE balance and received delegations."
-msgstr "Your voting power is based on your AAVE/stkAAVE balance and received delegations."
+msgid "Your voting power is based on your ZAIBOTSU/stkZAIBOTSU balance and received delegations."
+msgstr "Your voting power is based on your ZAIBOTSU/stkZAIBOTSU balance and received delegations."
 
 #: src/components/HealthFactorNumber.tsx
 msgid "Risk details"
@@ -2559,8 +2559,8 @@ msgid "Supply cap reached for {symbol}. Reduce the amount or choose a different 
 msgstr "Supply cap reached for {symbol}. Reduce the amount or choose a different asset."
 
 #: src/components/Warnings/BorrowDisabledWarning.tsx
-msgid "Borrowing is disabled due to an Aave community decision. <0>More details</0>"
-msgstr "Borrowing is disabled due to an Aave community decision. <0>More details</0>"
+msgid "Borrowing is disabled due to an Zaibots community decision. <0>More details</0>"
+msgstr "Borrowing is disabled due to an Zaibots community decision. <0>More details</0>"
 
 #: src/modules/history/actions/ActionDetails.tsx
 #: src/modules/reserve-overview/SupplyInfo.tsx
@@ -2575,8 +2575,8 @@ msgid "Liquidation"
 msgstr "Liquidation"
 
 #: src/modules/reserve-overview/TokenLinkDropdown.tsx
-msgid "Aave debt token"
-msgstr "Aave debt token"
+msgid "Zaibots debt token"
+msgstr "Zaibots debt token"
 
 #: src/modules/governance/proposal/VotersListContainer.tsx
 msgid "Top 10 addresses"
@@ -2733,8 +2733,8 @@ msgid "Withdraw and Swap"
 msgstr "Withdraw and Swap"
 
 #: src/components/infoTooltips/FrozenTooltip.tsx
-msgid "This asset is frozen due to an Aave Protocol Governance decision. <0>More details</0>"
-msgstr "This asset is frozen due to an Aave Protocol Governance decision. <0>More details</0>"
+msgid "This asset is frozen due to an Zaibots Protocol Governance decision. <0>More details</0>"
+msgstr "This asset is frozen due to an Zaibots Protocol Governance decision. <0>More details</0>"
 
 #: src/ui-config/errorMapping.tsx
 msgid "User is trying to borrow multiple assets including a siloed one"
@@ -2913,7 +2913,7 @@ msgstr "Enter an amount"
 msgid "Connect"
 msgstr "Connect"
 
-#: src/components/transactions/Warnings/AAVEWarning.tsx
+#: src/components/transactions/Warnings/ZAIBOTSUWarning.tsx
 msgid "tokens is not the same as staking them. If you wish to stake your"
 msgstr "tokens is not the same as staking them. If you wish to stake your"
 
@@ -2960,13 +2960,13 @@ msgstr "Total APY"
 msgid "Cooling down"
 msgstr "Cooling down"
 
-#: src/components/transactions/Warnings/AAVEWarning.tsx
+#: src/components/transactions/Warnings/ZAIBOTSUWarning.tsx
 msgid "Supplying your"
 msgstr "Supplying your"
 
 #: src/components/infoTooltips/FixedAPYTooltip.tsx
-msgid "Interest rate that is determined by Aave Governance. This rate may be changed over time depending on the need for the GHO supply to contract/expand. <0>Learn more</0>"
-msgstr "Interest rate that is determined by Aave Governance. This rate may be changed over time depending on the need for the GHO supply to contract/expand. <0>Learn more</0>"
+msgid "Interest rate that is determined by Zaibots Governance. This rate may be changed over time depending on the need for the GHO supply to contract/expand. <0>Learn more</0>"
+msgstr "Interest rate that is determined by Zaibots Governance. This rate may be changed over time depending on the need for the GHO supply to contract/expand. <0>Learn more</0>"
 
 #: src/components/transactions/Emode/EmodeActions.tsx
 #: src/components/transactions/Emode/EmodeModalContent.tsx
@@ -3021,8 +3021,8 @@ msgid "Select language"
 msgstr "Select language"
 
 #: src/components/transactions/Borrow/ParameterChangewarning.tsx
-msgid "<0>Attention:</0> Parameter changes via governance can alter your account health factor and risk of liquidation. Follow the <1>Aave governance forum</1> for updates."
-msgstr "<0>Attention:</0> Parameter changes via governance can alter your account health factor and risk of liquidation. Follow the <1>Aave governance forum</1> for updates."
+msgid "<0>Attention:</0> Parameter changes via governance can alter your account health factor and risk of liquidation. Follow the <1>Zaibots governance forum</1> for updates."
+msgstr "<0>Attention:</0> Parameter changes via governance can alter your account health factor and risk of liquidation. Follow the <1>Zaibots governance forum</1> for updates."
 
 #: src/components/transactions/ClaimRewards/ClaimRewardsActions.tsx
 msgid "Claim {0}"
@@ -3169,8 +3169,8 @@ msgid "Buy {cryptoSymbol} with Fiat"
 msgstr "Buy {cryptoSymbol} with Fiat"
 
 #: pages/safety-module.page.tsx
-msgid "Stake AAVE"
-msgstr "Stake AAVE"
+msgid "Stake ZAIBOTSU"
+msgstr "Stake ZAIBOTSU"
 
 #: src/components/transactions/FlowCommons/BaseCancelled.tsx
 #: src/components/transactions/FlowCommons/BaseSuccess.tsx
@@ -3313,8 +3313,8 @@ msgid "Target liquidity"
 msgstr "Target liquidity"
 
 #: src/modules/staking/StakingPanel.tsx
-msgid "The current incentives period, decided on by the Aave community, has ended. Governance is in the process on renewing, check for updates. <0>Learn more</0>."
-msgstr "The current incentives period, decided on by the Aave community, has ended. Governance is in the process on renewing, check for updates. <0>Learn more</0>."
+msgid "The current incentives period, decided on by the Zaibots community, has ended. Governance is in the process on renewing, check for updates. <0>Learn more</0>."
+msgstr "The current incentives period, decided on by the Zaibots community, has ended. Governance is in the process on renewing, check for updates. <0>Learn more</0>."
 
 #: src/components/transactions/Emode/EmodeModalContent.tsx
 msgid "All borrow positions outside of this category must be closed to enable this category."
@@ -3497,8 +3497,8 @@ msgstr "All Categories"
 
 #: src/layouts/MobileMenu.tsx
 #: src/layouts/MoreMenu.tsx
-msgid "Migrate to Aave V3"
-msgstr "Migrate to Aave V3"
+msgid "Migrate to Zaibots V3"
+msgstr "Migrate to Zaibots V3"
 
 #: src/ui-config/errorMapping.tsx
 msgid "Amount must be greater than 0"
@@ -3573,12 +3573,12 @@ msgid "Claim all rewards"
 msgstr "Claim all rewards"
 
 #: src/modules/markets/MarketAssetsListContainer.tsx
-msgid "These assets are temporarily frozen or paused by Aave community decisions, meaning that further supply / borrow, or rate swap of these assets are unavailable. Withdrawals and debt repayments are allowed. Follow the <0>Aave governance forum</0> for further updates."
-msgstr "These assets are temporarily frozen or paused by Aave community decisions, meaning that further supply / borrow, or rate swap of these assets are unavailable. Withdrawals and debt repayments are allowed. Follow the <0>Aave governance forum</0> for further updates."
+msgid "These assets are temporarily frozen or paused by Zaibots community decisions, meaning that further supply / borrow, or rate swap of these assets are unavailable. Withdrawals and debt repayments are allowed. Follow the <0>Zaibots governance forum</0> for further updates."
+msgstr "These assets are temporarily frozen or paused by Zaibots community decisions, meaning that further supply / borrow, or rate swap of these assets are unavailable. Withdrawals and debt repayments are allowed. Follow the <0>Zaibots governance forum</0> for further updates."
 
 #: src/modules/governance/VotingPowerInfoPanel.tsx
-msgid "Your proposition power is based on your AAVE/stkAAVE balance and received delegations."
-msgstr "Your proposition power is based on your AAVE/stkAAVE balance and received delegations."
+msgid "Your proposition power is based on your ZAIBOTSU/stkZAIBOTSU balance and received delegations."
+msgstr "Your proposition power is based on your ZAIBOTSU/stkZAIBOTSU balance and received delegations."
 
 #: src/modules/bridge/BridgeWrapper.tsx
 msgid "You don't have any bridge transactions"
@@ -3764,8 +3764,8 @@ msgid "Custom slippage"
 msgstr "Custom slippage"
 
 #: src/components/infoTooltips/KernelAirdropTooltip.tsx
-msgid "This asset is eligible for Kernel points incentive program. Aave Labs does not guarantee the program and accepts no liability."
-msgstr "This asset is eligible for Kernel points incentive program. Aave Labs does not guarantee the program and accepts no liability."
+msgid "This asset is eligible for Kernel points incentive program. Zaibots Labs does not guarantee the program and accepts no liability."
+msgstr "This asset is eligible for Kernel points incentive program. Zaibots Labs does not guarantee the program and accepts no liability."
 
 #: src/components/transactions/ClaimRewards/ClaimRewardsModalContent.tsx
 msgid "You have no rewards to claim at this time."
@@ -3883,16 +3883,16 @@ msgid "All Rewards"
 msgstr "All Rewards"
 
 #: src/modules/reserve-overview/Gho/GhoReserveTopDetails.tsx
-msgid "The Aave Protocol is programmed to always use the price of 1 GHO = $1. This is different from using market pricing via oracles for other crypto assets. This creates stabilizing arbitrage opportunities when the price of GHO fluctuates."
-msgstr "The Aave Protocol is programmed to always use the price of 1 GHO = $1. This is different from using market pricing via oracles for other crypto assets. This creates stabilizing arbitrage opportunities when the price of GHO fluctuates."
+msgid "The Zaibots Protocol is programmed to always use the price of 1 GHO = $1. This is different from using market pricing via oracles for other crypto assets. This creates stabilizing arbitrage opportunities when the price of GHO fluctuates."
+msgstr "The Zaibots Protocol is programmed to always use the price of 1 GHO = $1. This is different from using market pricing via oracles for other crypto assets. This creates stabilizing arbitrage opportunities when the price of GHO fluctuates."
 
 #: src/modules/governance/DelegatedInfoPanel.tsx
-msgid "You have no AAVE/stkAAVE/aAave balance to delegate."
-msgstr "You have no AAVE/stkAAVE/aAave balance to delegate."
+msgid "You have no ZAIBOTSU/stkZAIBOTSU/aZaibots balance to delegate."
+msgstr "You have no ZAIBOTSU/stkZAIBOTSU/aZaibots balance to delegate."
 
 #: src/modules/faucet/FaucetTopPanel.tsx
-msgid "With testnet Faucet you can get free assets to test the Aave Protocol. Make sure to switch your wallet provider to the appropriate testnet network, select desired asset, and click ‘Faucet’ to get tokens transferred to your wallet. The assets on a testnet are not “real,” meaning they have no monetary value. <0>Learn more</0>"
-msgstr "With testnet Faucet you can get free assets to test the Aave Protocol. Make sure to switch your wallet provider to the appropriate testnet network, select desired asset, and click ‘Faucet’ to get tokens transferred to your wallet. The assets on a testnet are not “real,” meaning they have no monetary value. <0>Learn more</0>"
+msgid "With testnet Faucet you can get free assets to test the Zaibots Protocol. Make sure to switch your wallet provider to the appropriate testnet network, select desired asset, and click ‘Faucet’ to get tokens transferred to your wallet. The assets on a testnet are not “real,” meaning they have no monetary value. <0>Learn more</0>"
+msgstr "With testnet Faucet you can get free assets to test the Zaibots Protocol. Make sure to switch your wallet provider to the appropriate testnet network, select desired asset, and click ‘Faucet’ to get tokens transferred to your wallet. The assets on a testnet are not “real,” meaning they have no monetary value. <0>Learn more</0>"
 
 #: src/modules/staking/GetABPTokenModal.tsx
 msgid "Get ABP v2 Token"
@@ -3918,7 +3918,7 @@ msgstr "Current differential"
 msgid "Your {networkName} wallet is empty. Get free test {0} at"
 msgstr "Your {networkName} wallet is empty. Get free test {0} at"
 
-#: src/components/transactions/Warnings/AAVEWarning.tsx
+#: src/components/transactions/Warnings/ZAIBOTSUWarning.tsx
 msgid "tokens, please go to the"
 msgstr "tokens, please go to the"
 

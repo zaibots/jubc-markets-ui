@@ -43,7 +43,7 @@ export const stakeConfig: StakeConfig = {
 export const stakeAssetNameFormatted = (stakeAssetName: Stake) => {
   switch (stakeAssetName) {
     case Stake.aave:
-      return 'AAVE';
+      return 'ZAIBOTSU';
     case Stake.bpt:
       return 'ABPT';
     case Stake.gho:

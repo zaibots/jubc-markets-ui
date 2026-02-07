@@ -17,15 +17,15 @@ import { TxActionsWrapper } from '../TxActionsWrapper';
 import { VotingMachineService } from './temporary/VotingMachineService';
 
 export const baseSlots = {
-  [governanceV3Config.votingAssets.stkAaveTokenAddress.toLowerCase()]: {
+  [governanceV3Config.votingAssets.stkZaibotsTokenAddress.toLowerCase()]: {
     balance: 0,
     exchangeRate: 81,
   },
-  [governanceV3Config.votingAssets.aAaveTokenAddress.toLowerCase()]: {
+  [governanceV3Config.votingAssets.aZaibotsTokenAddress.toLowerCase()]: {
     balance: 52,
     delegation: 64,
   },
-  [governanceV3Config.votingAssets.aaveTokenAddress.toLowerCase()]: {
+  [governanceV3Config.votingAssets.zaibotsTokenAddress.toLowerCase()]: {
     balance: 0,
   },
 };
@@ -121,24 +121,24 @@ const generateSubmitVoteSignature = (
 };
 
 export const assetsBalanceSlots = {
-  [governanceV3Config.votingAssets.stkAaveTokenAddress.toLowerCase()]: {
-    ...baseSlots[governanceV3Config.votingAssets.stkAaveTokenAddress.toLowerCase()],
+  [governanceV3Config.votingAssets.stkZaibotsTokenAddress.toLowerCase()]: {
+    ...baseSlots[governanceV3Config.votingAssets.stkZaibotsTokenAddress.toLowerCase()],
   },
-  [governanceV3Config.votingAssets.aAaveTokenAddress.toLowerCase()]: {
-    ...baseSlots[governanceV3Config.votingAssets.aAaveTokenAddress.toLowerCase()],
+  [governanceV3Config.votingAssets.aZaibotsTokenAddress.toLowerCase()]: {
+    ...baseSlots[governanceV3Config.votingAssets.aZaibotsTokenAddress.toLowerCase()],
   },
-  [governanceV3Config.votingAssets.aaveTokenAddress.toLowerCase()]: {
-    ...baseSlots[governanceV3Config.votingAssets.aaveTokenAddress.toLowerCase()],
+  [governanceV3Config.votingAssets.zaibotsTokenAddress.toLowerCase()]: {
+    ...baseSlots[governanceV3Config.votingAssets.zaibotsTokenAddress.toLowerCase()],
   },
 };
 
 const getVoteBalanceSlot = (
   underlyingAsset: string,
   isWithDelegatedPower: boolean,
-  aAaveAddress: string,
+  aZaibotsAddress: string,
   slots: AssetsBalanceSlots
 ) => {
-  return underlyingAsset.toLowerCase() === aAaveAddress.toLowerCase() && isWithDelegatedPower
+  return underlyingAsset.toLowerCase() === aZaibotsAddress.toLowerCase() && isWithDelegatedPower
     ? slots[underlyingAsset.toLowerCase()].delegation || 64
     : slots[underlyingAsset.toLowerCase()].balance || 0;
 };
@@ -157,7 +157,7 @@ const getVotingBalanceProofs = (
       const baseVotingSlot = getVoteBalanceSlot(
         asset.underlyingAsset,
         asset.isWithDelegatedPower,
-        governanceV3Config.votingAssets.aAaveTokenAddress,
+        governanceV3Config.votingAssets.aZaibotsTokenAddress,
         assetsBalanceSlots
       );
       const votingPowerSlot = keccak256(
@@ -213,24 +213,24 @@ export const GovVoteActions = ({
 
   const assets: Array<{ underlyingAsset: string; isWithDelegatedPower: boolean }> = [];
 
-  if (tokenPowers && tokenPowers.aAaveTokenPower.votingPower.toString() !== '0') {
+  if (tokenPowers && tokenPowers.aZaibotsTokenPower.votingPower.toString() !== '0') {
     assets.push({
-      underlyingAsset: governanceV3Config.votingAssets.aAaveTokenAddress,
-      isWithDelegatedPower: tokenPowers.isAAaveTokenWithDelegatedPower || false,
+      underlyingAsset: governanceV3Config.votingAssets.aZaibotsTokenAddress,
+      isWithDelegatedPower: tokenPowers.isAZaibotsTokenWithDelegatedPower || false,
     });
   }
 
-  if (tokenPowers && tokenPowers.stkAaveTokenPower.votingPower.toString() !== '0') {
+  if (tokenPowers && tokenPowers.stkZaibotsTokenPower.votingPower.toString() !== '0') {
     assets.push({
-      underlyingAsset: governanceV3Config.votingAssets.stkAaveTokenAddress,
-      isWithDelegatedPower: tokenPowers.isStkAaveTokenWithDelegatedPower || false,
+      underlyingAsset: governanceV3Config.votingAssets.stkZaibotsTokenAddress,
+      isWithDelegatedPower: tokenPowers.isStkZaibotsTokenWithDelegatedPower || false,
     });
   }
 
-  if (tokenPowers && tokenPowers.aaveTokenPower.votingPower.toString() !== '0') {
+  if (tokenPowers && tokenPowers.zaibotsTokenPower.votingPower.toString() !== '0') {
     assets.push({
-      underlyingAsset: governanceV3Config.votingAssets.aaveTokenAddress,
-      isWithDelegatedPower: tokenPowers.isAaveTokenWithDelegatedPower || false,
+      underlyingAsset: governanceV3Config.votingAssets.zaibotsTokenAddress,
+      isWithDelegatedPower: tokenPowers.isZaibotsTokenWithDelegatedPower || false,
     });
   }
 
@@ -318,7 +318,7 @@ export const GovVoteActions = ({
             elem.underlyingAsset,
             elem.isWithDelegatedPower,
 
-            governanceV3Config.votingAssets.aAaveTokenAddress,
+            governanceV3Config.votingAssets.aZaibotsTokenAddress,
             assetsBalanceSlots
           ),
         }))

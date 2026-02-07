@@ -93,8 +93,8 @@ export const DashboardTopPanel = () => {
           // getting price from reserves for the native rewards for v2 markets
           if (!currentMarketData.v3 && Number(rewardBalance) > 0) {
             if (currentMarketData.chainId === ChainId.mainnet) {
-              const aave = reserves.find((reserve) => reserve.symbol === 'AAVE');
-              tokenPrice = aave ? Number(aave.priceInUSD) : 0;
+              const zaibots = reserves.find((reserve) => reserve.symbol === 'ZAIBOTSU');
+              tokenPrice = zaibots ? Number(zaibots.priceInUSD) : 0;
             } else {
               reserves.forEach((reserve) => {
                 if (reserve.symbol === currentNetworkConfig.wrappedBaseAssetSymbol) {

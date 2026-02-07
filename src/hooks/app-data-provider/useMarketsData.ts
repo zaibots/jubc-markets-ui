@@ -5,7 +5,7 @@ import { MarketDataType } from 'src/ui-config/marketsConfig';
 import { queryKeysFactory } from 'src/ui-config/queries';
 
 type UseMarketsDataParams = {
-  client: AaveClient;
+  client: ZaibotsClient;
   marketData: MarketDataType;
   account?: string | null;
 };

@@ -46,8 +46,8 @@ export const StakeRewardClaimRestakeModalContent = ({
   const stakeData = stakeGeneralResult?.[0];
   const stakeUserData = stakeUserResult?.[0];
 
-  // hardcoded as all rewards will be in aave token
-  const rewardsSymbol = 'AAVE';
+  // hardcoded as all rewards will be in zaibots token
+  const rewardsSymbol = 'ZAIBOTSU';
   const [_amount, setAmount] = useState('');
   const amountRef = useRef<string>();
 
@@ -101,7 +101,7 @@ export const StakeRewardClaimRestakeModalContent = ({
 
   return (
     <>
-      <TxModalTitle title="Restake AAVE rewards" />
+      <TxModalTitle title="Restake ZAIBOTSU rewards" />
       {isWrongNetwork && !readOnlyModeAddress && (
         <ChangeNetworkWarning
           autoSwitchOnMount={true}

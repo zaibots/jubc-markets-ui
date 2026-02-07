@@ -212,7 +212,7 @@ export const frozenProposalMap: Record<string, string> = {
   ['UNIWBTCUSDC' + CustomMarket.proto_mainnet]: ammDisableProposal,
   ['UNIDAIWETH' + CustomMarket.proto_mainnet]: ammDisableProposal,
   ['UNIUSDCWETH' + CustomMarket.proto_mainnet]: ammDisableProposal,
-  ['UNIAAVEWETH' + CustomMarket.proto_mainnet]: ammDisableProposal,
+  ['UNIZAIBOTSUWETH' + CustomMarket.proto_mainnet]: ammDisableProposal,
   ['UNIBATWETH' + CustomMarket.proto_mainnet]: ammDisableProposal,
   ['UNICRVWETH' + CustomMarket.proto_mainnet]: ammDisableProposal,
   ['UNILINKWETH' + CustomMarket.proto_mainnet]: ammDisableProposal,

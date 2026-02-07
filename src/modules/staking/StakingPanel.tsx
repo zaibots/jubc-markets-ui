@@ -108,9 +108,9 @@ export const StakingPanel: React.FC<StakingPanelProps> = ({
     18 + 8 // incentivesBalance (18), rewardTokenPriceUSD (8)
   );
 
-  let aavePerMonth = '0';
+  let zaibotsPerMonth = '0';
   if (stakeData?.stakeTokenTotalSupply !== '0') {
-    aavePerMonth = formatEther(
+    zaibotsPerMonth = formatEther(
       valueToBigNumber(stakeUserData?.stakeTokenRedeemableAmount || '0')
         .dividedBy(stakeData?.stakeTokenTotalSupply || '1')
         .multipliedBy(stakeData?.distributionPerSecond || '0')
@@ -563,17 +563,17 @@ export const StakingPanel: React.FC<StakingPanelProps> = ({
         )}
 
         <StakeActionBox
-          title={<Trans>Claimable AAVE</Trans>}
+          title={<Trans>Claimable ZAIBOTSU</Trans>}
           value={formatEther(stakeUserData?.userIncentivesToClaim || '0')}
           valueUSD={claimableUSD}
           bottomLineTitle={<Trans>Zaibots per month</Trans>}
           dataCy={`rewardBox_${stakedToken}`}
           bottomLineComponent={
             <FormattedNumber
-              value={aavePerMonth}
+              value={zaibotsPerMonth}
               visibleDecimals={2}
               variant="secondary14"
-              color={+aavePerMonth === 0 ? 'text.disabled' : 'text.primary'}
+              color={+zaibotsPerMonth === 0 ? 'text.disabled' : 'text.primary'}
             />
           }
         >
@@ -597,7 +597,7 @@ export const StakingPanel: React.FC<StakingPanelProps> = ({
             >
               <Trans>Claim</Trans>
             </Button>
-            {stakedToken === 'AAVE' && (
+            {stakedToken === 'ZAIBOTSU' && (
               <Button
                 variant="contained"
                 onClick={onStakeRewardClaimRestakeAction}

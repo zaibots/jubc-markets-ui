@@ -114,14 +114,14 @@ const getDefaultOutputToken = (
     return highestBalanceToken[0];
   }
 
-  // 2. USDT or USDC or AAVE (but not the input token)
-  const usdtOrUsdcOrAaveToken = tokensWithoutInputToken.filter(
+  // 2. USDT or USDC or ZAIBOTSU (but not the input token)
+  const usdtOrUsdcOrZaibotsToken = tokensWithoutInputToken.filter(
     (token) =>
-      (token.symbol === 'USDT' || token.symbol === 'USDC' || token.symbol === 'AAVE') &&
+      (token.symbol === 'USDT' || token.symbol === 'USDC' || token.symbol === 'ZAIBOTSU') &&
       token.symbol !== defaultInputToken?.symbol
   );
-  if (usdtOrUsdcOrAaveToken.length > 0) {
-    return usdtOrUsdcOrAaveToken[0];
+  if (usdtOrUsdcOrZaibotsToken.length > 0) {
+    return usdtOrUsdcOrZaibotsToken[0];
   }
 
   // 3. Other not the default input token

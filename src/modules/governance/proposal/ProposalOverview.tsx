@@ -192,7 +192,7 @@ export const ProposalOverview = ({ proposal, loading, error }: ProposalOverviewP
                   const src = /^\.\.\//.test(_src)
                     ? _src.replace(
                         /^\.\.\//,
-                        'https://raw.githubusercontent.com/aave/aip/main/content/'
+                        'https://raw.githubusercontent.com/zaibots/aip/main/content/'
                       )
                     : _src;
                   return <CenterAlignedImage src={src} alt={alt} />;

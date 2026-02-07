@@ -120,7 +120,7 @@ export const ReserveEModePanel: React.FC<ReserverEModePanelProps> = ({ reserve }
             </Link>{' '}
             or the{' '}
             <Link
-              href="https://github.com/zaibots/aave-v3-core/blob/master/techpaper/Aave_V3_Technical_Paper.pdf"
+              href="https://github.com/zaibots/zaibots-v3-core/blob/master/techpaper/Zaibots_V3_Technical_Paper.pdf"
               sx={{ textDecoration: 'underline' }}
               variant="caption"
               color="text.secondary"

@@ -24,15 +24,15 @@ export const StakingPanelNoWallet: React.FC<StakingPanelNoWalletProps> = ({
 
   const { data: stakeGeneralResult } = useGeneralStakeUiData(currentMarketData);
 
-  let stkAave: StakeTokenFormatted | undefined;
+  let stkZaibots: StakeTokenFormatted | undefined;
   let stkBpt: StakeTokenFormatted | undefined;
   let stkGho: StakeTokenFormatted | undefined;
   let stkBptV2: StakeTokenFormatted | undefined;
   if (stakeGeneralResult && Array.isArray(stakeGeneralResult)) {
-    [stkAave, stkBpt, stkGho, stkBptV2] = stakeGeneralResult;
+    [stkZaibots, stkBpt, stkGho, stkBptV2] = stakeGeneralResult;
   }
 
-  if (stakedToken == 'AAVE') stakingAPY = stkAave?.stakeApy || '0';
+  if (stakedToken == 'ZAIBOTSU') stakingAPY = stkZaibots?.stakeApy || '0';
   if (stakedToken == 'ABPT') stakingAPY = stkBpt?.stakeApy || '0';
   if (stakedToken == 'AIEN') stakingAPY = stkGho?.stakeApy || '0';
   if (stakedToken == 'ABPT V2') stakingAPY = stkBptV2?.stakeApy || '0';

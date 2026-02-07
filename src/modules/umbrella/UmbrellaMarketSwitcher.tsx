@@ -307,7 +307,7 @@ export const MarketSwitcher = () => {
                 sx={
                   selectedMarketVersion === SelectedMarketVersion.V3
                     ? {
-                        backgroundImage: (theme) => theme.palette.gradients.aaveGradient,
+                        backgroundImage: (theme) => theme.palette.gradients.zaibotsGradient,
                         backgroundClip: 'text',
                         color: 'transparent',
                       }
@@ -336,7 +336,7 @@ export const MarketSwitcher = () => {
                 sx={
                   selectedMarketVersion === SelectedMarketVersion.V2
                     ? {
-                        backgroundImage: (theme) => theme.palette.gradients.aaveGradient,
+                        backgroundImage: (theme) => theme.palette.gradients.zaibotsGradient,
                         backgroundClip: 'text',
                         color: 'transparent',
                       }

@@ -22,7 +22,7 @@ import { TopInfoPanel } from '../../components/TopInfoPanel/TopInfoPanel';
 import { TopInfoPanelItem } from '../../components/TopInfoPanel/TopInfoPanelItem';
 import { useAppDataContext } from '../../hooks/app-data-provider/useAppDataProvider';
 import { AddTokenDropdown } from './AddTokenDropdown';
-import { AienReserveTopDetails } from './Gho/AienReserveTopDetails';
+import { AienReserveTopDetails } from './Aien/AienReserveTopDetails';
 import { ReserveTopDetails } from './ReserveTopDetails';
 import { TokenLinkDropdown } from './TokenLinkDropdown';
 
@@ -142,7 +142,7 @@ export const ReserveTopDetailsWrapper = ({ underlyingAsset }: ReserveTopDetailsP
                     px: 2,
                     mx: 2,
                     borderRadius: '12px',
-                    background: (theme) => theme.palette.gradients.aaveGradient,
+                    background: (theme) => theme.palette.gradients.zaibotsGradient,
                   }}
                 >
                   <Typography variant="subheader2">Version 3</Typography>

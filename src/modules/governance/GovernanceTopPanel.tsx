@@ -62,9 +62,9 @@ export const GovernanceTopPanel = () => {
 
           <Typography sx={{ color: '#8E92A3', maxWidth: '824px' }}>
             <Trans>
-              Zaibots is a fully decentralized, community governed protocol by the AAVE token-holders.
-              AAVE token-holders collectively discuss, propose, and vote on upgrades to the
-              protocol. AAVE token-holders (Ethereum network only) can either vote themselves on new
+              Zaibots is a fully decentralized, community governed protocol by the ZAIBOTSU token-holders.
+              ZAIBOTSU token-holders collectively discuss, propose, and vote on upgrades to the
+              protocol. ZAIBOTSU token-holders (Ethereum network only) can either vote themselves on new
               proposals or delagate to an address of choice. To learn more check out the Governance
             </Trans>{' '}
             <Link
@@ -88,7 +88,7 @@ export const GovernanceTopPanel = () => {
           maxWidth: 'sm',
         }}
       >
-        <ExternalLink text="SNAPSHOTS" href="https://snapshot.org/#/aave.eth" />
+        <ExternalLink text="SNAPSHOTS" href="https://snapshot.org/#/zaibots.eth" />
         <ExternalLink text="FORUM" href="https://governance.zaibots.com/" />
         <ExternalLink text="FAQ" href="https://docs.zaibots.com/faq/governance" />
         <ExternalLink text="GOVERNANCE V2" href="https://governance-v2.zaibots.com/" />

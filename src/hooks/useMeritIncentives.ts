@@ -96,7 +96,7 @@ export type MeritIncentivesBreakdown = {
   };
 };
 
-const url = 'https://apps.aavechan.com/api/merit/aprs';
+const url = 'https://apps.zaibotschan.com/api/merit/aprs';
 
 export type MeritReserveIncentiveData = Omit<ReserveIncentiveResponse, 'incentiveAPR'> & {
   action: MeritAction;
@@ -177,7 +177,7 @@ export const MERIT_DATA_MAP: Record<string, Record<string, MeritReserveIncentive
         rewardTokenAddress: AaveSafetyModule.STK_GHO,
         rewardTokenSymbol: 'sAIEN',
         customForumLink:
-          'https://governance.zaibots.com/t/arfc-merit-a-new-aave-alignment-user-reward-system/16646',
+          'https://governance.zaibots.com/t/arfc-merit-a-new-zaibots-alignment-user-reward-system/16646',
       },
     ],
     // cbBTC: [

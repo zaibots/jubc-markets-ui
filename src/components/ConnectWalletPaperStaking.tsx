@@ -53,7 +53,7 @@ export const ConnectWalletPaperStaking = ({
               sx={{ maxWidth: '758px', textAlign: 'right', justifyContent: 'center' }}
             >
               <Grid item xs={12} md={4}>
-                <StakingPanelNoWallet stakedToken={'AAVE'} icon={'aave'} />
+                <StakingPanelNoWallet stakedToken={'ZAIBOTSU'} icon={'zaibots'} />
               </Grid>
               <Grid item xs={12} md={4}>
                 <StakingPanelNoWallet stakedToken={'ABPT V2'} icon={'stkbptv2'} />

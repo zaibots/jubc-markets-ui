@@ -9,7 +9,7 @@ type MeritIncentives = {
   };
 };
 
-const url = 'https://apps.aavechan.com/api/merit/aprs';
+const url = 'https://apps.zaibotschan.com/api/merit/aprs';
 
 export const useStakeTokenAPR = () => {
   return useQuery({

@@ -60,7 +60,7 @@ export function VoteBar({ percent, yae, votes, loading, compact, ...rest }: Vote
             />
             {!compact && (
               <Typography variant="description" component="span" color="text.secondary">
-                AAVE
+                ZAIBOTSU
               </Typography>
             )}
           </Box>

@@ -16,29 +16,29 @@ import { useRootStore } from 'src/store/root';
 import { GENERAL } from 'src/utils/events';
 
 type DelegatedPowerProps = {
-  aavePower: string;
-  stkAavePower: string;
-  aaveDelegatee: string;
-  stkAaveDelegatee: string;
+  zaibotsPower: string;
+  stkZaibotsPower: string;
+  zaibotsDelegatee: string;
+  stkZaibotsDelegatee: string;
   title: string;
-  aAavePower: string;
-  aAaveDelegatee: string;
+  aZaibotsPower: string;
+  aZaibotsDelegatee: string;
 };
 
 const DelegatedPower: React.FC<DelegatedPowerProps> = ({
-  aavePower,
-  stkAavePower,
-  aaveDelegatee,
-  stkAaveDelegatee,
-  aAaveDelegatee,
-  aAavePower,
+  zaibotsPower,
+  stkZaibotsPower,
+  zaibotsDelegatee,
+  stkZaibotsDelegatee,
+  aZaibotsDelegatee,
+  aZaibotsPower,
   title,
 }) => {
-  const isAaveSelfDelegated = !aaveDelegatee || constants.AddressZero === aaveDelegatee;
-  const isStkAaveSelfDelegated = !stkAaveDelegatee || constants.AddressZero === stkAaveDelegatee;
-  const isAAaveSelfDelegated = !aAaveDelegatee || constants.AddressZero === aAaveDelegatee;
+  const isZaibotsSelfDelegated = !zaibotsDelegatee || constants.AddressZero === zaibotsDelegatee;
+  const isStkZaibotsSelfDelegated = !stkZaibotsDelegatee || constants.AddressZero === stkZaibotsDelegatee;
+  const isAZaibotsSelfDelegated = !aZaibotsDelegatee || constants.AddressZero === aZaibotsDelegatee;
 
-  if (isAaveSelfDelegated && isStkAaveSelfDelegated && isAAaveSelfDelegated) return null;
+  if (isZaibotsSelfDelegated && isStkZaibotsSelfDelegated && isAZaibotsSelfDelegated) return null;
 
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', mt: 6, mb: 2 }}>
@@ -46,80 +46,80 @@ const DelegatedPower: React.FC<DelegatedPowerProps> = ({
         <Trans>{title}</Trans>
       </Typography>
       <Box sx={{ display: 'flex', gap: 4, flexDirection: 'column' }}>
-        {aaveDelegatee !== ZERO_ADDRESS &&
-        aaveDelegatee === stkAaveDelegatee &&
-        aaveDelegatee === aAaveDelegatee ? (
+        {zaibotsDelegatee !== ZERO_ADDRESS &&
+        zaibotsDelegatee === stkZaibotsDelegatee &&
+        zaibotsDelegatee === aZaibotsDelegatee ? (
           <Row
             align="flex-start"
             caption={
               <ExternalUserDisplay
                 avatarProps={{ size: AvatarSize.XS }}
                 titleProps={{ variant: 'subheader1' }}
-                address={aaveDelegatee}
+                address={zaibotsDelegatee}
               />
             }
           >
             <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
               <FormattedNumber
-                value={Number(aavePower) + Number(stkAavePower) + Number(aAavePower)}
+                value={Number(zaibotsPower) + Number(stkZaibotsPower) + Number(aZaibotsPower)}
                 variant="subheader1"
               />
               <Typography variant="helperText" color="text.secondary">
-                AAVE + stkAAVE + aAAVE
+                ZAIBOTSU + stkZAIBOTSU + aZAIBOTSU
               </Typography>
             </Box>
           </Row>
         ) : (
           <>
-            {!isAaveSelfDelegated && (
+            {!isZaibotsSelfDelegated && (
               <Row
                 align="flex-start"
                 caption={
                   <ExternalUserDisplay
                     avatarProps={{ size: AvatarSize.XS }}
                     titleProps={{ variant: 'subheader1' }}
-                    address={aaveDelegatee}
+                    address={zaibotsDelegatee}
                   />
                 }
               >
                 <Box sx={{ display: 'flex', gap: 2, alignItems: 'center' }}>
-                  <TokenIcon symbol="AAVE" sx={{ width: 16, height: 16 }} />
-                  <FormattedNumber value={aavePower} variant="subheader1" />
+                  <TokenIcon symbol="ZAIBOTSU" sx={{ width: 16, height: 16 }} />
+                  <FormattedNumber value={zaibotsPower} variant="subheader1" />
                 </Box>
               </Row>
             )}
-            {!isStkAaveSelfDelegated && (
+            {!isStkZaibotsSelfDelegated && (
               <Row
                 align="flex-start"
                 caption={
                   <ExternalUserDisplay
                     avatarProps={{ size: AvatarSize.XS }}
                     titleProps={{ variant: 'subheader1' }}
-                    address={stkAaveDelegatee}
+                    address={stkZaibotsDelegatee}
                   />
                 }
               >
                 <Box sx={{ display: 'flex', gap: 2, alignItems: 'center' }}>
-                  <TokenIcon symbol="stkAAVE" sx={{ width: 16, height: 16 }} />
-                  <FormattedNumber value={stkAavePower} variant="subheader1" />
+                  <TokenIcon symbol="stkZAIBOTSU" sx={{ width: 16, height: 16 }} />
+                  <FormattedNumber value={stkZaibotsPower} variant="subheader1" />
                 </Box>
               </Row>
             )}
 
-            {!isAAaveSelfDelegated && (
+            {!isAZaibotsSelfDelegated && (
               <Row
                 align="flex-start"
                 caption={
                   <ExternalUserDisplay
                     avatarProps={{ size: AvatarSize.XS }}
                     titleProps={{ variant: 'subheader1' }}
-                    address={aAaveDelegatee}
+                    address={aZaibotsDelegatee}
                   />
                 }
               >
                 <Box sx={{ display: 'flex', gap: 2, alignItems: 'center' }}>
-                  <TokenIcon aToken symbol="aave" sx={{ width: 16, height: 16 }} />
-                  <FormattedNumber value={aAavePower} variant="subheader1" />
+                  <TokenIcon aToken symbol="zaibots" sx={{ width: 16, height: 16 }} />
+                  <FormattedNumber value={aZaibotsPower} variant="subheader1" />
                 </Box>
               </Row>
             )}
@@ -133,7 +133,7 @@ const DelegatedPower: React.FC<DelegatedPowerProps> = ({
 export const DelegatedInfoPanel = () => {
   const address = useRootStore((store) => store.account);
   const {
-    data: { aave, stkAave, aAave },
+    data: { zaibots, stkZaibots, aZaibots },
   } = useGovernanceTokens();
   const { data: powers } = usePowers();
   const { openGovDelegation, openRevokeGovDelegation } = useModalContext();
@@ -142,23 +142,23 @@ export const DelegatedInfoPanel = () => {
   if (!powers || !address) return null;
 
   const disableButton =
-    Number(aave) <= 0 &&
-    Number(stkAave) <= 0 &&
-    Number(aAave) <= 0 &&
-    powers.aavePropositionDelegatee === constants.AddressZero &&
-    powers.aaveVotingDelegatee === constants.AddressZero &&
-    powers.stkAavePropositionDelegatee === constants.AddressZero &&
-    powers.stkAaveVotingDelegatee === constants.AddressZero &&
-    powers.aAavePropositionDelegatee === constants.AddressZero &&
-    powers.aAaveVotingDelegatee === constants.AddressZero;
+    Number(zaibots) <= 0 &&
+    Number(stkZaibots) <= 0 &&
+    Number(aZaibots) <= 0 &&
+    powers.zaibotsPropositionDelegatee === constants.AddressZero &&
+    powers.zaibotsVotingDelegatee === constants.AddressZero &&
+    powers.stkZaibotsPropositionDelegatee === constants.AddressZero &&
+    powers.stkZaibotsVotingDelegatee === constants.AddressZero &&
+    powers.aZaibotsPropositionDelegatee === constants.AddressZero &&
+    powers.aZaibotsVotingDelegatee === constants.AddressZero;
 
   const showRevokeButton =
-    powers.aavePropositionDelegatee !== constants.AddressZero ||
-    powers.aaveVotingDelegatee !== constants.AddressZero ||
-    powers.stkAavePropositionDelegatee !== constants.AddressZero ||
-    powers.stkAaveVotingDelegatee !== constants.AddressZero ||
-    powers.aAaveVotingDelegatee !== constants.AddressZero ||
-    powers.aAavePropositionDelegatee !== constants.AddressZero;
+    powers.zaibotsPropositionDelegatee !== constants.AddressZero ||
+    powers.zaibotsVotingDelegatee !== constants.AddressZero ||
+    powers.stkZaibotsPropositionDelegatee !== constants.AddressZero ||
+    powers.stkZaibotsVotingDelegatee !== constants.AddressZero ||
+    powers.aZaibotsVotingDelegatee !== constants.AddressZero ||
+    powers.aZaibotsPropositionDelegatee !== constants.AddressZero;
 
   return (
     <Paper sx={{ mt: 2 }}>
@@ -168,7 +168,7 @@ export const DelegatedInfoPanel = () => {
         </Typography>
         <Typography typography="description" sx={{ mt: 1 }} color="text.secondary">
           <Trans>
-            Use your AAVE, stkAAVE, or aAave balance to delegate your voting and proposition powers.
+            Use your ZAIBOTSU, stkZAIBOTSU, or aZaibots balance to delegate your voting and proposition powers.
             You will not be sending any tokens, only the rights to vote and propose changes to the
             protocol. You can re-delegate or revoke power to self at any time.
           </Trans>
@@ -185,26 +185,26 @@ export const DelegatedInfoPanel = () => {
         </Typography>
         {disableButton ? (
           <Typography variant="description" color="text.muted" mt={6}>
-            <Trans>You have no AAVE/stkAAVE/aAave balance to delegate.</Trans>
+            <Trans>You have no ZAIBOTSU/stkZAIBOTSU/aZaibots balance to delegate.</Trans>
           </Typography>
         ) : (
           <>
             <DelegatedPower
-              aavePower={aave}
-              stkAavePower={stkAave}
-              aAavePower={aAave}
-              aAaveDelegatee={powers.aAaveVotingDelegatee}
-              aaveDelegatee={powers.aaveVotingDelegatee}
-              stkAaveDelegatee={powers.stkAaveVotingDelegatee}
+              zaibotsPower={zaibots}
+              stkZaibotsPower={stkZaibots}
+              aZaibotsPower={aZaibots}
+              aZaibotsDelegatee={powers.aZaibotsVotingDelegatee}
+              zaibotsDelegatee={powers.zaibotsVotingDelegatee}
+              stkZaibotsDelegatee={powers.stkZaibotsVotingDelegatee}
               title="Voting power"
             />
             <DelegatedPower
-              aavePower={aave}
-              aAavePower={aAave}
-              aAaveDelegatee={powers.aAavePropositionDelegatee}
-              stkAavePower={stkAave}
-              aaveDelegatee={powers.aavePropositionDelegatee}
-              stkAaveDelegatee={powers.stkAavePropositionDelegatee}
+              zaibotsPower={zaibots}
+              aZaibotsPower={aZaibots}
+              aZaibotsDelegatee={powers.aZaibotsPropositionDelegatee}
+              stkZaibotsPower={stkZaibots}
+              zaibotsDelegatee={powers.zaibotsPropositionDelegatee}
+              stkZaibotsDelegatee={powers.stkZaibotsPropositionDelegatee}
               title="Proposition power"
             />
           </>

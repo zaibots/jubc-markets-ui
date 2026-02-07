@@ -184,7 +184,7 @@ export const SwitchAssetInput = ({
   const popularAssets = assets.filter((asset) => COMMON_SWAPS.includes(asset.symbol));
 
   const getRecentStorageKey = (swapType: SwapType, chainId: number, side: 'input' | 'output') =>
-    `aave_recent_tokens_${swapType}_${chainId}_${side}`;
+    `zaibots_recent_tokens_${swapType}_${chainId}_${side}`;
 
   const recentAddresses: string[] = (() => {
     try {

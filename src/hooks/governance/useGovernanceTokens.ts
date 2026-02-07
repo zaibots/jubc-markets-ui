@@ -21,9 +21,9 @@ export const useGovernanceTokens = (blockHash?: string) => {
     enabled: !!user,
     refetchInterval: POLLING_INTERVAL,
     initialData: {
-      aave: '0',
-      stkAave: '0',
-      aAave: '0',
+      zaibots: '0',
+      stkZaibots: '0',
+      aZaibots: '0',
     },
   });
 };

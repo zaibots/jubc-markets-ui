@@ -5,7 +5,7 @@ import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 import { AlertTitle, Box, Typography } from '@mui/material';
 import { CapsCircularStatus } from 'src/components/caps/CapsCircularStatus';
 import { DebtCeilingStatus } from 'src/components/caps/DebtCeilingStatus';
-import { mapAaveProtocolIncentives } from 'src/components/incentives/incentives.helper';
+import { mapZaibotsProtocolIncentives } from 'src/components/incentives/incentives.helper';
 import { IncentivesCard } from 'src/components/incentives/IncentivesCard';
 import { LiquidationPenaltyTooltip } from 'src/components/infoTooltips/LiquidationPenaltyTooltip';
 import { LiquidationThresholdTooltip } from 'src/components/infoTooltips/LiquidationThresholdTooltip';
@@ -41,7 +41,7 @@ export const SupplyInfo = ({
   supplyCap,
   debtCeiling,
 }: SupplyInfoProps) => {
-  const supplyProtocolIncentives = mapAaveProtocolIncentives(reserve.incentives, 'supply');
+  const supplyProtocolIncentives = mapZaibotsProtocolIncentives(reserve.incentives, 'supply');
   const apyValue = Number(reserve.supplyInfo?.apy.value);
   return (
     <Box sx={{ flexGrow: 1, minWidth: 0, maxWidth: '100%', width: '100%' }}>
@@ -190,7 +190,7 @@ export const SupplyInfo = ({
                 In Isolation mode you cannot supply other assets as collateral for borrowing. Assets
                 used as collateral in Isolation mode can only be borrowed to a specific debt
                 ceiling.{' '}
-                <Link href="https://docs.zaibots.com/faq/aave-v3-features#isolation-mode">
+                <Link href="https://docs.zaibots.com/faq/zaibots-v3-features#isolation-mode">
                   Learn more
                 </Link>
               </Typography>
@@ -322,7 +322,7 @@ export const SupplyInfo = ({
               rebases.
             </Trans>{' '}
             <Link
-              href="https://blog.lido.fi/aave-integrates-lidos-steth-as-collateral/"
+              href="https://blog.lido.fi/zaibots-integrates-lidos-steth-as-collateral/"
               underline="always"
             >
               <Trans>Learn more</Trans>

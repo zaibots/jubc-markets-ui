@@ -250,7 +250,7 @@ export const MarketSwitcher = () => {
                           color: '#fff',
                           px: 2,
                           borderRadius: '12px',
-                          background: (theme) => theme.palette.gradients.aaveGradient,
+                          background: (theme) => theme.palette.gradients.zaibotsGradient,
                           display: 'flex',
                           alignItems: 'center',
                         }}
@@ -394,7 +394,7 @@ export const MarketSwitcher = () => {
                 sx={
                   selectedMarketVersion === SelectedMarketVersion.V3
                     ? {
-                        backgroundImage: (theme) => theme.palette.gradients.aaveGradient,
+                        backgroundImage: (theme) => theme.palette.gradients.zaibotsGradient,
                         backgroundClip: 'text',
                         color: 'transparent',
                       }
@@ -427,7 +427,7 @@ export const MarketSwitcher = () => {
                 sx={
                   selectedMarketVersion === SelectedMarketVersion.V2
                     ? {
-                        backgroundImage: (theme) => theme.palette.gradients.aaveGradient,
+                        backgroundImage: (theme) => theme.palette.gradients.zaibotsGradient,
                         backgroundClip: 'text',
                         color: 'transparent',
                       }

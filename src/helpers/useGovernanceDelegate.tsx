@@ -43,9 +43,9 @@ export const useGovernanceDelegate = (
 
   const [signatures, setSignatures] = useState<SignatureLike[]>([]);
   const [actionTx, setActionTx] = useState<EthereumTransactionTypeExtended | undefined>();
-  // const [aaveNonce, setAaveNonce] = useState(0);
-  // const [stkAaveNonce, setStkAaveNonce] = useState(0);
-  // const [aAaveNonce, setAAaveNonce] = useState(0);
+  // const [zaibotsNonce, setZaibotsNonce] = useState(0);
+  // const [stkZaibotsNonce, setStkZaibotsNonce] = useState(0);
+  // const [aZaibotsNonce, setAZaibotsNonce] = useState(0);
   const [deadline, setDeadline] = useState(Math.floor(Date.now() / 1000 + 3600).toString());
   // const prepareDelegateSignature = useRootStore((state) => state.prepareDelegateSignature);
   // const prepareDelegateByTypeSignature = useRootStore(
@@ -115,7 +115,7 @@ export const useGovernanceDelegate = (
         {
           delegator: user,
           delegatee,
-          underlyingAsset: governanceV3Config.votingAssets.aaveTokenAddress,
+          underlyingAsset: governanceV3Config.votingAssets.zaibotsTokenAddress,
           deadline,
           v: v1,
           r: r1,
@@ -125,7 +125,7 @@ export const useGovernanceDelegate = (
         {
           delegator: user,
           delegatee,
-          underlyingAsset: governanceV3Config.votingAssets.stkAaveTokenAddress,
+          underlyingAsset: governanceV3Config.votingAssets.stkZaibotsTokenAddress,
           deadline,
           v: v2,
           r: r2,
@@ -135,7 +135,7 @@ export const useGovernanceDelegate = (
         {
           delegator: user,
           delegatee,
-          underlyingAsset: governanceV3Config.votingAssets.aAaveTokenAddress,
+          underlyingAsset: governanceV3Config.votingAssets.aZaibotsTokenAddress,
           deadline,
           v: v3,
           r: r3,
@@ -203,24 +203,24 @@ export const useGovernanceDelegate = (
   const signMetaTxs = async () => {
     if (delegationTokenType === DelegationTokenType.ALL) {
       setApprovalTxState({ ...approvalTxState, loading: true });
-      const [aaveNonce, stkAaveNonce, aAaveNonce] = await Promise.all([
-        getTokenNonce(user, governanceV3Config.votingAssets.aaveTokenAddress),
-        getTokenNonce(user, governanceV3Config.votingAssets.stkAaveTokenAddress),
-        getTokenNonce(user, governanceV3Config.votingAssets.aAaveTokenAddress),
+      const [zaibotsNonce, stkZaibotsNonce, aZaibotsNonce] = await Promise.all([
+        getTokenNonce(user, governanceV3Config.votingAssets.zaibotsTokenAddress),
+        getTokenNonce(user, governanceV3Config.votingAssets.stkZaibotsTokenAddress),
+        getTokenNonce(user, governanceV3Config.votingAssets.aZaibotsTokenAddress),
       ]);
       const deadline = Math.floor(Date.now() / 1000 + 3600).toString();
       setDeadline(deadline);
-      // setAaveNonce(aaveNonce);
-      // setStkAaveNonce(stkAaveNonce);
-      // setAAaveNonce(aAaveNonce);
+      // setZaibotsNonce(zaibotsNonce);
+      // setStkZaibotsNonce(stkZaibotsNonce);
+      // setAZaibotsNonce(aZaibotsNonce);
 
       const delegationParameters = [
         {
           delegator: user,
           delegatee: delegatee,
-          underlyingAsset: governanceV3Config.votingAssets.aaveTokenAddress,
+          underlyingAsset: governanceV3Config.votingAssets.zaibotsTokenAddress,
           deadline,
-          nonce: String(aaveNonce),
+          nonce: String(zaibotsNonce),
           delegationType: delegationType,
           governanceTokenName: 'Zaibots token V3',
           increaseNonce: false,
@@ -229,9 +229,9 @@ export const useGovernanceDelegate = (
         {
           delegator: user,
           delegatee: delegatee,
-          underlyingAsset: governanceV3Config.votingAssets.stkAaveTokenAddress,
+          underlyingAsset: governanceV3Config.votingAssets.stkZaibotsTokenAddress,
           deadline,
-          nonce: String(stkAaveNonce),
+          nonce: String(stkZaibotsNonce),
           delegationType: delegationType,
           governanceTokenName: 'Staked Zaibots',
           increaseNonce: false,
@@ -240,10 +240,10 @@ export const useGovernanceDelegate = (
         {
           delegator: user,
           delegatee: delegatee,
-          underlyingAsset: governanceV3Config.votingAssets.aAaveTokenAddress,
-          governanceTokenName: 'Zaibots Ethereum AAVE',
+          underlyingAsset: governanceV3Config.votingAssets.aZaibotsTokenAddress,
+          governanceTokenName: 'Zaibots Ethereum ZAIBOTSU',
           deadline,
-          nonce: String(aAaveNonce),
+          nonce: String(aZaibotsNonce),
           delegationType: delegationType,
           increaseNonce: false,
           connectedChainId,
@@ -301,22 +301,22 @@ export const useGovernanceDelegate = (
           txs = await delegate({
             delegatee,
             governanceToken:
-              delegationTokenType === DelegationTokenType.AAVE
-                ? governanceV3Config.votingAssets.aaveTokenAddress
-                : delegationTokenType === DelegationTokenType.STKAAVE
-                ? governanceV3Config.votingAssets.stkAaveTokenAddress
-                : governanceV3Config.votingAssets.aAaveTokenAddress,
+              delegationTokenType === DelegationTokenType.ZAIBOTSU
+                ? governanceV3Config.votingAssets.zaibotsTokenAddress
+                : delegationTokenType === DelegationTokenType.STKZAIBOTSU
+                ? governanceV3Config.votingAssets.stkZaibotsTokenAddress
+                : governanceV3Config.votingAssets.aZaibotsTokenAddress,
           });
         } else {
           txs = await delegateByType({
             delegatee,
             delegationType: delegationType.toString(),
             governanceToken:
-              delegationTokenType === DelegationTokenType.AAVE
-                ? governanceV3Config.votingAssets.aaveTokenAddress
-                : delegationTokenType === DelegationTokenType.STKAAVE
-                ? governanceV3Config.votingAssets.stkAaveTokenAddress
-                : governanceV3Config.votingAssets.aAaveTokenAddress,
+              delegationTokenType === DelegationTokenType.ZAIBOTSU
+                ? governanceV3Config.votingAssets.zaibotsTokenAddress
+                : delegationTokenType === DelegationTokenType.STKZAIBOTSU
+                ? governanceV3Config.votingAssets.stkZaibotsTokenAddress
+                : governanceV3Config.votingAssets.aZaibotsTokenAddress,
           });
         }
         setActionTx(txs[0]);

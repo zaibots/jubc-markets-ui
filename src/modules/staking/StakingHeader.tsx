@@ -75,13 +75,13 @@ export const StakingHeader: React.FC<StakingHeaderProps> = ({ tvl, stkEmission, 
             <br />
             <br />
             <Trans>
-              AAVE and ABPT holders (Ethereum network only) can stake their assets in the Safety
+              ZAIBOTSU and ABPT holders (Ethereum network only) can stake their assets in the Safety
               Module to add more security to the protocol and earn Safety Incentives. In the case of
               a shortfall event, your stake can be slashed to cover the deficit, providing an
               additional layer of protection for the protocol.
             </Trans>{' '}
             <Link
-              href="https://zaibots.com/docs/aave-v3/umbrella#transition-from-the-legacy-safety-module"
+              href="https://zaibots.com/docs/zaibots-v3/umbrella#transition-from-the-legacy-safety-module"
               sx={{ textDecoration: 'underline', color: '#8E92A3' }}
               onClick={() =>
                 trackEvent(GENERAL.EXTERNAL_LINK, {
@@ -118,7 +118,7 @@ export const StakingHeader: React.FC<StakingHeaderProps> = ({ tvl, stkEmission, 
       <TopInfoPanelItem hideIcon title={<Trans>Total emission per day</Trans>} loading={loading}>
         <FormattedNumber
           value={stkEmission || 0}
-          symbol="AAVE"
+          symbol="ZAIBOTSU"
           variant={valueTypographyVariant}
           symbolsVariant={symbolsTypographyVariant}
           symbolsColor="#A5A8B6"

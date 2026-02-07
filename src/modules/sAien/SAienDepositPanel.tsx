@@ -174,7 +174,7 @@ export const SGHODepositPanel: React.FC<SGHODepositPanelProps> = ({
       stakeType: 'Safety Module',
       rewardType: 'Claim',
     });
-    openStakeRewardsClaim(Stake.gho, 'AAVE');
+    openStakeRewardsClaim(Stake.gho, 'ZAIBOTSU');
   };
 
   return (
@@ -517,7 +517,7 @@ export const SGHODepositPanel: React.FC<SGHODepositPanelProps> = ({
                   parseFloat(stakeUserData?.userIncentivesToClaim) > 0 && (
                     <Box sx={{ mt: 4 }}>
                       <StakeActionBox
-                        title={<Trans>Claimable AAVE</Trans>}
+                        title={<Trans>Claimable ZAIBOTSU</Trans>}
                         value={formatEther(stakeUserData?.userIncentivesToClaim || '0')}
                         valueUSD={claimableUSD}
                         bottomLineTitle={<></>}

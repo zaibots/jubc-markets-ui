@@ -111,9 +111,9 @@ export const AienStakingPanel: React.FC<AienStakingPanelProps> = ({
     18 + 8 // incentivesBalance (18), rewardTokenPriceUSD (8)
   );
 
-  // let aavePerMonth = '0';
+  // let zaibotsPerMonth = '0';
   // if (stakeData?.stakeTokenTotalSupply !== '0') {
-  //   aavePerMonth = formatEther(
+  //   zaibotsPerMonth = formatEther(
   //     valueToBigNumber(stakeUserData?.stakeTokenRedeemableAmount || '0')
   //       .dividedBy(stakeData?.stakeTokenTotalSupply || '1')
   //       .multipliedBy(stakeData?.distributionPerSecond || '0')
@@ -517,7 +517,7 @@ export const AienStakingPanel: React.FC<AienStakingPanelProps> = ({
         </StakeActionBox>
 
         <StakeActionBox
-          title={<Trans>Claimable AAVE</Trans>}
+          title={<Trans>Claimable ZAIBOTSU</Trans>}
           value={formatEther(stakeUserData?.userIncentivesToClaim || '0')}
           valueUSD={claimableUSD}
           bottomLineTitle={<></>}
