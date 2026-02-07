@@ -166,7 +166,7 @@ export function AppHeader() {
       <Typography variant="description">
         <Trans>The app is running in testnet mode. Learn how it works in</Trans>{' '}
         <Link
-          href="https://aave.com/faq"
+          href="https://zaibots.com/faq"
           style={{ fontSize: '14px', fontWeight: 400, textDecoration: 'underline' }}
         >
           FAQ.
@@ -227,7 +227,7 @@ export function AppHeader() {
           }}
           onClick={() => setMobileMenuOpen(false)}
         >
-          <img src={uiConfig.appLogo} alt="AAVE" width={72} height={20} />
+          <img src={uiConfig.appLogo} alt="Zaibots" width={72} height={20} />
         </Box>
         <Box sx={{ mr: sm ? 1 : 3 }}>
           {ENABLE_TESTNET && (
@@ -291,7 +291,7 @@ export function AppHeader() {
             >
               {!smd && (
                 <Typography component="span" typography="subheader1">
-                  Bridge GHO
+                  Bridge AIEN
                 </Typography>
               )}
               <SvgIcon fontSize="small">

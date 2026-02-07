@@ -12,8 +12,8 @@ import { useUserStakeUiData } from 'src/hooks/stake/useUserStakeUiData';
 import { useModalContext } from 'src/hooks/useModal';
 import { MainLayout } from 'src/layouts/MainLayout';
 import { WalletBalance } from 'src/modules/reserve-overview/ReserveActions';
-import { SGHODepositPanel } from 'src/modules/sGho/SGhoDepositPanel';
-import { SGHOHeader } from 'src/modules/sGho/SGhoHeader';
+import { SGHODepositPanel } from 'src/modules/sAien/SAienDepositPanel';
+import { SGHOHeader } from 'src/modules/sAien/SAienHeader';
 import { useRootStore } from 'src/store/root';
 import { CustomMarket } from 'src/ui-config/marketsConfig';
 import { SAFETY_MODULE } from 'src/utils/events';
@@ -21,14 +21,14 @@ import { useShallow } from 'zustand/shallow';
 
 import { useWeb3Context } from '../src/libs/hooks/useWeb3Context';
 
-const SavingsGhoDepositModal = dynamic(() =>
-  import('../src/components/transactions/SavingsGho/SavingsGhoDepositModal').then(
-    (module) => module.SavingsGhoDepositModal
+const SavingsAienDepositModal = dynamic(() =>
+  import('../src/components/transactions/SavingsAien/SavingsAienDepositModal').then(
+    (module) => module.SavingsAienDepositModal
   )
 );
-const SavingsGhoWithdrawModal = dynamic(() =>
-  import('../src/components/transactions/SavingsGho/SavingsGhoWithdrawModal').then(
-    (module) => module.SavingsGhoWithdrawModal
+const SavingsAienWithdrawModal = dynamic(() =>
+  import('../src/components/transactions/SavingsAien/SavingsAienWithdrawModal').then(
+    (module) => module.SavingsAienWithdrawModal
   )
 );
 const StakeRewardClaimModal = dynamic(() =>
@@ -37,8 +37,8 @@ const StakeRewardClaimModal = dynamic(() =>
   )
 );
 
-export default function SavingsGho() {
-  const { openSavingsGhoDeposit, openSavingsGhoWithdraw } = useModalContext();
+export default function SavingsAien() {
+  const { openSavingsAienDeposit, openSavingsAienWithdraw } = useModalContext();
   const { currentAccount } = useWeb3Context();
   const [trackEvent, currentMarket, setCurrentMarket] = useRootStore(
     useShallow((store) => [store.trackEvent, store.currentMarket, store.setCurrentMarket])
@@ -51,7 +51,7 @@ export default function SavingsGho() {
   const { data: stakeGeneralResult } = useGeneralStakeUiData(currentMarketData);
 
   // Automatically switch to the testnet market
-  // Note: sGHO functionality requires mainnet, but only testnet is available
+  // Note: sAIEN functionality requires mainnet, but only testnet is available
   useEffect(() => {
     if (currentMarket !== CustomMarket.test_sepolia_v3) {
       setCurrentMarket(CustomMarket.test_sepolia_v3);
@@ -60,7 +60,7 @@ export default function SavingsGho() {
 
   useEffect(() => {
     trackEvent('Page Viewed', {
-      'Page Name': 'sGHO',
+      'Page Name': 'sAIEN',
     });
   }, [trackEvent]);
 
@@ -111,37 +111,37 @@ export default function SavingsGho() {
                 }}
               >
                 <Typography variant="h3">
-                  <Trans>Savings GHO (sGHO)</Trans>
+                  <Trans>Savings AIEN (sAIEN)</Trans>
                 </Typography>
               </Box>
 
               <SGHODepositPanel
-                stakedToken="GHO"
+                stakedToken="AIEN"
                 stakeData={stkGho}
                 stakeUserData={stkGhoUserData}
                 onStakeAction={() => {
                   trackEvent(SAFETY_MODULE.STAKE_SAFETY_MODULE, {
                     action: SAFETY_MODULE.OPEN_STAKE_MODAL,
-                    asset: 'GHO',
+                    asset: 'AIEN',
                     stakeType: 'Safety Module',
                   });
-                  openSavingsGhoDeposit();
+                  openSavingsAienDeposit();
                 }}
                 onCooldownAction={() => {
                   trackEvent(SAFETY_MODULE.STAKE_SAFETY_MODULE, {
                     action: SAFETY_MODULE.OPEN_WITHDRAW_MODAL,
-                    asset: 'GHO',
+                    asset: 'AIEN',
                     stakeType: 'Safety Module',
                   });
-                  openSavingsGhoWithdraw();
+                  openSavingsAienWithdraw();
                 }}
                 onUnstakeAction={() => {
                   trackEvent(SAFETY_MODULE.STAKE_SAFETY_MODULE, {
                     action: SAFETY_MODULE.OPEN_WITHDRAW_MODAL,
-                    asset: 'GHO',
+                    asset: 'AIEN',
                     stakeType: 'Safety Module',
                   });
-                  openSavingsGhoWithdraw();
+                  openSavingsAienWithdraw();
                 }}
               />
             </Box>
@@ -178,7 +178,7 @@ const YourInfoGhoSection = () => {
       <Typography variant="h3" sx={{ mb: 6 }}>
         Your Info
       </Typography>
-      <WalletBalance balance={userGhoBalance.amount} symbol="GHO" marketTitle="GHO" />
+      <WalletBalance balance={userGhoBalance.amount} symbol="AIEN" marketTitle="AIEN" />
     </Paper>
   );
 };
@@ -210,13 +210,13 @@ const ConnectWallet = () => {
   );
 };
 
-SavingsGho.getLayout = function getLayout(page: React.ReactElement) {
+SavingsAien.getLayout = function getLayout(page: React.ReactElement) {
   return (
     <MainLayout>
       {page}
       {/** Modals */}
-      <SavingsGhoDepositModal />
-      <SavingsGhoWithdrawModal />
+      <SavingsAienDepositModal />
+      <SavingsAienWithdrawModal />
       <StakeRewardClaimModal />
       {/** End of modals */}
     </MainLayout>

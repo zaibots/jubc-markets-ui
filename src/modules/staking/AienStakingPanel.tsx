@@ -31,7 +31,7 @@ import { GENERAL } from 'src/utils/events';
 import { StakeActionBox } from './StakeActionBox';
 import { StakingPanelSkeleton } from './StakingPanelSkeleton';
 
-export interface GhoStakingPanelProps {
+export interface AienStakingPanelProps {
   onStakeAction?: () => void;
   onStakeRewardClaimAction?: () => void;
   onCooldownAction?: () => void;
@@ -47,7 +47,7 @@ export interface GhoStakingPanelProps {
   children?: React.ReactNode;
 }
 
-export const GhoStakingPanel: React.FC<GhoStakingPanelProps> = ({
+export const AienStakingPanel: React.FC<AienStakingPanelProps> = ({
   onStakeAction,
   onStakeRewardClaimAction,
   onCooldownAction,
@@ -111,9 +111,9 @@ export const GhoStakingPanel: React.FC<GhoStakingPanelProps> = ({
     18 + 8 // incentivesBalance (18), rewardTokenPriceUSD (8)
   );
 
-  // let aavePerMonth = '0';
+  // let zaibotsPerMonth = '0';
   // if (stakeData?.stakeTokenTotalSupply !== '0') {
-  //   aavePerMonth = formatEther(
+  //   zaibotsPerMonth = formatEther(
   //     valueToBigNumber(stakeUserData?.stakeTokenRedeemableAmount || '0')
   //       .dividedBy(stakeData?.stakeTokenTotalSupply || '1')
   //       .multipliedBy(stakeData?.distributionPerSecond || '0')
@@ -202,7 +202,7 @@ export const GhoStakingPanel: React.FC<GhoStakingPanelProps> = ({
             <TokenIcon symbol={icon} sx={{ fontSize: { xs: '40px', xsm: '32px' } }} />
             <Stack direction="column" ml={2} alignItems="start" justifyContent="center">
               <Stack direction="row">
-                <Typography variant={xsm ? 'subheader1' : 'h4'}>sGHO</Typography>
+                <Typography variant={xsm ? 'subheader1' : 'h4'}>sAIEN</Typography>
                 <Box sx={{ display: { xsm: 'none' } }}>
                   <TokenContractTooltip
                     explorerUrl={`https://etherscan.io/address/${stakeData.stakeTokenContract}`}
@@ -306,7 +306,7 @@ export const GhoStakingPanel: React.FC<GhoStakingPanelProps> = ({
             fullWidth={!xsm}
             data-cy={`stakeBtn_${stakedToken.toUpperCase()}`}
           >
-            <Trans>Get GHO</Trans>
+            <Trans>Get AIEN</Trans>
           </Button>
         ) : (
           <Button
@@ -329,7 +329,7 @@ export const GhoStakingPanel: React.FC<GhoStakingPanelProps> = ({
       >
         {/** Cooldown action */}
         <StakeActionBox
-          title={<Trans>sGHO</Trans>}
+          title={<Trans>sAIEN</Trans>}
           value={formatEther(stakeUserData?.stakeTokenRedeemableAmount || '0')}
           valueUSD={stakedUSD}
           dataCy={`stakedBox_${stakedToken}`}
@@ -402,7 +402,7 @@ export const GhoStakingPanel: React.FC<GhoStakingPanelProps> = ({
                   <Trans>Amount in cooldown</Trans>
                 </Typography>
                 <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                  <TokenIcon symbol="GHO" sx={{ mr: 1, width: 14, height: 14 }} />
+                  <TokenIcon symbol="AIEN" sx={{ mr: 1, width: 14, height: 14 }} />
                   <FormattedNumber
                     value={formatEther(stakeUserData?.userCooldownAmount || 0)}
                     variant="secondary14"
@@ -517,7 +517,7 @@ export const GhoStakingPanel: React.FC<GhoStakingPanelProps> = ({
         </StakeActionBox>
 
         <StakeActionBox
-          title={<Trans>Claimable AAVE</Trans>}
+          title={<Trans>Claimable ZAIBOTSU</Trans>}
           value={formatEther(stakeUserData?.userIncentivesToClaim || '0')}
           valueUSD={claimableUSD}
           bottomLineTitle={<></>}

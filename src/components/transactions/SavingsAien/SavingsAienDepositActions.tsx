@@ -17,7 +17,7 @@ export interface StakeActionProps extends BoxProps {
   event: string;
 }
 
-export const SavingsGhoDepositActions = ({
+export const SavingsAienDepositActions = ({
   amountToStake,
   isWrongNetwork,
   sx,

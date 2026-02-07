@@ -14,7 +14,7 @@ const WarningMessage = ({ market }: { market: string }) => {
 const getLink = (market: string): string => {
   //NOTE: Deprecated - can add market link again if needed
   if (market) {
-    return `https://app.aave.com/governance`;
+    return `https://app.zaibots.com/governance`;
   }
   return '';
 };

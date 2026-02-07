@@ -8,7 +8,7 @@ import { useAssetCaps } from 'src/hooks/useAssetCaps';
 import { useModalContext } from 'src/hooks/useModal';
 import { useRootStore } from 'src/store/root';
 import { DashboardReserve } from 'src/utils/dashboardSortUtils';
-import { displayGhoForMintableMarket } from 'src/utils/ghoUtilities';
+import { displayGhoForMintableMarket } from 'src/utils/aienUtilities';
 import { isFeatureEnabled } from 'src/utils/marketsAndNetworksConfig';
 import { showExternalIncentivesTooltip } from 'src/utils/utils';
 import { useShallow } from 'zustand/shallow';

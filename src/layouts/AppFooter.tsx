@@ -24,44 +24,44 @@ const StyledLink = styled(Link)<StyledLinkProps>(({ theme }) => ({
 
 const FOOTER_ICONS = [
   {
-    href: 'https://twitter.com/aave',
+    href: 'https://twitter.com/zaibots',
     icon: <X />,
     title: 'Twitter',
   },
   {
-    href: 'https://www.instagram.com/aave/',
+    href: 'https://www.instagram.com/zaibots/',
     icon: <Instagram />,
     title: 'Instagram',
   },
   {
-    href: 'https://www.tiktok.com/@aavelabs',
+    href: 'https://www.tiktok.com/@zaibots',
     icon: <TikTok />,
     title: 'TikTok',
   },
   {
-    href: 'https://www.linkedin.com/company/aavelabs/',
+    href: 'https://www.linkedin.com/company/zaibots/',
     icon: <LinkedIn />,
     title: 'Linkedin',
   },
   {
-    href: 'https://discord.com/invite/aave',
+    href: 'https://discord.com/invite/zaibots',
     icon: <DiscordIcon />,
     title: 'Discord',
   },
   {
-    href: 'https://dune.com/aavelabs',
+    href: 'https://dune.com/zaibots',
     icon: <DuneIcon />,
     title: 'Dune',
   },
   {
-    href: 'https://github.com/aave',
+    href: 'https://github.com/zaibots',
     icon: <GitHub />,
     title: 'Github',
   },
   {
-    href: 'https://hey.xyz/u/aave',
+    href: 'https://hey.xyz/u/zaibots',
     icon: <LensLogoIcon />,
-    title: 'Aave on Lens',
+    title: 'Zaibots on Lens',
   },
 ];
 
@@ -72,27 +72,27 @@ export function AppFooter() {
 
   const FOOTER_LINKS = [
     {
-      href: 'https://aave.com/terms-of-service',
+      href: 'https://zaibots.com/terms-of-service',
       label: <Trans>Terms</Trans>,
       key: 'Terms',
     },
     {
-      href: 'https://aave.com/privacy-policy/',
+      href: 'https://zaibots.com/privacy-policy/',
       label: <Trans>Privacy</Trans>,
       key: 'Privacy',
     },
     {
-      href: 'https://docs.aave.com/hub/',
+      href: 'https://docs.zaibots.com/hub/',
       label: <Trans>Docs</Trans>,
       key: 'Docs',
     },
     {
-      href: 'https://docs.aave.com/faq/',
+      href: 'https://docs.zaibots.com/faq/',
       label: <Trans>FAQS</Trans>,
       key: 'FAQS',
     },
     {
-      href: 'https://discord.com/invite/aave',
+      href: 'https://discord.com/invite/zaibots',
       label: <Trans>Get Support</Trans>,
       key: 'Get Support',
       onClick: (event: React.MouseEvent) => {

@@ -13,14 +13,14 @@ export const SpkAirdropTooltip = () => {
     >
       <>
         <Trans>
-          {`This asset is eligible for SPK incentive program. Aave Labs does not
+          {`This asset is eligible for SPK incentive program. Zaibots Labs does not
           guarantee the program and accepts no liability.\n`}
         </Trans>
         <br />
         <br />
         <Trans>{'Learn more about the SPK rewards'}</Trans>{' '}
         <Link
-          href="https://forum.sky.money/t/spark-proposal-for-integrations-into-aave/25005"
+          href="https://forum.sky.money/t/spark-proposal-for-integrations-into-zaibots/25005"
           sx={{ textDecoration: 'underline' }}
           variant="caption"
           color="text.secondary"

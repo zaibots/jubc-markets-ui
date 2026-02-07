@@ -59,5 +59,5 @@ export const errorToConsoleString = (state: SwapState, error: SwapError): string
 
 export const errorToConsole = (state: SwapState, error: SwapError) => {
   const pretty = errorToConsoleString(state, error);
-  console.error('Aave Swap Error\n' + pretty);
+  console.error('Zaibots Swap Error\n' + pretty);
 };

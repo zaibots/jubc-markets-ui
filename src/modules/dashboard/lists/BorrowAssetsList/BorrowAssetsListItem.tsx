@@ -5,7 +5,7 @@ import { useModalContext } from 'src/hooks/useModal';
 import { useRootStore } from 'src/store/root';
 import { DashboardReserve } from 'src/utils/dashboardSortUtils';
 import { DASHBOARD } from 'src/utils/events';
-import { displayGhoForMintableMarket } from 'src/utils/ghoUtilities';
+import { displayGhoForMintableMarket } from 'src/utils/aienUtilities';
 import { showExternalIncentivesTooltip } from 'src/utils/utils';
 import { useShallow } from 'zustand/shallow';
 

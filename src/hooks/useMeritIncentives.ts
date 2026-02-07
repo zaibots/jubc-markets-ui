@@ -96,7 +96,7 @@ export type MeritIncentivesBreakdown = {
   };
 };
 
-const url = 'https://apps.aavechan.com/api/merit/aprs';
+const url = 'https://apps.zaibotschan.com/api/merit/aprs';
 
 export type MeritReserveIncentiveData = Omit<ReserveIncentiveResponse, 'incentiveAPR'> & {
   action: MeritAction;
@@ -127,57 +127,57 @@ const weethUsdcCampaignMessage =
   'You must supply weETH and borrow new USDC, while maintaining a health factor of 2 or below, in order to receive merit rewards. Eligibility criteria for this campaign are different from usual, please refer to the forum post for full details.';
 
 const baseIncentivesUSDCCampaignsMessage =
-  'Users must have Moonwell and Gauntlet Morpho Vault positions on Base and must migrate all their positions to Aave on Base to receive rewards. Holding some assets or positions on other protocols may impact the amount of rewards you are eligible for. Please check the forum post for the full eligibility criteria.';
+  'Users must have Moonwell and Gauntlet Morpho Vault positions on Base and must migrate all their positions to Zaibots on Base to receive rewards. Holding some assets or positions on other protocols may impact the amount of rewards you are eligible for. Please check the forum post for the full eligibility criteria.';
 
-const baseIncentivesGHOCampaignsMessage =
-  'Users must have Moonwell and Gauntlet Morpho Vault positions on Base and must migrate all their positions to Aave on Base to receive rewards. Holding some assets or positions on other protocols may impact the amount of rewards you are eligible for. Please check the forum post for the full eligibility criteria.';
+const baseIncentivesAIENCampaignsMessage =
+  'Users must have Moonwell and Gauntlet Morpho Vault positions on Base and must migrate all their positions to Zaibots on Base to receive rewards. Holding some assets or positions on other protocols may impact the amount of rewards you are eligible for. Please check the forum post for the full eligibility criteria.';
 const baseIncentivesCbbtcCampaignsMessage =
-  'You must supply cbBTC and borrow USDC, GHO, EURC or wETH to receive Merit rewards. Users must have Morpho positions on Base and/or Ethereum and must migrate all their positions to Aave on Base to receive rewards.  Please check the forum post for the full eligibility criteria.';
+  'You must supply cbBTC and borrow USDC, AIEN, EURC or wETH to receive Merit rewards. Users must have Morpho positions on Base and/or Ethereum and must migrate all their positions to Zaibots on Base to receive rewards.  Please check the forum post for the full eligibility criteria.';
 
 const baseIncentivesWstETHCampaignsMessage =
-  'You must supply wstETH and borrow USDC, GHO, EURC or wETH to receive Merit rewards. Users must have Morpho positions on Base and must migrate all their positions to Aave on Base to receive rewards. Holding some assets or positions on other protocols may impact the amount of rewards you are eligible for. Please check the forum post for the full eligibility criteria.';
+  'You must supply wstETH and borrow USDC, AIEN, EURC or wETH to receive Merit rewards. Users must have Morpho positions on Base and must migrate all their positions to Zaibots on Base to receive rewards. Holding some assets or positions on other protocols may impact the amount of rewards you are eligible for. Please check the forum post for the full eligibility criteria.';
 
 const baseIncentivesETHCampaignsMessage =
-  'Supplying ETH alone earns 1.25%, supplying ETH and borrowing USDC or EURC earns 1.50%, supplying ETH and borrowing GHO earns 1.75%. Users must have Moonwell and Gauntlet Morpho Vault positions on Base and must migrate all their positions to Aave on Base to receive rewards. Holding some assets or positions on other protocols may impact the amount of rewards you are eligible for. Please check the forum post for the full eligibility criteria.';
+  'Supplying ETH alone earns 1.25%, supplying ETH and borrowing USDC or EURC earns 1.50%, supplying ETH and borrowing AIEN earns 1.75%. Users must have Moonwell and Gauntlet Morpho Vault positions on Base and must migrate all their positions to Zaibots on Base to receive rewards. Holding some assets or positions on other protocols may impact the amount of rewards you are eligible for. Please check the forum post for the full eligibility criteria.';
 
 const celoSupplyMultipleBorrowUsdtMessage =
   'You must supply (CELO or ETH) and borrow USDT, in order to receive merit rewards. Please check the forum post for the full eligibility criteria.';
 
 const joinedEthCorrelatedIncentiveForumLink =
-  'https://governance.aave.com/t/arfc-set-aci-as-emission-manager-for-liquidity-mining-programs/17898/56';
+  'https://governance.zaibots.com/t/arfc-set-aci-as-emission-manager-for-liquidity-mining-programs/17898/56';
 
 // const joinedEthCorrelatedIncentivePhase2ForumLink =
-//   'https://governance.aave.com/t/arfc-set-aci-as-emission-manager-for-liquidity-mining-programs/17898/70';
+//   'https://governance.zaibots.com/t/arfc-set-aci-as-emission-manager-for-liquidity-mining-programs/17898/70';
 
 // const eurcForumLink =
-//   'https://governance.aave.com/t/arfc-set-aci-as-emission-manager-for-liquidity-mining-programs/17898/77';
+//   'https://governance.zaibots.com/t/arfc-set-aci-as-emission-manager-for-liquidity-mining-programs/17898/77';
 
 const AusdRenewalForumLink =
-  'https://governance.aave.com/t/arfc-set-aci-as-emission-manager-for-liquidity-mining-programs/17898/88';
+  'https://governance.zaibots.com/t/arfc-set-aci-as-emission-manager-for-liquidity-mining-programs/17898/88';
 const AvalancheRenewalForumLink =
-  'https://governance.aave.com/t/arfc-set-aci-as-emission-manager-for-liquidity-mining-programs/17898/89';
+  'https://governance.zaibots.com/t/arfc-set-aci-as-emission-manager-for-liquidity-mining-programs/17898/89';
 
 // const lbtcCbbtcForumLink =
-//   'https://governance.aave.com/t/arfc-set-aci-as-emission-manager-for-liquidity-mining-programs/17898/91';
+//   'https://governance.zaibots.com/t/arfc-set-aci-as-emission-manager-for-liquidity-mining-programs/17898/91';
 
 const weethUsdcForumLink =
-  'https://governance.aave.com/t/arfc-set-aci-as-emission-manager-for-liquidity-mining-programs/17898/120';
+  'https://governance.zaibots.com/t/arfc-set-aci-as-emission-manager-for-liquidity-mining-programs/17898/120';
 
 const StSLoopIncentiveProgramForumLink =
-  'https://governance.aave.com/t/arfc-sts-loop-incentive-program/22368';
+  'https://governance.zaibots.com/t/arfc-sts-loop-incentive-program/22368';
 
 const baseIncentivesForumLink =
-  'https://governance.aave.com/t/arfc-base-incentive-campaign-funding/21983';
+  'https://governance.zaibots.com/t/arfc-base-incentive-campaign-funding/21983';
 
 export const MERIT_DATA_MAP: Record<string, Record<string, MeritReserveIncentiveData[]>> = {
   [CustomMarket.proto_mainnet_v3]: {
-    GHO: [
+    AIEN: [
       {
         action: MeritAction.ETHEREUM_SGHO,
         rewardTokenAddress: AaveSafetyModule.STK_GHO,
-        rewardTokenSymbol: 'sGHO',
+        rewardTokenSymbol: 'sAIEN',
         customForumLink:
-          'https://governance.aave.com/t/arfc-merit-a-new-aave-alignment-user-reward-system/16646',
+          'https://governance.zaibots.com/t/arfc-merit-a-new-zaibots-alignment-user-reward-system/16646',
       },
     ],
     // cbBTC: [
@@ -231,7 +231,7 @@ export const MERIT_DATA_MAP: Record<string, Record<string, MeritReserveIncentive
         rewardTokenSymbol: 'aEthPYUSD',
         protocolAction: ProtocolAction.supply,
         customForumLink:
-          'https://governance.aave.com/t/arfc-pyusd-reserve-configuration-update-incentive-campaign/19573',
+          'https://governance.zaibots.com/t/arfc-pyusd-reserve-configuration-update-incentive-campaign/19573',
         customMessage: antiLoopMessage,
       },
     ],
@@ -251,7 +251,7 @@ export const MERIT_DATA_MAP: Record<string, Record<string, MeritReserveIncentive
         protocolAction: ProtocolAction.supply,
         customMessage: antiLoopMessage,
         customForumLink:
-          'https://governance.aave.com/t/arfc-set-aci-as-emission-manager-for-liquidity-mining-programs/17898/85',
+          'https://governance.zaibots.com/t/arfc-set-aci-as-emission-manager-for-liquidity-mining-programs/17898/85',
       },
     ],
     weETH: [
@@ -465,19 +465,19 @@ export const MERIT_DATA_MAP: Record<string, Record<string, MeritReserveIncentive
         customForumLink: baseIncentivesForumLink,
       },
     ],
-    GHO: [
+    AIEN: [
       {
         action: MeritAction.BASE_SUPPLY_GHO,
         rewardTokenAddress: AaveV3Base.ASSETS.GHO.A_TOKEN,
-        rewardTokenSymbol: 'aBasGHO',
+        rewardTokenSymbol: 'aBasAIEN',
         protocolAction: ProtocolAction.supply,
-        customMessage: baseIncentivesGHOCampaignsMessage,
+        customMessage: baseIncentivesAIENCampaignsMessage,
         customForumLink: baseIncentivesForumLink,
       },
       {
         action: MeritAction.BASE_BORROW_GHO,
         rewardTokenAddress: AaveV3Base.ASSETS.GHO.A_TOKEN,
-        rewardTokenSymbol: 'aBasGHO',
+        rewardTokenSymbol: 'aBasAIEN',
         protocolAction: ProtocolAction.borrow,
         customMessage: antiLoopBorrowMessage,
         customForumLink: baseIncentivesForumLink,
@@ -563,7 +563,7 @@ export const MERIT_DATA_MAP: Record<string, Record<string, MeritReserveIncentive
         customForumLink: AusdRenewalForumLink,
       },
     ],
-    GHO: [
+    AIEN: [
       {
         action: MeritAction.AVALANCHE_SUPPLY_GHO,
         rewardTokenAddress: AaveV3Avalanche.ASSETS.sAVAX.A_TOKEN,
@@ -591,7 +591,7 @@ export const MERIT_DATA_MAP: Record<string, Record<string, MeritReserveIncentive
         protocolAction: ProtocolAction.supply,
         customMessage: antiLoopMessage,
         customForumLink:
-          'https://governance.aave.com/t/arfc-set-aci-as-emission-manager-for-liquidity-mining-programs/17898/61',
+          'https://governance.zaibots.com/t/arfc-set-aci-as-emission-manager-for-liquidity-mining-programs/17898/61',
       },
     ],
     ['stS']: [
@@ -624,7 +624,7 @@ export const MERIT_DATA_MAP: Record<string, Record<string, MeritReserveIncentive
         protocolAction: ProtocolAction.borrow,
         customMessage: antiLoopMessage,
         customForumLink:
-          'https://governance.aave.com/t/arfc-set-aci-as-emission-manager-for-liquidity-mining-programs/17898/83',
+          'https://governance.zaibots.com/t/arfc-set-aci-as-emission-manager-for-liquidity-mining-programs/17898/83',
       },
     ],
   },

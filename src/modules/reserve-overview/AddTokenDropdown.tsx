@@ -20,7 +20,7 @@ interface AddTokenDropdownProps {
   connectedChainId: number;
   hideAToken?: boolean;
   isSGHO?: boolean;
-  sGHOTokenAddress?: string;
+  sAIENTokenAddress?: string;
 }
 
 export const AddTokenDropdown = ({
@@ -33,13 +33,13 @@ export const AddTokenDropdown = ({
   connectedChainId,
   hideAToken,
   isSGHO,
-  sGHOTokenAddress,
+  sAIENTokenAddress,
 }: AddTokenDropdownProps) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [changingNetwork, setChangingNetwork] = useState(false);
   const [underlyingBase64, setUnderlyingBase64] = useState('');
   const [aTokenBase64, setATokenBase64] = useState('');
-  const [sGHOBase64, setSGHOBase64] = useState('');
+  const [sAIENBase64, setSGHOBase64] = useState('');
   const open = Boolean(anchorEl);
   const trackEvent = useRootStore((store) => store.trackEvent);
 
@@ -178,7 +178,7 @@ export const AddTokenDropdown = ({
           <Box>
             <Box sx={{ px: 4, pt: 3, pb: 2 }}>
               <Typography variant="secondary12" color="text.secondary">
-                <Trans>Aave aToken</Trans>
+                <Trans>Zaibots aToken</Trans>
               </Typography>
             </Box>
             <MenuItem
@@ -216,11 +216,11 @@ export const AddTokenDropdown = ({
             </MenuItem>
           </Box>
         )}
-        {isSGHO && sGHOTokenAddress && (
+        {isSGHO && sAIENTokenAddress && (
           <Box>
             <Box sx={{ px: 4, pt: 3, pb: 2 }}>
               <Typography variant="secondary12" color="text.secondary">
-                <Trans>Savings GHO token</Trans>
+                <Trans>Savings AIEN token</Trans>
               </Typography>
             </Box>
             <MenuItem
@@ -233,16 +233,16 @@ export const AddTokenDropdown = ({
                   });
                 } else {
                   trackEvent(RESERVE_DETAILS.ADD_TO_WALLET, {
-                    type: 'Savings GHO token',
-                    asset: sGHOTokenAddress,
-                    assetName: 'sGHO',
+                    type: 'Savings AIEN token',
+                    asset: sAIENTokenAddress,
+                    assetName: 'sAIEN',
                   });
 
                   addERC20Token({
-                    address: sGHOTokenAddress,
+                    address: sAIENTokenAddress,
                     decimals: poolReserve.underlyingToken.decimals,
-                    symbol: `stkGHO`, // TODO: change to sGHO when upgraded contract is deployed
-                    image: sGHOBase64,
+                    symbol: `stkAIEN`, // TODO: change to sAIEN when upgraded contract is deployed
+                    image: sAIENBase64,
                   });
                 }
                 handleClose();
@@ -250,7 +250,7 @@ export const AddTokenDropdown = ({
             >
               <TokenIcon symbol="sgho" sx={{ fontSize: '20px' }} />
               <Typography variant="subheader1" sx={{ ml: 3 }} noWrap data-cy={`assetName`}>
-                sGHO
+                sAIEN
               </Typography>
             </MenuItem>
           </Box>

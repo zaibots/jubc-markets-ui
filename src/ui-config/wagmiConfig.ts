@@ -46,9 +46,9 @@ if (FORK_ENABLED) {
 
 const defaultConfig = {
   walletConnectProjectId: process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID as string,
-  appName: 'Aave',
-  appDescription: 'Non-custodial liquidity protocol',
-  appUrl: 'https://app.aave.com',
+  appName: 'Zaibots',
+  appDescription: 'Zaibots - Non-custodial liquidity protocol',
+  appUrl: 'https://app.zaibots.com',
   appIcon: 'https://avatars.githubusercontent.com/u/47617460?s=200&v=4',
 };
 

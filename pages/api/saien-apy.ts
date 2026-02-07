@@ -1,11 +1,11 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { fetchSGhoApyData } from 'pages/api/SGhoService';
-import { ApiResponse } from 'pages/api/SGhoService.types';
+import { fetchSGhoApyData } from 'pages/api/SAienService';
+import { ApiResponse } from 'pages/api/SAienService.types';
 
 /**
- * Next.js API route to fetch sGHO APY data from TokenLogic GraphQL API
+ * Next.js API route to fetch sAIEN APY data from TokenLogic GraphQL API
  *
- * GET /api/sgho-apy
+ * GET /api/saien-apy
  * Query parameters:
  * - limit: number (optional, default: 100) - Number of records to fetch
  * - startDate: string (optional) - Start date for filtering (ISO format or YYYY-MM-DD)

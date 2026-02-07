@@ -109,7 +109,7 @@ export const BridgeTransactionListItem = ({
   return (
     <ListItem>
       <ListColumn isRow>
-        <TokenIcon symbol="GHO" fontSize="large" />
+        <TokenIcon symbol="AIEN" fontSize="large" />
         <Stack sx={{ ml: 2 }} direction="column" alignItems="center">
           <FormattedNumber
             sx={{ mb: 1 }}
@@ -184,7 +184,7 @@ const BridgeTransactionMobileListItem = ({
             </Typography>
           </Stack>
           <Stack direction="row">
-            <TokenIcon symbol="GHO" sx={{ fontSize: '40px' }} />
+            <TokenIcon symbol="AIEN" sx={{ fontSize: '40px' }} />
             <Stack sx={{ ml: 2 }} direction="column" alignItems="center" justifyContent="center">
               <FormattedNumber
                 sx={{ mb: 1 }}

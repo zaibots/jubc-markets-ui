@@ -1,7 +1,7 @@
 import { Trans } from '@lingui/macro';
 import { useMediaQuery } from '@mui/material';
 import { useState } from 'react';
-import { mapAaveProtocolIncentives } from 'src/components/incentives/incentives.helper';
+import { mapZaibotsProtocolIncentives } from 'src/components/incentives/incentives.helper';
 import { VariableAPYTooltip } from 'src/components/infoTooltips/VariableAPYTooltip';
 import { ListColumn } from 'src/components/lists/ListColumn';
 import { ListHeaderTitle } from 'src/components/lists/ListHeaderTitle';
@@ -47,8 +47,8 @@ type MarketAssetsListProps = {
   loading: boolean;
 };
 export type ReserveWithProtocolIncentives = ReserveWithId & {
-  supplyProtocolIncentives: ReturnType<typeof mapAaveProtocolIncentives>;
-  borrowProtocolIncentives: ReturnType<typeof mapAaveProtocolIncentives>;
+  supplyProtocolIncentives: ReturnType<typeof mapZaibotsProtocolIncentives>;
+  borrowProtocolIncentives: ReturnType<typeof mapZaibotsProtocolIncentives>;
 };
 
 export default function MarketAssetsList({ reserves, loading }: MarketAssetsListProps) {
@@ -100,8 +100,8 @@ export default function MarketAssetsList({ reserves, loading }: MarketAssetsList
   });
   const reservesWithIncentives: ReserveWithProtocolIncentives[] = sortedReserves.map((reserve) => ({
     ...reserve,
-    supplyProtocolIncentives: mapAaveProtocolIncentives(reserve.incentives, 'supply'),
-    borrowProtocolIncentives: mapAaveProtocolIncentives(reserve.incentives, 'borrow'),
+    supplyProtocolIncentives: mapZaibotsProtocolIncentives(reserve.incentives, 'supply'),
+    borrowProtocolIncentives: mapZaibotsProtocolIncentives(reserve.incentives, 'borrow'),
   }));
   // Show loading state when loading
   if (loading) {

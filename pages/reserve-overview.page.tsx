@@ -20,14 +20,14 @@ import { useRootStore } from 'src/store/root';
 
 import { ContentContainer } from '../src/components/ContentContainer';
 
-const SavingsGhoDepositModal = dynamic(() =>
-  import('../src/components/transactions/SavingsGho/SavingsGhoDepositModal').then(
-    (module) => module.SavingsGhoDepositModal
+const SavingsAienDepositModal = dynamic(() =>
+  import('../src/components/transactions/SavingsAien/SavingsAienDepositModal').then(
+    (module) => module.SavingsAienDepositModal
   )
 );
-const SavingsGhoWithdrawModal = dynamic(() =>
-  import('../src/components/transactions/SavingsGho/SavingsGhoWithdrawModal').then(
-    (module) => module.SavingsGhoWithdrawModal
+const SavingsAienWithdrawModal = dynamic(() =>
+  import('../src/components/transactions/SavingsAien/SavingsAienWithdrawModal').then(
+    (module) => module.SavingsAienWithdrawModal
   )
 );
 const StakeModal = dynamic(() =>
@@ -145,8 +145,8 @@ ReserveOverview.getLayout = function getLayout(page: React.ReactElement) {
       <StakeModal />
       <StakeCooldownModal />
       <UnStakeModal />
-      <SavingsGhoDepositModal />
-      <SavingsGhoWithdrawModal />
+      <SavingsAienDepositModal />
+      <SavingsAienWithdrawModal />
     </MainLayout>
   );
 };

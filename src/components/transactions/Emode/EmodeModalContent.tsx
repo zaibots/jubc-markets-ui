@@ -223,7 +223,7 @@ export const EmodeModalContent = ({ user }: { user: ExtendedFormattedUser }) => 
           <Link
             sx={{ textDecoration: 'underline' }}
             variant="caption"
-            href="https://aave.com/help/borrowing/e-mode"
+            href="https://zaibots.com/help/borrowing/e-mode"
             target="_blank"
             rel="noopener"
           >

@@ -37,7 +37,7 @@ export const UmbrellaHeader: React.FC = () => {
         <Box mb={4}>
           {/* <ChainAvailabilityText wrapperSx={{ mb: 4 }} chainId={ChainId.mainnet} /> */}
           <Box sx={{ display: 'flex', alignItems: 'center', mb: 4 }}>
-            {/* <img src={`/aave-logo-purple.svg`} width="64px" height="64px" alt="" /> */}
+            {/* <img src={`/zaibots-logo-purple.svg`} width="64px" height="64px" alt="" /> */}
             <Typography
               variant={downToXSM ? 'h2' : upToLG ? 'display1' : 'h1'}
               sx={{ ml: 2, mr: 3 }}
@@ -58,11 +58,11 @@ export const UmbrellaHeader: React.FC = () => {
             <br />
             <br />
             <Trans>
-              Stake your Aave aTokens or underlying assets to earn rewards. In case of a shortfall
+              Stake your Zaibots aTokens or underlying assets to earn rewards. In case of a shortfall
               event, your stake may be slashed to cover the deficit.
             </Trans>{' '}
             <Link
-              href="https://aave.com/docs/primitives/umbrella"
+              href="https://zaibots.com/docs/primitives/umbrella"
               sx={{ textDecoration: 'underline', color: '#8E92A3' }}
               onClick={() =>
                 trackEvent(GENERAL.EXTERNAL_LINK, {

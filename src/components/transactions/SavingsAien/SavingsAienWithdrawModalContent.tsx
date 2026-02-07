@@ -16,7 +16,7 @@ import { TxErrorView } from '../FlowCommons/Error';
 import { GasEstimationError } from '../FlowCommons/GasEstimationError';
 import { TxSuccessView } from '../FlowCommons/Success';
 import { GasStation } from '../GasStation/GasStation';
-import { SavingsGhoWithdrawActions } from './SavingsGhoWithdrawActions';
+import { SavingsAienWithdrawActions } from './SavingsAienWithdrawActions';
 
 export type UnStakeProps = {
   icon: string;
@@ -26,7 +26,7 @@ export enum ErrorType {
   NOT_ENOUGH_BALANCE,
 }
 
-export const SavingsGhoModalWithdrawContent = ({ icon }: UnStakeProps) => {
+export const SavingsAienModalWithdrawContent = ({ icon }: UnStakeProps) => {
   const { chainId: connectedChainId } = useWeb3Context();
   const { gasLimit, mainTxState: txState, txError } = useModalContext();
   const currentMarketData = useRootStore((store) => store.currentMarketData);
@@ -131,7 +131,7 @@ export const SavingsGhoModalWithdrawContent = ({ icon }: UnStakeProps) => {
 
       {txError && <GasEstimationError txError={txError} />}
 
-      <SavingsGhoWithdrawActions
+      <SavingsAienWithdrawActions
         sx={{ mt: '48px' }}
         amountToUnStake={amount}
         isWrongNetwork={isWrongNetwork}

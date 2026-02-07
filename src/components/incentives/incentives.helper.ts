@@ -10,7 +10,7 @@ const isAaveBorrowIncentive = (incentive: ReserveIncentive): incentive is AaveBo
   return incentive.__typename === 'AaveBorrowIncentive';
 };
 
-export const isAaveProtocolIncentive = (incentive: ReserveIncentive): boolean => {
+export const isZaibotsProtocolIncentive = (incentive: ReserveIncentive): boolean => {
   return isAaveSupplyIncentive(incentive) || isAaveBorrowIncentive(incentive);
 };
 
@@ -34,7 +34,7 @@ export const getIncentiveAPR = (incentive: ReserveIncentive): string => {
 };
 
 // Mapping sdk structure to legacy structure used in incentives card logic
-export const mapAaveProtocolIncentives = (
+export const mapZaibotsProtocolIncentives = (
   incentives: ReserveIncentive[] | undefined,
   direction: 'supply' | 'borrow'
 ): ReserveIncentiveResponse[] => {

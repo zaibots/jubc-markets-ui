@@ -92,7 +92,7 @@ export const createStakeSlice: StateCreator<
       return service.claimRewards(currentAccount, amount);
     },
     claimRewardsAndStake({ token, amount }) {
-      // Note: only available for stkAAVE
+      // Note: only available for stkZAIBOTSU
       const currentAccount = get().account;
       const provider = getCorrectProvider();
       const service = new StakingService(provider, {

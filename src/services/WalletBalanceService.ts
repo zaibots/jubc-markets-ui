@@ -6,9 +6,9 @@ import { governanceV3Config } from 'src/ui-config/governanceConfig';
 import { MarketDataType } from 'src/ui-config/marketsConfig';
 
 export interface GovernanceTokensBalance {
-  aave: string;
-  stkAave: string;
-  aAave: string;
+  zaibots: string;
+  stkZaibots: string;
+  aZaibots: string;
 }
 
 export type UserPoolTokensBalances = {
@@ -45,16 +45,16 @@ export class WalletBalanceService {
     const balances = await walletBalanceService.batchBalanceOf(
       [user],
       [
-        governanceV3Config.votingAssets.aaveTokenAddress,
-        governanceV3Config.votingAssets.aAaveTokenAddress,
-        governanceV3Config.votingAssets.stkAaveTokenAddress,
+        governanceV3Config.votingAssets.zaibotsTokenAddress,
+        governanceV3Config.votingAssets.aZaibotsTokenAddress,
+        governanceV3Config.votingAssets.stkZaibotsTokenAddress,
       ],
       options
     );
     return {
-      aave: normalize(balances[0].toString(), 18),
-      aAave: normalize(balances[1].toString(), 18),
-      stkAave: normalize(balances[2].toString(), 18),
+      zaibots: normalize(balances[0].toString(), 18),
+      aZaibots: normalize(balances[1].toString(), 18),
+      stkZaibots: normalize(balances[2].toString(), 18),
     };
   }
 
@@ -95,7 +95,7 @@ export class WalletBalanceService {
 
     const balances = await walletBalanceService.batchBalanceOf(
       [user],
-      [ghoTokenAddress?.toLowerCase() as string] // GHO UNDERLYING
+      [ghoTokenAddress?.toLowerCase() as string] // AIEN UNDERLYING
     );
 
     return {

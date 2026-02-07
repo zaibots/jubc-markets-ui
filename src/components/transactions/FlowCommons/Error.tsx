@@ -42,8 +42,8 @@ export const TxErrorView = ({ txError }: { txError: TxErrorType }) => {
         <Typography>
           <Trans>
             You can report incident to our{' '}
-            <Link href="https://discord.com/invite/aave">Discord</Link> or
-            <Link href="https://github.com/aave/interface">Github</Link>.
+            <Link href="https://discord.com/invite/zaibots">Discord</Link> or
+            <Link href="https://github.com/zaibots/interface">Github</Link>.
           </Trans>
         </Typography>
 

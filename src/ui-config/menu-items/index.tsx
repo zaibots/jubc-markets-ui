@@ -53,17 +53,17 @@ interface MoreMenuItem extends Navigation {
 
 const moreMenuItems: MoreMenuItem[] = [
   {
-    link: 'https://aave.com/faq/',
+    link: 'https://zaibots.com/faq/',
     title: t`FAQ`,
     icon: <QuestionMarkCircleIcon />,
   },
   {
-    link: 'https://aave.com/docs/',
+    link: 'https://zaibots.com/docs/',
     title: t`Developers`,
     icon: <BookOpenIcon />,
   },
   {
-    link: 'https://legacy-markets.aave.com/',
+    link: 'https://legacy-markets.zaibots.com/',
     title: t`Legacy Markets`,
     icon: <ArrowCircleRightIcon />,
   },

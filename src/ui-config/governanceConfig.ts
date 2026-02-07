@@ -47,9 +47,9 @@ export interface GovernanceV3Config {
     TOKEN_POWER_HELPER: string;
   };
   votingAssets: {
-    aaveTokenAddress: string;
-    aAaveTokenAddress: string;
-    stkAaveTokenAddress: string;
+    zaibotsTokenAddress: string;
+    aZaibotsTokenAddress: string;
+    stkZaibotsTokenAddress: string;
   };
 }
 
@@ -87,9 +87,9 @@ export const governanceChainConfig: GovernanceChainConfig = {
   //     [ChainId.fuji]: '0x6B9AF21B95FE20b5a878b43670c23124841ec31A',
   //   },
   //   votingAssets: {
-  //     aaveTokenAddress: '0xdaEcee477B931b209e8123401EA37582ACB3811d',
-  //     stkAaveTokenAddress: '0x354032B31339853A3D682613749F183328d07275',
-  //     aAaveTokenAddress: '0x26aAB2aE39897338c2d91491C46c14a8c2a67919',
+  //     zaibotsTokenAddress: '0xdaEcee477B931b209e8123401EA37582ACB3811d',
+  //     stkZaibotsTokenAddress: '0x354032B31339853A3D682613749F183328d07275',
+  //     aZaibotsTokenAddress: '0x26aAB2aE39897338c2d91491C46c14a8c2a67919',
   //   },
   //   addresses: {
   //     GOVERNANCE_CORE: '0xc4ABF658C3Dda84225cF8A07d7D5Bb6Aa41d9E59',
@@ -150,9 +150,9 @@ export const governanceChainConfig: GovernanceChainConfig = {
       [ChainId.mantle]: GovernanceV3Mantle.PC_DATA_HELPER,
     },
     votingAssets: {
-      aaveTokenAddress: AaveV3Ethereum.ASSETS.AAVE.UNDERLYING,
-      aAaveTokenAddress: AaveV3Ethereum.ASSETS.AAVE.A_TOKEN,
-      stkAaveTokenAddress: AaveSafetyModule.STK_AAVE,
+      zaibotsTokenAddress: AaveV3Ethereum.ASSETS.AAVE.UNDERLYING,
+      aZaibotsTokenAddress: AaveV3Ethereum.ASSETS.AAVE.A_TOKEN,
+      stkZaibotsTokenAddress: AaveSafetyModule.STK_AAVE,
     },
     addresses: {
       GOVERNANCE_CORE: GovernanceV3Ethereum.GOVERNANCE,

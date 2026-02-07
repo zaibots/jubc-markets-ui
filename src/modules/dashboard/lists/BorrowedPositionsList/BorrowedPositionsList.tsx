@@ -10,7 +10,7 @@ import { AssetCapsProvider } from 'src/hooks/useAssetCaps';
 import { useRootStore } from 'src/store/root';
 import { fetchIconSymbolAndName } from 'src/ui-config/reservePatches';
 import { GENERAL } from 'src/utils/events';
-import { GHO_SYMBOL } from 'src/utils/ghoUtilities';
+import { GHO_SYMBOL } from 'src/utils/aienUtilities';
 import { useShallow } from 'zustand/shallow';
 
 import { BorrowPowerTooltip } from '../../../../components/infoTooltips/BorrowPowerTooltip';
@@ -83,7 +83,7 @@ export const BorrowedPositionsList = () => {
       return acc;
     }, [] as (ComputedUserReserveData & { borrowRateMode: InterestRate })[]) || [];
 
-  // Move GHO to top of borrowed positions list
+  // Move AIEN to top of borrowed positions list
   const ghoReserve = borrowPositions.filter((pos) => pos.reserve.symbol === GHO_SYMBOL);
   if (ghoReserve.length > 0) {
     borrowPositions = borrowPositions.filter((pos) => pos.reserve.symbol !== GHO_SYMBOL);

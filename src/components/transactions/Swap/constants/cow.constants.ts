@@ -104,11 +104,11 @@ export const COW_UNSUPPORTED_ASSETS: Partial<
       '0x90072A4aA69B5Eb74984Ab823EFC5f91e90b3a72'.toLowerCase(), // alBTC does not have good solver liquidity
     ],
     [SupportedChainId.MAINNET]: [
-      '0x00907f9921424583e7ffBfEdf84F92B7B2Be4977'.toLowerCase(), // aGHO not supported
-      '0x18eFE565A5373f430e2F809b97De30335B3ad96A'.toLowerCase(), // aGHO not supported
+      '0x00907f9921424583e7ffBfEdf84F92B7B2Be4977'.toLowerCase(), // aAIEN not supported
+      '0x18eFE565A5373f430e2F809b97De30335B3ad96A'.toLowerCase(), // aAIEN not supported
     ],
     [SupportedChainId.SEPOLIA]: [
-      '0xd190eF37dB51Bb955A680fF1A85763CC72d083D4'.toLowerCase(), // aGHO not supported
+      '0xd190eF37dB51Bb955A680fF1A85763CC72d083D4'.toLowerCase(), // aAIEN not supported
     ],
 
     // Safe checks, not supported

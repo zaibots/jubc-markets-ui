@@ -7,9 +7,9 @@ import { TokenIcon } from 'src/components/primitives/TokenIcon';
 import { useGeneralStakeUiData } from 'src/hooks/stake/useGeneralStakeUiData';
 import { useMeritIncentives } from 'src/hooks/useMeritIncentives';
 import { useRootStore } from 'src/store/root';
-import { GHO_SYMBOL } from 'src/utils/ghoUtilities';
+import { GHO_SYMBOL } from 'src/utils/aienUtilities';
 
-export const SavingsGhoBanner = () => {
+export const SavingsAienBanner = () => {
   const theme = useTheme();
   const isCustomBreakpoint = useMediaQuery('(min-width:1125px)');
   const isMd = useMediaQuery(theme.breakpoints.up('xs'));
@@ -48,7 +48,7 @@ export const SavingsGhoBanner = () => {
     >
       <Stack
         component={Link}
-        href={ROUTES.sGHO}
+        href={ROUTES.sAIEN}
         sx={(theme) => ({
           [theme.breakpoints.up(780)]: {
             height: '116px',
@@ -68,7 +68,7 @@ export const SavingsGhoBanner = () => {
       >
         <Box
           component="img"
-          src="/sgho-banner.svg"
+          src="/saien-banner.svg"
           alt="ghost and coin"
           sx={{
             height: isMd2 ? '130px' : '100px',
@@ -87,7 +87,7 @@ export const SavingsGhoBanner = () => {
               },
             })}
           >
-            <Trans>Save with sGHO</Trans>
+            <Trans>Save with sAIEN</Trans>
           </Typography>
           <Typography
             sx={(theme) => ({
@@ -96,7 +96,7 @@ export const SavingsGhoBanner = () => {
             })}
             color="text.secondary"
           >
-            GHO yield with instant withdraws.
+            AIEN yield with instant withdraws.
           </Typography>
         </Stack>
         <Stack direction="row" alignItems="center" gap={3}>
@@ -160,7 +160,7 @@ export const SavingsGhoBanner = () => {
           variant="contained"
           component={Link}
           size="medium"
-          href={ROUTES.sGHO}
+          href={ROUTES.sAIEN}
           sx={{
             mr: 8,
             ml: isMd2 ? 12 : 0,
@@ -200,7 +200,7 @@ const GhoSavingsBannerMobile = () => {
     >
       <Stack
         component={Link}
-        href={ROUTES.sGHO}
+        href={ROUTES.sAIEN}
         sx={(theme) => ({
           [theme.breakpoints.up(780)]: {
             height: '116px',
@@ -220,7 +220,7 @@ const GhoSavingsBannerMobile = () => {
       >
         <Box
           component="img"
-          src="/sgho-banner.svg"
+          src="/saien-banner.svg"
           alt="ghost and coin"
           sx={{ position: 'absolute', height: '100px', top: -8, right: 8 }}
         />
@@ -231,10 +231,10 @@ const GhoSavingsBannerMobile = () => {
         >
           <Stack direction="column">
             <Typography variant="subheader1">
-              <Trans>Save with sGHO</Trans>
+              <Trans>Save with sAIEN</Trans>
             </Typography>
             <Typography variant="caption" color="text.secondary">
-              GHO yield with instant withdraws.
+              AIEN yield with instant withdraws.
             </Typography>
           </Stack>
           <Stack direction="row" alignItems="center" gap={4}>
@@ -273,7 +273,7 @@ const GhoSavingsBannerMobile = () => {
               </Typography>
             </Stack>
           </Stack>
-          <Button variant="contained" fullWidth component={Link} size="medium" href={ROUTES.sGHO}>
+          <Button variant="contained" fullWidth component={Link} size="medium" href={ROUTES.sAIEN}>
             <Trans>View details</Trans>
           </Button>
         </Stack>

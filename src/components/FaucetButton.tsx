@@ -10,7 +10,7 @@ export const FaucetButton = () => {
   const currentNetworkConfig = useRootStore((store) => store.currentNetworkConfig);
 
   return (
-    <DarkTooltip title="Get free assets to test the Aave Protocol">
+    <DarkTooltip title="Get free assets to test the Zaibots Protocol">
       <Button
         startIcon={
           <img

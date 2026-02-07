@@ -109,8 +109,8 @@ export const IncentivesCard = ({
     : protocolAPY + (protocolIncentivesAPY as number) + totalMeritAPY + merklIncentivesAPR;
 
   const isSghoPage =
-    typeof router?.asPath === 'string' && router.asPath.toLowerCase().startsWith('/sgho');
-  const hideMeritValue = symbol === 'GHO' && !isSghoPage;
+    typeof router?.asPath === 'string' && router.asPath.toLowerCase().startsWith('/saien');
+  const hideMeritValue = symbol === 'AIEN' && !isSghoPage;
 
   const incentivesContent = (
     <>

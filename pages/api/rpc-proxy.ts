@@ -57,7 +57,7 @@ function getRpcUrl(chainId: number): string | null {
 }
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const allowedOrigins = ['https://app.aave.com', 'https://aave.com'];
+  const allowedOrigins = ['https://app.zaibots.com', 'https://zaibots.com'];
   const origin = req.headers.origin;
 
   const isOriginAllowed = (origin: string | undefined): boolean => {
@@ -108,8 +108,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Origin: origin || 'https://app.aave.com',
-        Referer: 'https://app.aave.com/',
+        Origin: origin || 'https://app.zaibots.com',
+        Referer: 'https://app.zaibots.com/',
       },
       body: JSON.stringify(rpcRequest),
     });

@@ -12,7 +12,7 @@ export interface FavoriteMarketsSlice {
   hydrateFavoriteMarkets: () => void;
 }
 
-const FAVORITE_MARKETS_STORAGE_KEY = 'aave-favorite-markets';
+const FAVORITE_MARKETS_STORAGE_KEY = 'zaibots-favorite-markets';
 
 const getFavoriteMarketsFromStorage = (): CustomMarket[] => {
   if (typeof window === 'undefined') return [];

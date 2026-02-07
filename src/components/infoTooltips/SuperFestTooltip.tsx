@@ -13,7 +13,7 @@ export const SuperFestTooltip = () => {
     >
       <>
         <Trans>
-          This asset is eligible for rewards through SuperFest. Aave Labs does not guarantee the
+          This asset is eligible for rewards through SuperFest. Zaibots Labs does not guarantee the
           program and accepts no liability.
         </Trans>{' '}
         <Link

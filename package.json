@@ -3,8 +3,8 @@
   "version": "3.0.1",
   "private": true,
   "license": "BSD-3-Clause",
-  "engines" : { 
-    "node" : ">=18.0.0"
+  "engines": {
+    "node": ">=18.0.0"
   },
   "scripts": {
     "dev": "next dev",
@@ -109,7 +109,7 @@
     "@ethersproject/providers": "^5.5.3",
     "@lingui/cli": "^4.13.0",
     "@lingui/macro": "^4.14.0",
-    "@next/bundle-analyzer": "^12.1.0",
+    "@next/bundle-analyzer": "^16.1.6",
     "@svgr/webpack": "^6.5.1",
     "@tanstack/react-query-devtools": "^5.62.8",
     "@testing-library/jest-dom": "^5.16.5",

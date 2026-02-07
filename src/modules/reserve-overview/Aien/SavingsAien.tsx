@@ -18,17 +18,17 @@ import { useRootStore } from 'src/store/root';
 
 import { PanelItem } from '../ReservePanels';
 
-export const SavingsGho = () => {
+export const SavingsAien = () => {
   const currentMarketData = useRootStore((store) => store.currentMarketData);
   const { data: stakeUserResult } = useUserStakeUiData(currentMarketData, Stake.gho);
   const { data: stakeGeneralResult, isLoading: stakeDataLoading } = useGeneralStakeUiData(
     currentMarketData,
     Stake.gho
   );
-  const { openSavingsGhoDeposit, openSavingsGhoWithdraw } = useModalContext();
+  const { openSavingsAienDeposit, openSavingsAienWithdraw } = useModalContext();
   const now = useCurrentTimestamp(1);
   const { data: meritIncentives } = useMeritIncentives({
-    symbol: 'GHO',
+    symbol: 'AIEN',
     market: currentMarketData.market,
   });
 
@@ -60,14 +60,14 @@ export const SavingsGho = () => {
   return (
     <Stack direction="column" gap={4}>
       <Typography gutterBottom>
-        Stake GHO is now Savings GHO. With no risk of slashing and immediate withdraws available,
+        Stake AIEN is now Savings AIEN. With no risk of slashing and immediate withdraws available,
         earn up to {aprFormatted}% APR and claim rewards weekly.
       </Typography>
       <Stack direction="row">
         <Stack direction="row" alignItems="center" gap={1}>
           <TokenIcon symbol="sgho" sx={{ width: 24, height: 24 }} />
           <Typography variant="h3">
-            <Trans>sGHO</Trans>
+            <Trans>sAIEN</Trans>
           </Typography>
           {!stakeDataLoading && stakeData && (
             <TokenContractTooltip
@@ -111,7 +111,7 @@ export const SavingsGho = () => {
             </Box>
           }
         >
-          <MeritIncentivesButton symbol="GHO" market={currentMarketData.market} />
+          <MeritIncentivesButton symbol="AIEN" market={currentMarketData.market} />
         </PanelItem>
       </Stack>
 
@@ -121,7 +121,7 @@ export const SavingsGho = () => {
             dataCy={`stakedBox_`}
             title={
               <>
-                <Trans>sGHO</Trans>
+                <Trans>sAIEN</Trans>
               </>
             }
             value={formatEther(stakeUserData.stakeTokenRedeemableAmount)}
@@ -154,7 +154,7 @@ export const SavingsGho = () => {
                     <Trans>Amount in cooldown</Trans>
                   </Typography>
                   <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                    <TokenIcon symbol="GHO" sx={{ mr: 1, width: 14, height: 14 }} />
+                    <TokenIcon symbol="AIEN" sx={{ mr: 1, width: 14, height: 14 }} />
                     <FormattedNumber
                       value={formatEther(stakeUserData.userCooldownAmount)}
                       variant="secondary14"
@@ -173,12 +173,12 @@ export const SavingsGho = () => {
                 fullWidth
                 variant="contained"
                 disabled={stakeUserData.underlyingTokenUserBalance === '0'}
-                onClick={() => openSavingsGhoDeposit()}
+                onClick={() => openSavingsAienDeposit()}
               >
                 <Trans>Deposit</Trans>
               </Button>
               {stakeUserData.stakeTokenUserBalance !== '0' && (
-                <Button fullWidth variant="outlined" onClick={() => openSavingsGhoWithdraw()}>
+                <Button fullWidth variant="outlined" onClick={() => openSavingsAienWithdraw()}>
                   <Trans>Withdraw</Trans>
                 </Button>
               )}

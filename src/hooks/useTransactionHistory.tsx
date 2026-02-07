@@ -256,7 +256,7 @@ export const useTransactionHistory = ({ isFilterActive }: { isFilterActive: bool
         offset: skip,
       });
 
-      const filteredCowAaveOrders = (
+      const filteredCowZaibotsOrders = (
         await Promise.all(
           orders.map(async (order) => {
             try {
@@ -275,7 +275,7 @@ export const useTransactionHistory = ({ isFilterActive }: { isFilterActive: bool
       ).filter((order) => order !== null);
 
       apiTxns = await Promise.all(
-        filteredCowAaveOrders.map<Promise<TransactionHistoryItemUnion | null>>(async (order) => {
+        filteredCowZaibotsOrders.map<Promise<TransactionHistoryItemUnion | null>>(async (order) => {
           const erc20Service = new ERC20Service(getProvider);
 
           // Helper function to find token info from pool reserves
@@ -309,7 +309,7 @@ export const useTransactionHistory = ({ isFilterActive }: { isFilterActive: bool
           let srcToken = findTokenFromReserves(order.sellToken);
           let destToken = findTokenFromReserves(order.buyToken);
 
-          // Fallback to TOKEN_LIST if not found in pool reserves (for non-Aave tokens)
+          // Fallback to TOKEN_LIST if not found in pool reserves (for non-Zaibots tokens)
           if (!srcToken) {
             srcToken = TOKEN_LIST.tokens.find(
               (token) =>

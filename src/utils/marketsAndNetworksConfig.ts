@@ -198,12 +198,12 @@ export const getENSProvider = () => {
   return new StaticJsonRpcProvider(config.publicJsonRPCUrl[0], chainId);
 };
 
-const ammDisableProposal = 'https://governance-v2.aave.com/governance/proposal/44';
-const ustDisableProposal = 'https://governance-v2.aave.com/governance/proposal/75';
-const kncDisableProposal = 'https://governance-v2.aave.com/governance/proposal/69';
-const v2MainnetDisableProposal = 'https://governance-v2.aave.com/governance/proposal/111';
-const v2MainnetDisableProposal2 = 'https://governance-v2.aave.com/governance/proposal/125';
-const v2PolygonDisableProposal = 'https://governance-v2.aave.com/governance/proposal/124';
+const ammDisableProposal = 'https://governance-v2.zaibots.com/governance/proposal/44';
+const ustDisableProposal = 'https://governance-v2.zaibots.com/governance/proposal/75';
+const kncDisableProposal = 'https://governance-v2.zaibots.com/governance/proposal/69';
+const v2MainnetDisableProposal = 'https://governance-v2.zaibots.com/governance/proposal/111';
+const v2MainnetDisableProposal2 = 'https://governance-v2.zaibots.com/governance/proposal/125';
+const v2PolygonDisableProposal = 'https://governance-v2.zaibots.com/governance/proposal/124';
 
 export const frozenProposalMap: Record<string, string> = {
   ['UST' + CustomMarket.proto_mainnet]: ustDisableProposal,
@@ -212,7 +212,7 @@ export const frozenProposalMap: Record<string, string> = {
   ['UNIWBTCUSDC' + CustomMarket.proto_mainnet]: ammDisableProposal,
   ['UNIDAIWETH' + CustomMarket.proto_mainnet]: ammDisableProposal,
   ['UNIUSDCWETH' + CustomMarket.proto_mainnet]: ammDisableProposal,
-  ['UNIAAVEWETH' + CustomMarket.proto_mainnet]: ammDisableProposal,
+  ['UNIZAIBOTSUWETH' + CustomMarket.proto_mainnet]: ammDisableProposal,
   ['UNIBATWETH' + CustomMarket.proto_mainnet]: ammDisableProposal,
   ['UNICRVWETH' + CustomMarket.proto_mainnet]: ammDisableProposal,
   ['UNILINKWETH' + CustomMarket.proto_mainnet]: ammDisableProposal,

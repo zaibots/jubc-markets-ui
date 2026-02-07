@@ -46,7 +46,7 @@ export const GovDelegationModalContent: React.FC<GovDelegationModalContentProps>
   const currentNetworkConfig = useRootStore((store) => store.currentNetworkConfig);
   const currentChainId = useRootStore((store) => store.currentChainId);
   const {
-    data: { aave, stkAave, aAave },
+    data: { zaibots, stkZaibots, aZaibots },
   } = useGovernanceTokens();
   const { data: powers, refetch } = usePowers();
   // error states
@@ -61,16 +61,16 @@ export const GovDelegationModalContent: React.FC<GovDelegationModalContentProps>
   const onlyOnePowerToRevoke =
     isRevokeModal &&
     !!powers &&
-    ((powers.aaveVotingDelegatee === constants.AddressZero &&
-      powers.stkAaveVotingDelegatee === constants.AddressZero) ||
-      (powers.aavePropositionDelegatee === constants.AddressZero &&
-        powers.stkAavePropositionDelegatee === constants.AddressZero));
+    ((powers.zaibotsVotingDelegatee === constants.AddressZero &&
+      powers.stkZaibotsVotingDelegatee === constants.AddressZero) ||
+      (powers.zaibotsPropositionDelegatee === constants.AddressZero &&
+        powers.stkZaibotsPropositionDelegatee === constants.AddressZero));
 
   useEffect(() => {
     if (onlyOnePowerToRevoke) {
       if (
-        powers.aaveVotingDelegatee === constants.AddressZero &&
-        powers.stkAaveVotingDelegatee === constants.AddressZero
+        powers.zaibotsVotingDelegatee === constants.AddressZero &&
+        powers.stkZaibotsVotingDelegatee === constants.AddressZero
       )
         setDelegationType(DelegationType.PROPOSITION);
       else setDelegationType(DelegationType.VOTING);
@@ -83,31 +83,31 @@ export const GovDelegationModalContent: React.FC<GovDelegationModalContentProps>
 
   const tokens = [
     {
-      address: governanceV3Config.votingAssets.stkAaveTokenAddress,
-      symbol: 'stkAAVE',
-      name: 'Staked AAVE',
-      amount: stkAave,
-      votingDelegatee: powers?.stkAaveVotingDelegatee,
-      propositionDelegatee: powers?.stkAavePropositionDelegatee,
-      type: DelegationTokenType.STKAAVE,
+      address: governanceV3Config.votingAssets.stkZaibotsTokenAddress,
+      symbol: 'stkZAIBOTSU',
+      name: 'Staked ZAIBOTSU',
+      amount: stkZaibots,
+      votingDelegatee: powers?.stkZaibotsVotingDelegatee,
+      propositionDelegatee: powers?.stkZaibotsPropositionDelegatee,
+      type: DelegationTokenType.STKZAIBOTSU,
     },
     {
-      address: governanceV3Config.votingAssets.aaveTokenAddress,
-      symbol: 'AAVE',
-      name: 'AAVE',
-      amount: aave,
-      votingDelegatee: powers?.aaveVotingDelegatee,
-      propositionDelegatee: powers?.aavePropositionDelegatee,
-      type: DelegationTokenType.AAVE,
+      address: governanceV3Config.votingAssets.zaibotsTokenAddress,
+      symbol: 'ZAIBOTSU',
+      name: 'ZAIBOTSU',
+      amount: zaibots,
+      votingDelegatee: powers?.zaibotsVotingDelegatee,
+      propositionDelegatee: powers?.zaibotsPropositionDelegatee,
+      type: DelegationTokenType.ZAIBOTSU,
     },
     {
-      address: governanceV3Config.votingAssets.aAaveTokenAddress,
-      symbol: 'aAAVE',
-      name: 'aAAVE',
-      amount: aAave,
-      votingDelegatee: powers?.aAaveVotingDelegatee,
-      propositionDelegatee: powers?.aAavePropositionDelegatee,
-      type: DelegationTokenType.aAave,
+      address: governanceV3Config.votingAssets.aZaibotsTokenAddress,
+      symbol: 'aZAIBOTSU',
+      name: 'aZAIBOTSU',
+      amount: aZaibots,
+      votingDelegatee: powers?.aZaibotsVotingDelegatee,
+      propositionDelegatee: powers?.aZaibotsPropositionDelegatee,
+      type: DelegationTokenType.aZaibots,
     },
   ];
 
@@ -161,10 +161,10 @@ export const GovDelegationModalContent: React.FC<GovDelegationModalContentProps>
       )}
       {(isRevokeModal &&
         !!powers &&
-        ((powers.aaveVotingDelegatee === constants.AddressZero &&
-          powers.stkAaveVotingDelegatee === constants.AddressZero) ||
-          (powers.aavePropositionDelegatee === constants.AddressZero &&
-            powers.stkAavePropositionDelegatee === constants.AddressZero))) || (
+        ((powers.zaibotsVotingDelegatee === constants.AddressZero &&
+          powers.stkZaibotsVotingDelegatee === constants.AddressZero) ||
+          (powers.zaibotsPropositionDelegatee === constants.AddressZero &&
+            powers.stkZaibotsPropositionDelegatee === constants.AddressZero))) || (
         <>
           <Typography variant="description" color="text.secondary" sx={{ mb: 1 }}>
             <Trans>{isRevokeModal ? 'Power to revoke' : 'Power to delegate'}</Trans>
@@ -196,8 +196,8 @@ export const GovDelegationModalContent: React.FC<GovDelegationModalContentProps>
         >
           <Trans>
             Choose how much voting/proposition power to give to someone else by delegating some of
-            your AAVE, stkAAVE or aAave balance. Your tokens will remain in your account, but your
-            delegate will be able to vote or propose on your behalf. If your AAVE, stkAAVE or aAave
+            your ZAIBOTSU, stkZAIBOTSU or aZaibots balance. Your tokens will remain in your account, but your
+            delegate will be able to vote or propose on your behalf. If your ZAIBOTSU, stkZAIBOTSU or aZaibots
             balance changes, your delegate&apos;s voting/proposition power will be automatically
             adjusted.
           </Trans>

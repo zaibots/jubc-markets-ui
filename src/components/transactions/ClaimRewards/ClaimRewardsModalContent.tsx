@@ -79,8 +79,8 @@ export const ClaimRewardsModalContent = ({ user, reserves }: ClaimRewardsModalCo
       let tokenPrice = 0;
       if (!currentMarketData.v3 && Number(rewardBalance) > 0) {
         if (currentMarketData.chainId === ChainId.mainnet) {
-          const aave = reserves.find((reserve) => reserve.symbol === 'AAVE');
-          tokenPrice = aave ? Number(aave.priceInUSD) : 0;
+          const zaibots = reserves.find((reserve) => reserve.symbol === 'ZAIBOTSU');
+          tokenPrice = zaibots ? Number(zaibots.priceInUSD) : 0;
         } else {
           reserves.forEach((reserve) => {
             if (reserve.isWrappedBaseAsset) {

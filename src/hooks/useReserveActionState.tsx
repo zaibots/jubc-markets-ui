@@ -12,7 +12,7 @@ import { useAssetCaps } from 'src/hooks/useAssetCaps';
 import { WalletEmptyInfo } from 'src/modules/dashboard/lists/SupplyAssetsList/WalletEmptyInfo';
 import { useRootStore } from 'src/store/root';
 import { assetCanBeBorrowedByUser } from 'src/utils/getMaxAmountAvailableToBorrow';
-import { displayGhoForMintableMarket } from 'src/utils/ghoUtilities';
+import { displayGhoForMintableMarket } from 'src/utils/aienUtilities';
 import { useShallow } from 'zustand/shallow';
 
 import { useModalContext } from './useModal';

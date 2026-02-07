@@ -6,7 +6,7 @@ import {
   SGhoApyQueryOptions,
   SGhoRatesData,
   TransformedDailyData,
-} from './SGhoService.types';
+} from './SAienService.types';
 
 export const sghoConfig = {
   graphqlEndpoint: 'https://tokenlogic-data.ddn.hasura.app/graphql',
@@ -15,17 +15,17 @@ export const sghoConfig = {
 } as const;
 
 /**
- * GraphQL queries for sGHO APY data
+ * GraphQL queries for sAIEN APY data
  */
 export const sghoQueries = {
   /**
-   * Query for sGHO APY data with date range filtering
+   * Query for sAIEN APY data with date range filtering
    */
   getApyHistoryDateRange: (startDate: string, endDate: string, limit: number) =>
     `{ aaveV3RatesSgho(limit: ${limit}, where: {blockHour: {_gte: "${startDate}", _lte: "${endDate}"}}) { blockHour apr } }`,
 
   /**
-   * Query for recent sGHO APY data
+   * Query for recent sAIEN APY data
    */
   getApyHistory: (limit: number) => `{ aaveV3RatesSgho(limit: ${limit}) { blockHour apr } }`,
 } as const;
@@ -96,7 +96,7 @@ export const executeGraphQLQuery = async (query: string): Promise<GraphQLRespons
 };
 
 /**
- * Fetch and transform sGHO APY data
+ * Fetch and transform sAIEN APY data
  */
 /**
  * Normalize date string to ISO format without milliseconds (to match API expectation)

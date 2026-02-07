@@ -21,7 +21,7 @@ export const SonicAirdropTooltipContent = ({ points }: { points: number }) => {
       <br />
       <br />
       <Trans>
-        {`Aave Labs does not
+        {`Zaibots Labs does not
           guarantee the program and accepts no liability.\n`}
       </Trans>
     </Box>

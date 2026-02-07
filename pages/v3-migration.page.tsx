@@ -46,7 +46,7 @@ const AAVE_MARKETS_TO_MIGRATE = Object.keys(marketsData)
 
 const selectableMarkets = [
   {
-    title: 'Aave V2 Markets',
+    title: 'Zaibots V2 Markets',
     markets: AAVE_MARKETS_TO_MIGRATE,
   },
 ];

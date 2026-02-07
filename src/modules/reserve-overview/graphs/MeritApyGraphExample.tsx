@@ -1,12 +1,12 @@
 import React from 'react';
-import { useSGhoApyHistory } from 'src/hooks/useSGhoApyHistory';
+import { useSAienApyHistory } from 'src/hooks/useSAienApyHistory';
 
 import { MeritApyDataItem } from './MeritApyGraph';
 import { MeritApyGraphContainer } from './MeritApyGraphContainer';
 
 // Example using the API hook - basic usage
 export const SGhoApyGraphWithAPI = () => {
-  const { data, loading, error, refetch } = useSGhoApyHistory();
+  const { data, loading, error, refetch } = useSAienApyHistory();
 
   return (
     <MeritApyGraphContainer
@@ -15,7 +15,7 @@ export const SGhoApyGraphWithAPI = () => {
       error={error}
       lineColor="#2EBAC6"
       showAverage={true}
-      title="sGHO Merit APY"
+      title="sAIEN Merit APY"
       onRetry={refetch}
     />
   );
@@ -23,7 +23,7 @@ export const SGhoApyGraphWithAPI = () => {
 
 // Example with custom limit
 export const SGhoApyGraphWithCustomLimit = () => {
-  const { data, loading, error, refetch } = useSGhoApyHistory({ limit: 50 });
+  const { data, loading, error, refetch } = useSAienApyHistory({ limit: 50 });
 
   return (
     <MeritApyGraphContainer
@@ -32,7 +32,7 @@ export const SGhoApyGraphWithCustomLimit = () => {
       error={error}
       lineColor="#B6509E"
       showAverage={true}
-      title="sGHO Merit APY (Last 50 records)"
+      title="sAIEN Merit APY (Last 50 records)"
       onRetry={refetch}
     />
   );
@@ -44,7 +44,7 @@ export const SGhoApyGraphWithDateRange = () => {
   const endDate = new Date().toISOString();
   const startDate = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString();
 
-  const { data, loading, error, refetch } = useSGhoApyHistory({
+  const { data, loading, error, refetch } = useSAienApyHistory({
     startDate,
     endDate,
     limit: 1000,
@@ -57,7 +57,7 @@ export const SGhoApyGraphWithDateRange = () => {
       error={error}
       lineColor="#0062D2"
       showAverage={true}
-      title="sGHO Merit APY (Last 30 days)"
+      title="sAIEN Merit APY (Last 30 days)"
       onRetry={refetch}
     />
   );

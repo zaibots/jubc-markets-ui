@@ -12,120 +12,120 @@ import TopBarNotify from './TopBarNotify';
 
 const getCampaignConfigs = () => ({
   [ChainId.base]: {
-    notifyText: 'Introducing the Aave mobile app, a smarter way to save.',
+    notifyText: 'Introducing the Zaibots mobile app, a smarter way to save.',
     buttonText: 'Join waitlist',
     buttonAction: {
       type: 'url' as const,
-      value: 'https://aave.com/app',
+      value: 'https://zaibots.com/app',
       target: '_blank' as const,
     },
-    bannerVersion: 'aave-app-waitlist-v2',
+    bannerVersion: 'zaibots-app-waitlist-v2',
   },
 
   [ChainId.sonic]: {
-    notifyText: 'Introducing the Aave mobile app, a smarter way to save.',
+    notifyText: 'Introducing the Zaibots mobile app, a smarter way to save.',
     buttonText: 'Join waitlist',
     buttonAction: {
       type: 'url' as const,
-      value: 'https://aave.com/app',
+      value: 'https://zaibots.com/app',
       target: '_blank' as const,
     },
-    bannerVersion: 'aave-app-waitlist-v2',
+    bannerVersion: 'zaibots-app-waitlist-v2',
     // icon: '/icons/networks/sonic.svg',
   },
 
   [ChainId.mainnet]: {
-    notifyText: 'Introducing the Aave mobile app, a smarter way to save.',
+    notifyText: 'Introducing the Zaibots mobile app, a smarter way to save.',
     buttonText: 'Join waitlist',
     buttonAction: {
       type: 'url' as const,
-      value: 'https://aave.com/app',
+      value: 'https://zaibots.com/app',
       target: '_blank' as const,
     },
-    bannerVersion: 'aave-app-waitlist-v2',
+    bannerVersion: 'zaibots-app-waitlist-v2',
   },
 
   [ChainId.polygon]: {
-    notifyText: 'Introducing the Aave mobile app, a smarter way to save.',
+    notifyText: 'Introducing the Zaibots mobile app, a smarter way to save.',
     buttonText: 'Join waitlist',
     buttonAction: {
       type: 'url' as const,
-      value: 'https://aave.com/app',
+      value: 'https://zaibots.com/app',
       target: '_blank' as const,
     },
-    bannerVersion: 'aave-app-waitlist-v2',
+    bannerVersion: 'zaibots-app-waitlist-v2',
     // icon: '/icons/networks/polygon.svg',
   },
 
   [ChainId.avalanche]: {
-    notifyText: 'Introducing the Aave mobile app, a smarter way to save.',
+    notifyText: 'Introducing the Zaibots mobile app, a smarter way to save.',
     buttonText: 'Join waitlist',
     buttonAction: {
       type: 'url' as const,
-      value: 'https://aave.com/app',
+      value: 'https://zaibots.com/app',
       target: '_blank' as const,
     },
-    bannerVersion: 'aave-app-waitlist-v2',
+    bannerVersion: 'zaibots-app-waitlist-v2',
     // icon: '/icons/networks/avalanche.svg',
   },
 
   [ChainId.arbitrum_one]: {
-    notifyText: 'Introducing the Aave mobile app, a smarter way to save.',
+    notifyText: 'Introducing the Zaibots mobile app, a smarter way to save.',
     buttonText: 'Join waitlist',
     buttonAction: {
       type: 'url' as const,
-      value: 'https://aave.com/app',
+      value: 'https://zaibots.com/app',
       target: '_blank' as const,
     },
-    bannerVersion: 'aave-app-waitlist-v2',
+    bannerVersion: 'zaibots-app-waitlist-v2',
     // icon: '/icons/networks/arbitrum.svg',
   },
 
   [ChainId.optimism]: {
-    notifyText: 'Introducing the Aave mobile app, a smarter way to save.',
+    notifyText: 'Introducing the Zaibots mobile app, a smarter way to save.',
     buttonText: 'Join waitlist',
     buttonAction: {
       type: 'url' as const,
-      value: 'https://aave.com/app',
+      value: 'https://zaibots.com/app',
       target: '_blank' as const,
     },
-    bannerVersion: 'aave-app-waitlist-v2',
+    bannerVersion: 'zaibots-app-waitlist-v2',
     // icon: '/icons/networks/optimism.svg',
   },
 
   [ChainId.xdai]: {
-    notifyText: 'Introducing the Aave mobile app, a smarter way to save.',
+    notifyText: 'Introducing the Zaibots mobile app, a smarter way to save.',
     buttonText: 'Join waitlist',
     buttonAction: {
       type: 'url' as const,
-      value: 'https://aave.com/app',
+      value: 'https://zaibots.com/app',
       target: '_blank' as const,
     },
-    bannerVersion: 'aave-app-waitlist-v2',
+    bannerVersion: 'zaibots-app-waitlist-v2',
     // icon: '/icons/networks/gnosis.svg',
   },
 
   [ChainId.bnb]: {
-    notifyText: 'Introducing the Aave mobile app, a smarter way to save.',
+    notifyText: 'Introducing the Zaibots mobile app, a smarter way to save.',
     buttonText: 'Join waitlist',
     buttonAction: {
       type: 'url' as const,
-      value: 'https://aave.com/app',
+      value: 'https://zaibots.com/app',
       target: '_blank' as const,
     },
-    bannerVersion: 'aave-app-waitlist-v2',
+    bannerVersion: 'zaibots-app-waitlist-v2',
     // icon: '/icons/networks/binance.svg',
   },
 });
 
 // For defining Route specific campaigns if needed in future
 const routeCampaigns = {
-  // '/sgho': {
-  //   notifyText: "Earn 4% higher yield on savings GHO using OKX's GHO staking vault.",
+  // '/saien': {
+  //   notifyText: "Earn 4% higher yield on savings AIEN using OKX's AIEN staking vault.",
   //   buttonText: 'Learn more',
   //   buttonAction: {
   //     type: 'url' as const,
-  //     value: 'https://web3.okx.com/earn/activity/aave-gho',
+  //     value: 'https://web3.okx.com/earn/activity/zaibots-aien',
   //     target: '_blank' as const,
   //   },
   //   bannerVersion: 'sgho-okx-v1',

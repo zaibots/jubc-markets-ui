@@ -114,7 +114,7 @@ export const useGetBridgeMessage = ({
           const ethUsdPrice = formatUnits(latestPrice, decimals);
           transactionCostUsd = Number(formatUnits(fees, 18)) * Number(ethUsdPrice);
         } else {
-          // Handling for GHO or other tokens
+          // Handling for AIEN or other tokens
           const sourceLaneConfig = laneConfig.find(
             (config) => config.sourceChainId === sourceChainId
           );

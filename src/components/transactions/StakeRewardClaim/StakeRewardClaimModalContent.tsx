@@ -45,8 +45,8 @@ export const StakeRewardClaimModalContent = ({ stakeAssetName, icon }: StakeRewa
   const stakeData = stakeGeneralResult?.[0];
   const stakeUserData = stakeUserResult?.[0];
 
-  // hardcoded as all rewards will be in aave token
-  const rewardsSymbol = 'AAVE';
+  // hardcoded as all rewards will be in zaibots token
+  const rewardsSymbol = 'ZAIBOTSU';
 
   const maxAmountToClaim = normalize(stakeUserData?.userIncentivesToClaim || '0', 18);
   const isMaxSelected = _amount === '-1';

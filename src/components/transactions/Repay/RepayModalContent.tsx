@@ -16,7 +16,7 @@ import {
 } from 'src/hooks/app-data-provider/useAppDataProvider';
 import { useModalContext } from 'src/hooks/useModal';
 import { useRootStore } from 'src/store/root';
-import { displayGhoForMintableMarket } from 'src/utils/ghoUtilities';
+import { displayGhoForMintableMarket } from 'src/utils/aienUtilities';
 import { getNetworkConfig } from 'src/utils/marketsAndNetworksConfig';
 import { useShallow } from 'zustand/shallow';
 

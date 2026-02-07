@@ -5,7 +5,7 @@ import { FormattedNumber } from 'src/components/primitives/FormattedNumber';
 import { TokenIcon } from 'src/components/primitives/TokenIcon';
 import { convertAprToApy } from 'src/utils/utils';
 
-export interface SavingsGhoCardProps {
+export interface SavingsAienCardProps {
   // APR data
   stakingApr?: number;
 
@@ -25,7 +25,7 @@ export interface SavingsGhoCardProps {
   hasGhoBalance?: boolean;
 }
 
-export const SavingsGhoCard: React.FC<SavingsGhoCardProps> = ({
+export const SavingsAienCard: React.FC<SavingsAienCardProps> = ({
   stakingApr = 7.86,
   sGhoBalance = 100.0,
   sGhoBalanceUsd = 6475.12,
@@ -73,7 +73,7 @@ export const SavingsGhoCard: React.FC<SavingsGhoCardProps> = ({
       {/* Header */}
       <Box sx={{ p: 3, pb: 2 }}>
         <Typography variant="h4" sx={{ fontWeight: 'bold', mb: 1 }}>
-          <Trans>Savings GHO (sGHO)</Trans>
+          <Trans>Savings AIEN (sAIEN)</Trans>
         </Typography>
       </Box>
 
@@ -81,11 +81,11 @@ export const SavingsGhoCard: React.FC<SavingsGhoCardProps> = ({
       <Box sx={{ px: 3, pb: 3 }}>
         <Box sx={{ mb: 3 }}>
           <Typography variant="subheader1" sx={{ fontWeight: 'bold', mb: 0.5 }}>
-            <Trans>Deposit GHO</Trans>
+            <Trans>Deposit AIEN</Trans>
           </Typography>
           <Typography variant="description" color="text.secondary">
             <Trans>
-              Deposit GHO and earn up to{' '}
+              Deposit AIEN and earn up to{' '}
               <Box component="span" sx={{ color: '#338E3C', fontWeight: 'bold' }}>
                 {stakingApyPct.toFixed(2)}%
               </Box>{' '}
@@ -117,7 +117,7 @@ export const SavingsGhoCard: React.FC<SavingsGhoCardProps> = ({
             variant="contained"
             fullWidth
             onClick={() => {
-              /* Handle get GHO */
+              /* Handle get AIEN */
             }}
             sx={{
               py: 1.5,
@@ -127,7 +127,7 @@ export const SavingsGhoCard: React.FC<SavingsGhoCardProps> = ({
               fontWeight: 'bold',
             }}
           >
-            <Trans>Get GHO</Trans>
+            <Trans>Get AIEN</Trans>
           </Button>
         ) : (
           <Button
@@ -158,9 +158,9 @@ export const SavingsGhoCard: React.FC<SavingsGhoCardProps> = ({
       >
         <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ mb: 2 }}>
           <Stack direction="row" alignItems="center" spacing={2}>
-            <TokenIcon symbol="GHO" sx={{ fontSize: '32px' }} />
+            <TokenIcon symbol="AIEN" sx={{ fontSize: '32px' }} />
             <Typography variant="subheader1" color="text.secondary">
-              sGHO
+              sAIEN
             </Typography>
           </Stack>
           <Box sx={{ textAlign: 'right' }}>

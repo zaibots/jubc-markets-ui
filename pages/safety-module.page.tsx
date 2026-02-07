@@ -18,7 +18,7 @@ import { useUserStakeUiData } from 'src/hooks/stake/useUserStakeUiData';
 import { useModalContext } from 'src/hooks/useModal';
 import { MainLayout } from 'src/layouts/MainLayout';
 import { GetABPToken } from 'src/modules/staking/GetABPToken';
-// import { GhoStakingPanel } from 'src/modules/staking/GhoStakingPanel';
+// import { AienStakingPanel } from 'src/modules/staking/AienStakingPanel';
 import { StakingHeader } from 'src/modules/staking/StakingHeader';
 import { StakingPanel } from 'src/modules/staking/StakingPanel';
 import { useRootStore } from 'src/store/root';
@@ -50,14 +50,14 @@ const UnStakeModal = dynamic(() =>
     (module) => module.UnStakeModal
   )
 );
-const SavingsGhoDepositModal = dynamic(() =>
-  import('../src/components/transactions/SavingsGho/SavingsGhoDepositModal').then(
-    (module) => module.SavingsGhoDepositModal
+const SavingsAienDepositModal = dynamic(() =>
+  import('../src/components/transactions/SavingsAien/SavingsAienDepositModal').then(
+    (module) => module.SavingsAienDepositModal
   )
 );
-const SavingsGhoWithdrawModal = dynamic(() =>
-  import('../src/components/transactions/SavingsGho/SavingsGhoWithdrawModal').then(
-    (module) => module.SavingsGhoWithdrawModal
+const SavingsAienWithdrawModal = dynamic(() =>
+  import('../src/components/transactions/SavingsAien/SavingsAienWithdrawModal').then(
+    (module) => module.SavingsAienWithdrawModal
   )
 );
 
@@ -93,8 +93,8 @@ export default function Staking() {
     openStakeRewardsClaim,
     openStakeRewardsRestakeClaim,
     openStakingMigrate,
-    // openSavingsGhoDeposit,
-    // openSavingsGhoWithdraw,
+    // openSavingsAienDeposit,
+    // openSavingsAienWithdraw,
   } = useModalContext();
 
   const [mode, setMode] = useState<Stake>(Stake.aave);
@@ -109,7 +109,7 @@ export default function Staking() {
 
   const tvl = {
     'Staked Aave': Number(stkAave?.totalSupplyUSDFormatted || '0'),
-    // 'Staked GHO': Number(stkGho?.totalSupplyUSDFormatted || '0'),
+    // 'Staked AIEN': Number(stkGho?.totalSupplyUSDFormatted || '0'),
     'Staked ABPT': Number(stkBpt?.totalSupplyUSDFormatted || '0'),
     'Staked ABPT V2': Number(stkBptV2?.totalSupplyUSDFormatted || '0'),
   };
@@ -233,9 +233,9 @@ export default function Staking() {
                 lg={6}
                 sx={{ display: { xs: !isStkGho ? 'none' : 'block', lg: 'block' } }}
               >
-                <GhoStakingPanel
-                  stakeTitle="sGHO (formerly stkGHO)"
-                  stakedToken="GHO"
+                <AienStakingPanel
+                  stakeTitle="sAIEN (formerly stkAIEN)"
+                  stakedToken="AIEN"
                   icon="sgho"
                   maxSlash={stkGho?.maxSlashablePercentageFormatted || '0'}
                   stakeData={stkGho}
@@ -243,31 +243,31 @@ export default function Staking() {
                   onStakeAction={() => {
                     trackEvent(SAFETY_MODULE.STAKE_SAFETY_MODULE, {
                       action: SAFETY_MODULE.OPEN_STAKE_MODAL,
-                      asset: 'GHO',
+                      asset: 'AIEN',
                       stakeType: 'Safety Module',
                     });
-                    openSavingsGhoDeposit();
+                    openSavingsAienDeposit();
                   }}
                   onCooldownAction={() => {
                     trackEvent(SAFETY_MODULE.STAKE_SAFETY_MODULE, {
                       action: SAFETY_MODULE.OPEN_WITHDRAW_MODAL,
-                      asset: 'GHO',
+                      asset: 'AIEN',
                       stakeType: 'Safety Module',
                     });
-                    openSavingsGhoWithdraw();
+                    openSavingsAienWithdraw();
                   }}
                   onUnstakeAction={() => {
                     trackEvent(SAFETY_MODULE.STAKE_SAFETY_MODULE, {
                       action: SAFETY_MODULE.OPEN_WITHDRAW_MODAL,
-                      asset: 'GHO',
+                      asset: 'AIEN',
                       stakeType: 'Safety Module',
                     });
-                    openSavingsGhoWithdraw();
+                    openSavingsAienWithdraw();
                   }}
                   onStakeRewardClaimAction={() => {
                     trackEvent(SAFETY_MODULE.STAKE_SAFETY_MODULE, {
                       action: SAFETY_MODULE.OPEN_CLAIM_MODAL,
-                      asset: 'GHO',
+                      asset: 'AIEN',
                       stakeType: 'Safety Module',
                       rewardType: 'Claim',
                     });
@@ -458,8 +458,8 @@ Staking.getLayout = function getLayout(page: React.ReactElement) {
       <UnStakeModal />
       <StakeRewardClaimModal />
       <StakeRewardClaimRestakeModal />
-      <SavingsGhoDepositModal />
-      <SavingsGhoWithdrawModal />
+      <SavingsAienDepositModal />
+      <SavingsAienWithdrawModal />
       {/** End of modals */}
     </MainLayout>
   );

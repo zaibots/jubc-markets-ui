@@ -2,7 +2,7 @@
 
 ## Overview
 
-The governance module displays Aave DAO proposals — listing, searching, detail views, voting results, and lifecycle tracking. It supports **two data sources** toggled by the env var `NEXT_PUBLIC_USE_GOVERNANCE_CACHE`:
+The governance module displays Zaibots DAO proposals — listing, searching, detail views, voting results, and lifecycle tracking. It supports **two data sources** toggled by the env var `NEXT_PUBLIC_USE_GOVERNANCE_CACHE`:
 
 - **Graph path** (`false` / unset): Fetches from Aave's governance subgraph + on-chain contracts via `@aave/contract-helpers`. This is the original data source.
 - **Cache path** (`true`): Fetches from a local PostgreSQL-backed GraphQL server (`GovernanceCacheService.ts`). Faster, no subgraph dependency.

@@ -11,7 +11,7 @@ import { useBridgeTransactionHistory } from 'src/hooks/useBridgeTransactionHisto
 import { useModalContext } from 'src/hooks/useModal';
 import { useWeb3Context } from 'src/libs/hooks/useWeb3Context';
 
-import LandingGhost from '/public/resting-gho-hat-purple.svg';
+import LandingGhost from '/public/resting-aien-hat-purple.svg';
 
 import { BridgeTransactionListItemWrapper } from './BridgeTransactionListItem';
 import {
@@ -55,7 +55,7 @@ export function BridgeWrapper() {
           <Trans>You don&apos;t have any bridge transactions</Trans>
         </Typography>{' '}
         <Button sx={{ mt: 4 }} onClick={openBridge} variant="gradient">
-          <Typography typography="subheader1">Bridge GHO</Typography>
+          <Typography typography="subheader1">Bridge AIEN</Typography>
         </Button>
       </Paper>
     );

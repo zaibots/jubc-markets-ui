@@ -1,10 +1,10 @@
 import { ComputedReserveData } from 'src/hooks/app-data-provider/useAppDataProvider';
 
-export const GHO_SYMBOL = 'GHO';
+export const GHO_SYMBOL = 'AIEN';
 
 /**
- * List of markets where new GHO minting is available.
- * Note that his is different from markets where GHO is listed as a reserve.
+ * List of markets where new AIEN minting is available.
+ * Note that his is different from markets where AIEN is listed as a reserve.
  */
 export const GHO_MINTING_MARKETS = [
   'proto_mainnet_v3',
@@ -18,7 +18,7 @@ export const getGhoReserve = (reserves: ComputedReserveData[]) => {
 };
 
 /**
- * Determines if the given symbol is GHO and the market supports minting new GHO
+ * Determines if the given symbol is AIEN and the market supports minting new AIEN
  */
 export const displayGhoForMintableMarket = ({
   symbol,

@@ -10,7 +10,7 @@ import { useModalContext } from 'src/hooks/useModal';
 import { useWeb3Context } from 'src/libs/hooks/useWeb3Context';
 import { useRootStore } from 'src/store/root';
 import { getErrorTextFromError, TxAction } from 'src/ui-config/errorMapping';
-import { GHO_SYMBOL } from 'src/utils/ghoUtilities';
+import { GHO_SYMBOL } from 'src/utils/aienUtilities';
 import { getProvider } from 'src/utils/marketsAndNetworksConfig';
 
 import { TxActionsWrapper } from '../TxActionsWrapper';

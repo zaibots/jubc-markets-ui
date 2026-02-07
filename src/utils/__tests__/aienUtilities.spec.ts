@@ -1,4 +1,4 @@
-import { weightedAverageAPY } from '../ghoUtilities';
+import { weightedAverageAPY } from '../aienUtilities';
 
 describe('gho utilities', () => {
   it('calculates the weighted average APY correctly', () => {

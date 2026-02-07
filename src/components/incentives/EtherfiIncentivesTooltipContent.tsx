@@ -24,7 +24,7 @@ export const EtherFiAirdropTooltipContent = ({ multiplier }: { multiplier: numbe
       .
       <br />
       <br />
-      <Trans>Aave Labs does not guarantee the program and accepts no liability.</Trans>
+      <Trans>Zaibots Labs does not guarantee the program and accepts no liability.</Trans>
     </Box>
   );
 };

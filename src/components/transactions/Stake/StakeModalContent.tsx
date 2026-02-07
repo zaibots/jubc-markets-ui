@@ -112,7 +112,7 @@ export const StakeModalContent = ({ stakeAssetName, icon }: StakeProps) => {
         />
       )}
 
-      {nameFormatted !== 'GHO' && stakeData?.stakeCooldownSeconds && (
+      {nameFormatted !== 'AIEN' && stakeData?.stakeCooldownSeconds && (
         <CooldownWarning cooldownSeconds={stakeData.stakeCooldownSeconds} />
       )}
 

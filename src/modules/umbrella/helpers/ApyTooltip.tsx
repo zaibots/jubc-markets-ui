@@ -11,7 +11,7 @@ export const ApyTooltip = () => {
           staking levels.
         </Trans>{' '}
         <Link
-          href="https://aave.com/docs/primitives/umbrella#rewards-and-safety-incentives"
+          href="https://zaibots.com/docs/primitives/umbrella#rewards-and-safety-incentives"
           underline="always"
         >
           <Trans>Learn more</Trans>

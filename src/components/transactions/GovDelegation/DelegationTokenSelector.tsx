@@ -20,9 +20,9 @@ export type DelegationToken = {
 
 export enum DelegationTokenType {
   ALL = 0,
-  AAVE,
-  STKAAVE,
-  aAave,
+  ZAIBOTSU,
+  STKZAIBOTSU,
+  aZaibots,
 }
 
 export type DelegationTokenSelectorProps = {
@@ -48,8 +48,8 @@ export const TokenRow: React.FC<TokenRowProps> = ({ symbol, amount }) => {
             symbol.map((token, index) => (
               <>
                 <TokenIcon
-                  aToken={token === 'aAAVE'}
-                  symbol={token === 'aAAVE' ? 'aave' : token}
+                  aToken={token === 'aZAIBOTSU'}
+                  symbol={token === 'aZAIBOTSU' ? 'zaibots' : token}
                   sx={{ width: 16, height: 16 }}
                 />
                 <Typography variant="subheader1">{token}</Typography>
@@ -59,8 +59,8 @@ export const TokenRow: React.FC<TokenRowProps> = ({ symbol, amount }) => {
           ) : (
             <>
               <TokenIcon
-                aToken={symbol === 'aAAVE'}
-                symbol={symbol === 'aAAVE' ? 'aave' : symbol}
+                aToken={symbol === 'aZAIBOTSU'}
+                symbol={symbol === 'aZAIBOTSU' ? 'zaibots' : symbol}
                 sx={{ width: 16, height: 16 }}
               />
               <Typography variant="subheader1">{symbol}</Typography>
@@ -96,7 +96,7 @@ export const DelegationTokenSelector = ({
   filter,
 }: DelegationTokenSelectorProps) => {
   const {
-    data: { aave, stkAave, aAave },
+    data: { zaibots, stkZaibots, aZaibots },
   } = useGovernanceTokens();
 
   const filteredTokens = filter ? filterTokens(delegationTokens, delegationType) : delegationTokens;
@@ -124,32 +124,32 @@ export const DelegationTokenSelector = ({
           componentsProps={{ typography: { width: '100%' } }}
           label={
             <TokenRow
-              symbol={['AAVE', 'stkAAVE', 'aAAVE']}
-              amount={Number(aave) + Number(stkAave) + Number(aAave)}
+              symbol={['ZAIBOTSU', 'stkZAIBOTSU', 'aZAIBOTSU']}
+              amount={Number(zaibots) + Number(stkZaibots) + Number(aZaibots)}
             />
           }
           data-cy={`delegate-token-both`}
         />
         <FormControlLabel
-          value={DelegationTokenType.AAVE}
+          value={DelegationTokenType.ZAIBOTSU}
           control={<Radio size="small" />}
           componentsProps={{ typography: { width: '100%' } }}
-          label={<TokenRow symbol="AAVE" amount={aave} />}
-          data-cy={`delegate-token-AAVE`}
+          label={<TokenRow symbol="ZAIBOTSU" amount={zaibots} />}
+          data-cy={`delegate-token-ZAIBOTSU`}
         />
         <FormControlLabel
-          value={DelegationTokenType.STKAAVE}
+          value={DelegationTokenType.STKZAIBOTSU}
           control={<Radio size="small" />}
           componentsProps={{ typography: { width: '100%' } }}
-          label={<TokenRow symbol="stkAAVE" amount={stkAave} />}
-          data-cy={`delegate-token-stkAAVE`}
+          label={<TokenRow symbol="stkZAIBOTSU" amount={stkZaibots} />}
+          data-cy={`delegate-token-stkZAIBOTSU`}
         />
         <FormControlLabel
-          value={DelegationTokenType.aAave}
+          value={DelegationTokenType.aZaibots}
           control={<Radio size="small" />}
           componentsProps={{ typography: { width: '100%' } }}
-          label={<TokenRow symbol="aAAVE" amount={aAave} />}
-          data-cy={`delegate-token-aAave`}
+          label={<TokenRow symbol="aZAIBOTSU" amount={aZaibots} />}
+          data-cy={`delegate-token-aZaibots`}
         />
       </RadioGroup>
     </FormControl>

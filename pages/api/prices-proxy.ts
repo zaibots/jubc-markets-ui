@@ -3,7 +3,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 const FAMILY_API_URL = process.env.FAMILY_API_URL;
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const allowedOrigins = ['https://app.aave.com', 'https://aave.com'];
+  const allowedOrigins = ['https://app.zaibots.com', 'https://zaibots.com'];
   const origin = req.headers.origin;
 
   const isOriginAllowed = (origin: string | undefined): boolean => {
@@ -56,8 +56,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       headers: {
         'Content-Type': 'application/json',
         'x-api-key': familyApiKey,
-        Origin: origin || 'https://app.aave.com',
-        Referer: 'https://app.aave.com/',
+        Origin: origin || 'https://app.zaibots.com',
+        Referer: 'https://app.zaibots.com/',
       },
       body: JSON.stringify(requestBody),
     });

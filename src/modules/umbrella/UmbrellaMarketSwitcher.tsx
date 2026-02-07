@@ -263,7 +263,7 @@ export const MarketSwitcher = () => {
       <Box>
         <Typography variant="subheader2" color="text.secondary" sx={{ px: 4, pt: 2 }}>
           <Trans>
-            {ENABLE_TESTNET || STAGING_ENV ? 'Select Aave Testnet Market' : 'Select Aave Market'}
+            {ENABLE_TESTNET || STAGING_ENV ? 'Select Zaibots Testnet Market' : 'Select Zaibots Market'}
           </Trans>
         </Typography>
       </Box>
@@ -307,7 +307,7 @@ export const MarketSwitcher = () => {
                 sx={
                   selectedMarketVersion === SelectedMarketVersion.V3
                     ? {
-                        backgroundImage: (theme) => theme.palette.gradients.aaveGradient,
+                        backgroundImage: (theme) => theme.palette.gradients.zaibotsGradient,
                         backgroundClip: 'text',
                         color: 'transparent',
                       }
@@ -336,7 +336,7 @@ export const MarketSwitcher = () => {
                 sx={
                   selectedMarketVersion === SelectedMarketVersion.V2
                     ? {
-                        backgroundImage: (theme) => theme.palette.gradients.aaveGradient,
+                        backgroundImage: (theme) => theme.palette.gradients.zaibotsGradient,
                         backgroundClip: 'text',
                         color: 'transparent',
                       }

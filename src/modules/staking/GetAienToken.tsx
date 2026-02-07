@@ -5,16 +5,16 @@ import { TokenIcon } from 'src/components/primitives/TokenIcon';
 import { useRootStore } from 'src/store/root';
 import { GENERAL } from 'src/utils/events';
 
-export const GetGhoToken = () => {
+export const GetAienToken = () => {
   const trackEvent = useRootStore((store) => store.trackEvent);
 
   const handleClick = () => {
-    trackEvent(GENERAL.EXTERNAL_LINK, { Link: 'Get Gho' });
+    trackEvent(GENERAL.EXTERNAL_LINK, { Link: 'Get AIEN' });
   };
 
   return (
     <>
-      <DarkTooltip title="Get GHO to stake within the Aave Protocol">
+      <DarkTooltip title="Get AIEN to stake within the Zaibots Protocol">
         <Button
           variant="outlined"
           size="small"
@@ -22,11 +22,11 @@ export const GetGhoToken = () => {
           data-cy={`getGho-token`} // todo tests
           startIcon={
             <Box sx={{ mr: -1 }}>
-              <TokenIcon symbol="GHO" sx={{ fontSize: '14px' }} />
+              <TokenIcon symbol="AIEN" sx={{ fontSize: '14px' }} />
             </Box>
           }
         >
-          <Trans>Get GHO</Trans>
+          <Trans>Get AIEN</Trans>
         </Button>
       </DarkTooltip>
     </>

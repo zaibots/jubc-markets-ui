@@ -6,16 +6,16 @@ import { governanceV3Config } from 'src/ui-config/governanceConfig';
 
 export interface Powers {
   votingPower: string;
-  aaveTokenPower: Power;
-  stkAaveTokenPower: Power;
+  zaibotsTokenPower: Power;
+  stkZaibotsTokenPower: Power;
   propositionPower: string;
-  aaveVotingDelegatee: string;
-  aavePropositionDelegatee: string;
-  stkAaveVotingDelegatee: string;
-  stkAavePropositionDelegatee: string;
-  aAaveVotingDelegatee: string;
-  aAavePropositionDelegatee: string;
-  aAaveTokenPower: Power;
+  zaibotsVotingDelegatee: string;
+  zaibotsPropositionDelegatee: string;
+  stkZaibotsVotingDelegatee: string;
+  stkZaibotsPropositionDelegatee: string;
+  aZaibotsVotingDelegatee: string;
+  aZaibotsPropositionDelegatee: string;
+  aZaibotsTokenPower: Power;
 }
 
 // interface VoteOnProposalData {
@@ -23,7 +23,7 @@ export interface Powers {
 //   support: boolean;
 // }
 
-const AAVE_GOVERNANCE_V2 = '0xEC568fffba86c094cf06b22134B23074DFE2252c';
+const ZAIBOTSU_GOVERNANCE_V2 = '0xEC568fffba86c094cf06b22134B23074DFE2252c';
 
 export class GovernanceService {
   constructor(private readonly getProvider: (chainId: number) => Provider) {}
@@ -31,7 +31,7 @@ export class GovernanceService {
   private getAaveGovernanceService(chainId: ChainId) {
     const provider = this.getProvider(chainId);
     return new AaveGovernanceService(provider, {
-      GOVERNANCE_ADDRESS: AAVE_GOVERNANCE_V2,
+      GOVERNANCE_ADDRESS: ZAIBOTSU_GOVERNANCE_V2,
       GOVERNANCE_HELPER_ADDRESS: governanceV3Config.addresses.TOKEN_POWER_HELPER,
     });
   }
@@ -67,7 +67,7 @@ export class GovernanceService {
   // }
 
   async getPowers(govChainId: ChainId, user: string, blockHash?: string): Promise<Powers> {
-    const { aaveTokenAddress, stkAaveTokenAddress, aAaveTokenAddress } =
+    const { zaibotsTokenAddress, stkZaibotsTokenAddress, aZaibotsTokenAddress } =
       governanceV3Config.votingAssets;
 
     const aaveGovernanceService = this.getAaveGovernanceService(govChainId);
@@ -77,43 +77,43 @@ export class GovernanceService {
       options.blockTag = blockHash;
     }
 
-    const [aaveTokenPower, stkAaveTokenPower, aAaveTokenPower] =
+    const [zaibotsTokenPower, stkZaibotsTokenPower, aZaibotsTokenPower] =
       // pass blockhash here as optional
       await aaveGovernanceService.getTokensPower(
         {
           user: user,
-          tokens: [aaveTokenAddress, stkAaveTokenAddress, aAaveTokenAddress],
+          tokens: [zaibotsTokenAddress, stkZaibotsTokenAddress, aZaibotsTokenAddress],
         },
         options
       );
-    // todo setup powers for aAaveToken
+    // todo setup powers for aZaibotsToken
     const powers = {
       votingPower: normalize(
-        valueToBigNumber(aaveTokenPower.votingPower.toString())
-          .plus(stkAaveTokenPower.votingPower.toString())
-          .plus(aAaveTokenPower.votingPower.toString())
+        valueToBigNumber(zaibotsTokenPower.votingPower.toString())
+          .plus(stkZaibotsTokenPower.votingPower.toString())
+          .plus(aZaibotsTokenPower.votingPower.toString())
           .toString(),
         18
       ),
-      aAaveTokenPower,
-      aaveTokenPower,
-      stkAaveTokenPower,
+      aZaibotsTokenPower,
+      zaibotsTokenPower,
+      stkZaibotsTokenPower,
       propositionPower: normalize(
-        valueToBigNumber(aaveTokenPower.propositionPower.toString())
-          .plus(stkAaveTokenPower.propositionPower.toString())
-          .plus(aAaveTokenPower.votingPower.toString())
+        valueToBigNumber(zaibotsTokenPower.propositionPower.toString())
+          .plus(stkZaibotsTokenPower.propositionPower.toString())
+          .plus(aZaibotsTokenPower.votingPower.toString())
           .toString(),
         18
       ),
-      aAaveVotingDelegatee: aAaveTokenPower.delegatedAddressVotingPower,
-      aAavePropositionDelegatee: aAaveTokenPower.delegatedAddressPropositionPower,
+      aZaibotsVotingDelegatee: aZaibotsTokenPower.delegatedAddressVotingPower,
+      aZaibotsPropositionDelegatee: aZaibotsTokenPower.delegatedAddressPropositionPower,
 
-      aaveVotingDelegatee: aaveTokenPower.delegatedAddressVotingPower,
-      aavePropositionDelegatee: aaveTokenPower.delegatedAddressPropositionPower,
+      zaibotsVotingDelegatee: zaibotsTokenPower.delegatedAddressVotingPower,
+      zaibotsPropositionDelegatee: zaibotsTokenPower.delegatedAddressPropositionPower,
 
-      stkAaveVotingDelegatee: stkAaveTokenPower.delegatedAddressVotingPower,
+      stkZaibotsVotingDelegatee: stkZaibotsTokenPower.delegatedAddressVotingPower,
 
-      stkAavePropositionDelegatee: stkAaveTokenPower.delegatedAddressPropositionPower,
+      stkZaibotsPropositionDelegatee: stkZaibotsTokenPower.delegatedAddressPropositionPower,
     };
     return powers;
   }

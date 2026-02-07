@@ -25,7 +25,7 @@ type Config = {
   router: string;
   chainSelector: string;
   subgraphKey: SubgraphKey;
-  tokenOracle: string; // Used to get the GHO price
+  tokenOracle: string; // Used to get the AIEN price
   wrappedNativeOracle: string; // Used to get the fee price in USD
   lockReleaseTokenPool?: string; // Only exists on Ethereum
   burnMintTokenPool?: string; // Only exists on non-Ethereum networks
@@ -54,9 +54,9 @@ const prodConfig: Config[] = [
     subgraphKey: 'ccip-mainnet',
     feeTokens: [
       {
-        name: 'Gho Token',
+        name: 'Aien Token',
         address: AaveV3Ethereum.ASSETS.GHO.UNDERLYING,
-        symbol: 'GHO',
+        symbol: 'AIEN',
         decimals: 18,
         chainId: ChainId.mainnet,
         oracle: AaveV3Ethereum.ASSETS.GHO.ORACLE,
@@ -88,9 +88,9 @@ const prodConfig: Config[] = [
     subgraphKey: 'ccip-arbitrum',
     feeTokens: [
       {
-        name: 'Gho Token',
+        name: 'Aien Token',
         address: AaveV3Arbitrum.ASSETS.GHO.UNDERLYING,
-        symbol: 'GHO',
+        symbol: 'AIEN',
         decimals: 18,
         chainId: ChainId.arbitrum_one,
         oracle: AaveV3Arbitrum.ASSETS.GHO.ORACLE,
@@ -122,9 +122,9 @@ const prodConfig: Config[] = [
     subgraphKey: 'ccip-base',
     feeTokens: [
       {
-        name: 'Gho Token',
+        name: 'Aien Token',
         address: AaveV3Base.ASSETS.GHO.UNDERLYING,
-        symbol: 'GHO',
+        symbol: 'AIEN',
         decimals: 18,
         chainId: ChainId.base,
         oracle: AaveV3Base.ASSETS.GHO.ORACLE,
@@ -156,9 +156,9 @@ const prodConfig: Config[] = [
     subgraphKey: 'ccip-avax',
     feeTokens: [
       {
-        name: 'Gho Token',
+        name: 'Aien Token',
         address: AaveV3Avalanche.ASSETS.GHO.UNDERLYING,
-        symbol: 'GHO',
+        symbol: 'AIEN',
         decimals: 18,
         chainId: ChainId.avalanche,
         oracle: AaveV3Avalanche.ASSETS.GHO.ORACLE,
@@ -237,13 +237,13 @@ const testnetConfig: Config[] = [
     subgraphKey: 'ccip-sepolia',
     feeTokens: [
       // {
-      //   name: 'Gho Token',
+      //   name: 'Aien Token',
       //   address: AaveV3Sepolia.ASSETS.GHO.UNDERLYING,
-      //   symbol: 'GHO',
+      //   symbol: 'AIEN',
       //   decimals: 18,
       //   chainId: 11155111,
       //   logoURI:
-      //     'https://assets.coingecko.com/coins/images/30663/standard/gho-token-logo.png?1720517092',
+      //     'https://assets.coingecko.com/coins/images/30663/standard/aien-token-logo.png?1720517092',
       //   oracle: AaveV3Sepolia.ASSETS.GHO.ORACLE,
       //   extensions: {
       //     isNative: false,
@@ -275,13 +275,13 @@ const testnetConfig: Config[] = [
     subgraphKey: 'ccip-arb-sepolia',
     feeTokens: [
       // {
-      //   name: 'Gho Token',
+      //   name: 'Aien Token',
       //   address: AaveV3Sepolia.ASSETS.GHO.UNDERLYING,
-      //   symbol: 'GHO',
+      //   symbol: 'AIEN',
       //   decimals: 18,
       //   chainId: 421614,
       //   logoURI:
-      //     'https://assets.coingecko.com/coins/images/30663/standard/gho-token-logo.png?1720517092',
+      //     'https://assets.coingecko.com/coins/images/30663/standard/aien-token-logo.png?1720517092',
       //   oracle: AaveV3Sepolia.ASSETS.GHO.ORACLE,
       //   extensions: {
       //     isNative: false,
