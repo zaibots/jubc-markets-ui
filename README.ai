@@ -1,0 +1,24 @@
+# 🌐 Zaibots Markets UI: Perception Layer
+
+This repository contains the **Perception Layer (RNA)** for the Zaibots protocol. It provides the interface for managing USDC collateral and AIEN debt positions.
+
+**Core Mandate:** Render the "Street Truth" of the Zaibots protocol with high fidelity and clinical clarity.
+
+## 🧬 Interface Identity
+- **Platform**: React/Next.js (Based on Aave Protocol Interface).
+- **Branding**: Rebranded to **Zaibots** (Compute Economy).
+- **Core Asset**: **AIEN** (Compute Commodity).
+
+## 🛠️ Key Features
+- **Carry Vault Dashboard**: Visualizes USDC collateral vs. AIEN debt with real-time leverage and health factor tracking.
+- **8004 Integration**: Displays nearly trustless inference data from the TEE Oracle to mitigate the "Hiccup Gap."
+- **Typeform Integration**: Clinical ingestion of user feedback and registration.
+
+## ⚖️ Sovereign Mandate for Agents
+1.  **UI Integrity**: All rebranding (Aave → Zaibots, GHO → AIEN) must be bit-perfect across all components.
+2.  **Telemetry Flow**: Ensure the UI correctly ingests and displays the 8004 multi-sig status for pending strikes.
+3.  **Low Entropy**: Avoid high-entropy UI drift; maintain the clinical, functional aesthetic of the Zaibots organization.
+
+---
+*Status: Clinical Realization (Zaibots Organization)*  
+*Mandate: Perception Management*
