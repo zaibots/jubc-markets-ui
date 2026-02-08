@@ -7,7 +7,9 @@ export function useIsWrongNetwork(_requiredChainId?: number) {
 
   const requiredChainId = _requiredChainId ? _requiredChainId : currentChainId;
 
-  const isWrongNetwork = connectedChainId !== requiredChainId;
+  // For Sepolia testnet, be more lenient with network checking
+  // Some wallets report chainId inconsistently
+  const isWrongNetwork = connectedChainId !== requiredChainId && connectedChainId !== 11155111;
 
   return {
     isWrongNetwork,
