@@ -11,13 +11,13 @@ import { BorrowInfo } from '../BorrowInfo';
 import { ReserveEModePanel } from '../ReserveEModePanel';
 import { PanelRow, PanelTitle } from '../ReservePanels';
 
-// import { SavingsGho } from './SavingsGho';
+// import { SavingsAien } from './SavingsAien';
 
-type GhoReserveConfigurationProps = {
+type AienReserveConfigurationProps = {
   reserve: ReserveWithId;
 };
 
-export const GhoReserveConfiguration: React.FC<GhoReserveConfigurationProps> = ({ reserve }) => {
+export const AienReserveConfiguration: React.FC<AienReserveConfigurationProps> = ({ reserve }) => {
   const [currentNetworkConfig, currentMarketData] = useRootStore(
     useShallow((store) => [store.currentNetworkConfig, store.currentMarketData])
   );
@@ -28,15 +28,15 @@ export const GhoReserveConfiguration: React.FC<GhoReserveConfigurationProps> = (
     <>
       <PanelRow>
         <PanelTitle>
-          <Trans>About GHO</Trans>
+          <Trans>About AIEN</Trans>
         </PanelTitle>
         <Box>
           <Typography gutterBottom>
             <Trans>
-              GHO is a native decentralized, collateral-backed digital asset pegged to USD. It is
-              created by users via borrowing against multiple collateral. When user repays their GHO
-              borrow position, the protocol burns that user&apos;s GHO. All the interest payments
-              accrued by minters of GHO would be directly transferred to the AaveDAO treasury.
+              AIEN is a native decentralized, collateral-backed digital asset pegged to USD. It is
+              created by users via borrowing against multiple collateral. When user repays their AIEN
+              borrow position, the protocol burns that user&apos;s AIEN. All the interest payments
+              accrued by minters of AIEN would be directly transferred to the ZaibotsDAO treasury.
             </Trans>
           </Typography>
           <Box
@@ -50,7 +50,7 @@ export const GhoReserveConfiguration: React.FC<GhoReserveConfigurationProps> = (
               component={Link}
               variant="outlined"
               size="small"
-              href="https://github.com/aave/gho/blob/main/techpaper/GHO_Technical_Paper.pdf"
+              href="https://github.com/zaibots/gho/blob/main/techpaper/GHO_Technical_Paper.pdf"
               sx={{ p: '2px 4px', mt: 2, mr: 2, minWidth: 0 }}
             >
               <Typography sx={{ mr: 1, fontSize: '10px' }}>
@@ -64,7 +64,7 @@ export const GhoReserveConfiguration: React.FC<GhoReserveConfigurationProps> = (
               component={Link}
               variant="outlined"
               size="small"
-              href="https://gho.xyz"
+              href="https://aien.xyz"
               sx={{ p: '2px 4px', mt: 2, mr: 2, minWidth: 0 }}
             >
               <Typography sx={{ mr: 1, fontSize: '10px' }}>
@@ -78,7 +78,7 @@ export const GhoReserveConfiguration: React.FC<GhoReserveConfigurationProps> = (
               component={Link}
               variant="outlined"
               size="small"
-              href="https://docs.gho.xyz/concepts/faq"
+              href="https://docs.aien.xyz/concepts/faq"
               sx={{ p: '2px 4px', mt: 2, mr: 2, minWidth: 0 }}
             >
               <Typography sx={{ mr: 1, fontSize: '10px' }}>
@@ -94,10 +94,10 @@ export const GhoReserveConfiguration: React.FC<GhoReserveConfigurationProps> = (
       {/* <Divider sx={{ my: { xs: 6, sm: 10 } }} /> */}
       {/* <PanelRow>
         <PanelTitle>
-          <Trans>Savings GHO</Trans>
+          <Trans>Savings AIEN</Trans>
         </PanelTitle>
         <Box>
-          <SavingsGho />
+          <SavingsAien />
         </Box>
       </PanelRow> */}
       <Divider sx={{ my: { xs: 6, sm: 10 } }} />

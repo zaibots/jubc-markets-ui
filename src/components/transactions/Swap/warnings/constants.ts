@@ -1,7 +1,7 @@
 export const SAFETY_MODULE_TOKENS = [
-  'stkgho',
-  'stkaave',
-  'stkaavewstethbptv2',
+  'stkaien',
+  'stkzaibots',
+  'stkzaibotswstethbptv2',
   'stkbptv2',
   'stkbpt',
   'stkabpt',

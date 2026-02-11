@@ -85,7 +85,7 @@ export const GovVoteModalContent = ({
               onClick={() => trackEvent(AIP.SHARE_VOTE_ON_LENS)}
               href={`https://hey.xyz/?url=${
                 window.location.href
-              }&text=${`I just voted on the latest active proposal on aave governance`}&hashtags=Aave&preview=true`}
+              }&text=${`I just voted on the latest active proposal on zaibots governance`}&hashtags=Zaibots&preview=true`}
               startIcon={
                 <LensIcon
                   color={palette.mode === 'dark' ? palette.primary.light : palette.text.primary}

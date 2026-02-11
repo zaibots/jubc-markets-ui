@@ -7,9 +7,9 @@ export const SwapFeeTooltip = () => {
   return (
     <TextWithTooltip variant="caption" text={<Trans>Fee</Trans>}>
       <Trans>
-        Fees help support the user experience and security of the Aave application.{' '}
+        Fees help support the user experience and security of the Zaibots application.{' '}
         <Link
-          href="https://aave.com/docs/developers/smart-contracts/swap-features"
+          href="https://zaibots.com/docs/developers/smart-contracts/swap-features"
           target="_blank"
           rel="noopener"
         >

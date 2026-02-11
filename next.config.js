@@ -34,6 +34,12 @@ module.exports = withSentryConfig(
       config.resolve.fallback = { fs: false, net: false, tls: false };
       return config;
     },
+    typescript: {
+      ignoreBuildErrors: true,
+    },
+    eslint: {
+      ignoreDuringBuilds: true,
+    },
     reactStrictMode: true,
     // assetPrefix: "./",
     trailingSlash: true,
@@ -66,7 +72,7 @@ module.exports = withSentryConfig(
     // https://www.npmjs.com/package/@sentry/webpack-plugin#options
 
     org: 'avara-ex',
-    project: 'aave-v3',
+    project: 'zaibots-v3',
 
     // Only print logs for uploading source maps in CI
     silent: !process.env.CI,

@@ -214,7 +214,7 @@ export const SupportModal = () => {
                 target="_blank"
                 variant="subheader1"
                 color="text.primary"
-                href="https://discord.gg/aave"
+                href="https://discord.gg/zaibots"
                 underline="always"
               >
                 Discord server

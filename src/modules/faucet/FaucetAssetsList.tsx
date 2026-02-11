@@ -34,7 +34,7 @@ export default function FaucetAssetsList() {
 
   const listData = reserves
     .filter(
-      (reserve) => !reserve.isWrappedBaseAsset && !reserve.isFrozen && reserve.symbol !== 'GHO'
+      (reserve) => !reserve.isWrappedBaseAsset && !reserve.isFrozen && reserve.symbol !== 'AIEN'
     )
     .map((reserve) => {
       const walletBalance = valueToBigNumber(

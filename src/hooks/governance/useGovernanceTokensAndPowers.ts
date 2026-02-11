@@ -8,9 +8,9 @@ import { useGovernanceTokens } from './useGovernanceTokens';
 import { usePowers } from './usePowers';
 
 interface GovernanceTokensAndPowers extends Powers, GovernanceTokensBalance {
-  isAaveTokenWithDelegatedPower: boolean;
-  isStkAaveTokenWithDelegatedPower: boolean;
-  isAAaveTokenWithDelegatedPower: boolean;
+  isZaibotsTokenWithDelegatedPower: boolean;
+  isStkZaibotsTokenWithDelegatedPower: boolean;
+  isAZaibotsTokenWithDelegatedPower: boolean;
   refetchPowers: <TPageData>(
     options?: (RefetchOptions & RefetchQueryFilters<TPageData>) | undefined
   ) => Promise<QueryObserverResult<Powers, unknown>>;
@@ -30,19 +30,19 @@ export const useGovernanceTokensAndPowers = (
   const convertToBigNumber = (value: string, decimals = 18) =>
     value ? ethers.utils.parseUnits(value.toString(), decimals) : BigNumber.from(0);
 
-  const aAavePower = powers.aAaveTokenPower.votingPower;
-  const aAaveToken = convertToBigNumber(governanceTokens.aAave);
-  const aavePower = powers.aaveTokenPower.votingPower;
-  const aaveToken = convertToBigNumber(governanceTokens.aave);
-  const stkAavePower = powers.stkAaveTokenPower.votingPower;
-  const stkAaveToken = convertToBigNumber(governanceTokens.stkAave);
+  const aZaibotsPower = powers.aZaibotsTokenPower.votingPower;
+  const aZaibotsToken = convertToBigNumber(governanceTokens.aZaibots);
+  const zaibotsPower = powers.zaibotsTokenPower.votingPower;
+  const zaibotsToken = convertToBigNumber(governanceTokens.zaibots);
+  const stkZaibotsPower = powers.stkZaibotsTokenPower.votingPower;
+  const stkZaibotsToken = convertToBigNumber(governanceTokens.stkZaibots);
 
   return {
     ...powers,
     ...governanceTokens,
-    isAAaveTokenWithDelegatedPower: aAavePower.gt(aAaveToken),
-    isAaveTokenWithDelegatedPower: aavePower.gt(aaveToken),
-    isStkAaveTokenWithDelegatedPower: stkAavePower.gt(stkAaveToken),
+    isAZaibotsTokenWithDelegatedPower: aZaibotsPower.gt(aZaibotsToken),
+    isZaibotsTokenWithDelegatedPower: zaibotsPower.gt(zaibotsToken),
+    isStkZaibotsTokenWithDelegatedPower: stkZaibotsPower.gt(stkZaibotsToken),
     refetchPowers,
   };
 };

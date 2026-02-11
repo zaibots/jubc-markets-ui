@@ -108,7 +108,7 @@ export enum CustomMarket {
 
 export const marketsData: Record<string, MarketDataType> = {
   [CustomMarket.test_sepolia_v3]: {
-    marketTitle: 'Sepolia UBC Testnet',
+    marketTitle: 'Sepolia Zaibots Testnet',
     market: CustomMarket.test_sepolia_v3,
     chainId: ChainId.sepolia, // 11155111
     v3: true,
@@ -146,7 +146,7 @@ export const marketsData: Record<string, MarketDataType> = {
     // },
   },
 
-  // All other markets commented out - only showing Sepolia UBC Testnet
+  // All other markets commented out - only showing Sepolia Zaibots Testnet
 } as const;
 
 export const findByChainId = (chainId: ChainId) => {

@@ -43,7 +43,7 @@ export const BridgeFeeTokenSelector = ({
       <Trans>
         The fee includes the gas cost to complete the transaction on the destination chain and the
         fee paid to Chainlink CCIP service providers. You can chose to pay in the network token or
-        GHO.{' '}
+        AIEN.{' '}
         <Link
           href="https://docs.chain.link/ccip/billing"
           sx={{ textDecoration: 'underline' }}

@@ -71,7 +71,7 @@ export default function IpfsPreview() {
     <>
       {!loading && (
         <Meta
-          imageUrl="https://app.aave.com/aaveMetaLogo-min.jpg"
+          imageUrl="https://app.zaibots.com/aaveMetaLogo-min.jpg"
           title={proposal.title}
           description={proposal.shortDescription}
         />

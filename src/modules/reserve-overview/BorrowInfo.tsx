@@ -5,7 +5,7 @@ import { Box, Typography } from '@mui/material';
 import { BigNumber } from 'bignumber.js';
 import { CapsCircularStatus } from 'src/components/caps/CapsCircularStatus';
 import { IncentivesCard } from 'src/components/incentives/IncentivesCard';
-import { GhoRateTooltip } from 'src/components/infoTooltips/GhoRateTooltip';
+import { AienRateTooltip } from 'src/components/infoTooltips/AienRateTooltip';
 import { VariableAPYTooltip } from 'src/components/infoTooltips/VariableAPYTooltip';
 import { FormattedNumber } from 'src/components/primitives/FormattedNumber';
 import { Link } from 'src/components/primitives/Link';
@@ -14,10 +14,10 @@ import { TextWithTooltip } from 'src/components/TextWithTooltip';
 import { ReserveWithId } from 'src/hooks/app-data-provider/useAppDataProvider';
 import { AssetCapHookData } from 'src/hooks/useAssetCapsSDK';
 import { GENERAL } from 'src/utils/events';
-import { displayGhoForMintableMarket } from 'src/utils/ghoUtilities';
+import { displayGhoForMintableMarket } from 'src/utils/aienUtilities';
 import { MarketDataType, NetworkConfig } from 'src/utils/marketsAndNetworksConfig';
 
-import { mapAaveProtocolIncentives } from '../../components/incentives/incentives.helper';
+import { mapZaibotsProtocolIncentives } from '../../components/incentives/incentives.helper';
 import { BorrowApyGraph } from './graphs/ApyGraphContainer';
 import { ReserveFactorOverview } from './ReserveFactorOverview';
 import { PanelItem } from './ReservePanels';
@@ -58,7 +58,7 @@ export const BorrowInfo = ({
     currentMarket: currentMarketData.market,
   });
 
-  const borrowProtocolIncentives = mapAaveProtocolIncentives(reserve.incentives, 'borrow');
+  const borrowProtocolIncentives = mapZaibotsProtocolIncentives(reserve.incentives, 'borrow');
   const apyValue = Number(reserve.borrowInfo?.apy.value);
 
   return (
@@ -111,7 +111,7 @@ export const BorrowInfo = ({
                         pool insolvency.
                       </Trans>{' '}
                       <Link
-                        href="https://docs.aave.com/developers/whats-new/supply-borrow-caps"
+                        href="https://docs.zaibots.com/developers/whats-new/supply-borrow-caps"
                         underline="always"
                       >
                         <Trans>Learn more</Trans>
@@ -166,7 +166,7 @@ export const BorrowInfo = ({
         <PanelItem
           title={
             isGho ? (
-              <GhoRateTooltip text={<Trans>APY</Trans>} />
+              <AienRateTooltip text={<Trans>APY</Trans>} />
             ) : (
               <VariableAPYTooltip
                 event={{

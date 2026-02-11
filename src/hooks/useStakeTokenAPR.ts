@@ -9,7 +9,7 @@ type MeritIncentives = {
   };
 };
 
-const url = 'https://apps.aavechan.com/api/merit/aprs';
+const url = 'https://apps.zaibotschan.com/api/merit/aprs';
 
 export const useStakeTokenAPR = () => {
   return useQuery({
@@ -23,7 +23,7 @@ export const useStakeTokenAPR = () => {
     queryKey: ['stakeTokenAPR'],
     staleTime: 1000 * 60 * 5, // 5 minutes
     select: (data) => {
-      // Get the sGHO staking APR
+      // Get the sAIEN staking APR
       const stakeAPR = data.actionsAPR[MeritAction.ETHEREUM_SGHO];
 
       if (!stakeAPR) {

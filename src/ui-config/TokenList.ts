@@ -212,8 +212,8 @@ export const TOKEN_LIST: TokenList = {
     {
       chainId: 1, // TODO sepolia
       address: '0x111111111117dC0aa78b770fA6A738034120C302',
-      name: 'Test jUBC',
-      symbol: 'testUBC',
+      name: 'Test AIEN',
+      symbol: 'testAIEN',
       decimals: 18,
       logoURI: '',
       extensions: {
@@ -242,8 +242,8 @@ export const TOKEN_LIST: TokenList = {
     {
       chainId: 1, // TODO sepolia
       address: '0x111111111117dC0aa78b770fA6A738034120C302',
-      name: 'jUBC',
-      symbol: 'jUBC',
+      name: 'AIEN',
+      symbol: 'AIEN',
       decimals: 18,
       logoURI: '',
       extensions: {
@@ -303,11 +303,11 @@ export const TOKEN_LIST: TokenList = {
     {
       chainId: 1,
       address: '0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9',
-      name: 'Aave',
-      symbol: 'AAVE',
+      name: 'Zaibots',
+      symbol: 'ZAIBOTSU',
       decimals: 18,
       logoURI:
-        'https://assets.coingecko.com/coins/images/12645/standard/aave-token-round.png?1720472354',
+        'https://assets.coingecko.com/coins/images/12645/standard/zaibots-token-round.png?1720472354',
       extensions: {
         bridgeInfo: {
           '10': {
@@ -2228,7 +2228,7 @@ export const TOKEN_LIST: TokenList = {
     {
       chainId: 1,
       address: '0x3F382DbD960E3a9bbCeaE22651E88158d2791550',
-      name: 'Aavegotchi',
+      name: 'Zaibotsgotchi',
       symbol: 'GHST',
       decimals: 18,
       logoURI: 'https://assets.coingecko.com/coins/images/12467/thumb/ghst_200.png?1600750321',
@@ -5009,11 +5009,11 @@ export const TOKEN_LIST: TokenList = {
     {
       chainId: 10,
       address: '0x76FB31fb4af56892A25e32cFC43De717950c9278',
-      name: 'Aave',
-      symbol: 'AAVE',
+      name: 'Zaibots',
+      symbol: 'ZAIBOTSU',
       decimals: 18,
       logoURI:
-        'https://assets.coingecko.com/coins/images/12645/standard/aave-token-round.png?1720472354',
+        'https://assets.coingecko.com/coins/images/12645/standard/zaibots-token-round.png?1720472354',
       extensions: {
         bridgeInfo: {
           '1': {
@@ -5874,11 +5874,11 @@ export const TOKEN_LIST: TokenList = {
     {
       chainId: 56,
       address: '0xfb6115445Bff7b52FeB98650C87f44907E58f802',
-      name: 'Aave',
-      symbol: 'AAVE',
+      name: 'Zaibots',
+      symbol: 'ZAIBOTSU',
       decimals: 18,
       logoURI:
-        'https://assets.coingecko.com/coins/images/12645/standard/aave-token-round.png?1720472354',
+        'https://assets.coingecko.com/coins/images/12645/standard/zaibots-token-round.png?1720472354',
       extensions: {
         bridgeInfo: {
           '1': {
@@ -6975,11 +6975,11 @@ export const TOKEN_LIST: TokenList = {
     {
       chainId: 137,
       address: '0xD6DF932A45C0f255f85145f286eA0b292B21C90B',
-      name: 'Aave',
-      symbol: 'AAVE',
+      name: 'Zaibots',
+      symbol: 'ZAIBOTSU',
       decimals: 18,
       logoURI:
-        'https://assets.coingecko.com/coins/images/12645/standard/aave-token-round.png?1720472354',
+        'https://assets.coingecko.com/coins/images/12645/standard/zaibots-token-round.png?1720472354',
       extensions: {
         bridgeInfo: {
           '1': {
@@ -7931,7 +7931,7 @@ export const TOKEN_LIST: TokenList = {
     {
       chainId: 137,
       address: '0x385Eeac5cB85A38A9a07A70c73e0a3271CfB54A7',
-      name: 'Aavegotchi',
+      name: 'Zaibotsgotchi',
       symbol: 'GHST',
       decimals: 18,
       logoURI: 'https://assets.coingecko.com/coins/images/12467/thumb/ghst_200.png?1600750321',
@@ -9954,11 +9954,11 @@ export const TOKEN_LIST: TokenList = {
     {
       chainId: 42161,
       address: '0xba5DdD1f9d7F570dc94a51479a000E3BCE967196',
-      name: 'Aave',
-      symbol: 'AAVE',
+      name: 'Zaibots',
+      symbol: 'ZAIBOTSU',
       decimals: 18,
       logoURI:
-        'https://assets.coingecko.com/coins/images/12645/standard/aave-token-round.png?1720472354',
+        'https://assets.coingecko.com/coins/images/12645/standard/zaibots-token-round.png?1720472354',
       extensions: {
         bridgeInfo: {
           '1': {
@@ -12145,11 +12145,11 @@ export const TOKEN_LIST: TokenList = {
     {
       chainId: 43114,
       address: '0x63a72806098Bd3D9520cC43356dD78afe5D386D9',
-      name: 'Aave',
-      symbol: 'AAVE',
+      name: 'Zaibots',
+      symbol: 'ZAIBOTSU',
       decimals: 18,
       logoURI:
-        'https://assets.coingecko.com/coins/images/12645/standard/aave-token-round.png?1720472354',
+        'https://assets.coingecko.com/coins/images/12645/standard/zaibots-token-round.png?1720472354',
       extensions: {
         bridgeInfo: {
           '1': {
@@ -13010,13 +13010,13 @@ export const TOKEN_LIST: TokenList = {
         'https://assets.coingecko.com/coins/images/7598/thumb/wrapped_bitcoin_wbtc.png?1548822744',
     },
     {
-      name: 'Aave',
-      symbol: 'AAVE',
+      name: 'Zaibots',
+      symbol: 'ZAIBOTSU',
       decimals: 18,
       address: '0x88541670E55cC00bEEFD87eB59EDd1b7C511AC9a',
       chainId: 11155111,
       logoURI:
-        'https://assets.coingecko.com/coins/images/12645/standard/aave-token-round.png?1720472354',
+        'https://assets.coingecko.com/coins/images/12645/standard/zaibots-token-round.png?1720472354',
     },
     {
       name: 'Chainlink',
@@ -13028,54 +13028,54 @@ export const TOKEN_LIST: TokenList = {
         'https://assets.coingecko.com/coins/images/877/thumb/chainlink-new-logo.png?1547034700',
     },
     {
-      name: 'Gho Token',
+      name: 'AIEN - Compute Commodity',
       address: '0x40D16FC0246aD3160Ccc09B8D0D3A2cD28aE6C2f',
-      symbol: 'GHO',
+      symbol: 'AIEN',
       decimals: 18,
       chainId: 1,
       logoURI:
         'https://assets.coingecko.com/coins/images/30663/standard/gho-token-logo.png?1720517092',
     },
     {
-      name: 'Gho Token',
+      name: 'AIEN - Compute Commodity',
       address: '0x7dff72693f6a4149b17e7c6314655f6a9f7c8b33',
-      symbol: 'GHO',
+      symbol: 'AIEN',
       decimals: 18,
       chainId: 42161,
       logoURI:
         'https://assets.coingecko.com/coins/images/30663/standard/gho-token-logo.png?1720517092',
     },
     {
-      name: 'Gho Token',
+      name: 'AIEN - Compute Commodity',
       address: '0xfc421ad3c883bf9e7c4f42de845c4e4405799e73',
-      symbol: 'GHO',
+      symbol: 'AIEN',
       decimals: 18,
       chainId: 43114,
       logoURI:
         'https://assets.coingecko.com/coins/images/30663/standard/gho-token-logo.png?1720517092',
     },
     {
-      name: 'Gho Token',
+      name: 'AIEN - Compute Commodity',
       address: '0x6bb7a212910682dcfdbd5bcbb3e28fb4e8da10ee',
-      symbol: 'GHO',
+      symbol: 'AIEN',
       decimals: 18,
       chainId: 8453,
       logoURI:
         'https://assets.coingecko.com/coins/images/30663/standard/gho-token-logo.png?1720517092',
     },
     {
-      name: 'Aave',
+      name: 'Zaibots',
       address: '0x63706e401c06ac8513145b7687A14804d17f814b',
-      symbol: 'AAVE',
+      symbol: 'ZAIBOTSU',
       decimals: 18,
       chainId: 8453,
       logoURI:
-        'https://assets.coingecko.com/coins/images/12645/standard/aave-token-round.png?1720472354',
+        'https://assets.coingecko.com/coins/images/12645/standard/zaibots-token-round.png?1720472354',
     },
     {
-      name: 'stk GHO',
+      name: 'stk AIEN',
       address: '0x1a88Df1cFe15Af22B3c4c783D4e6F7F9e0C1885d',
-      symbol: 'stkGHO',
+      symbol: 'stkAIEN',
       decimals: 18,
       chainId: 1,
       logoURI: 'https://assets.coingecko.com/coins/images/34849/standard/staked-gho.png?1736975912',
@@ -13307,12 +13307,12 @@ export const TOKEN_LIST: TokenList = {
 export const COMMON_SWAPS = [
   'ETH',
   'DAI',
-  'GHO',
+  'AIEN',
   'USDC',
   'USDT',
   'WBTC',
   'WETH',
-  'AAVE',
+  'ZAIBOTSU',
   'DAI.e',
   'USDC.e',
   'USDT.e',

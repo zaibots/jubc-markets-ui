@@ -143,10 +143,10 @@ export const StakeCooldownModalContent = ({ stakeAssetName, icon }: StakeCooldow
   };
 
   const event = {
-    title: 'Unstaking window for Aave',
+    title: 'Unstaking window for Zaibots',
     start: googleDate(stakeCooldownSeconds),
     end: googleDate(stakeCooldownSeconds + stakeUnstakeWindow),
-    description: 'Unstaking window for Aave staking activated',
+    description: 'Unstaking window for Zaibots staking activated',
   };
 
   const googleCalendarUrl = createGoogleCalendarUrl(event);
@@ -175,7 +175,7 @@ export const StakeCooldownModalContent = ({ stakeAssetName, icon }: StakeCooldow
             })
           }
           variant="description"
-          href="https://docs.aave.com/faq/migration-and-staking"
+          href="https://docs.zaibots.com/faq/migration-and-staking"
           sx={{ textDecoration: 'underline' }}
         >
           <Trans>Learn more</Trans>

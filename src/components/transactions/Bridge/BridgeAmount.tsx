@@ -3,7 +3,7 @@ import { Typography, useTheme } from '@mui/material';
 import { formatEther } from 'ethers/lib/utils';
 import { FormattedNumber } from 'src/components/primitives/FormattedNumber';
 import { TextWithTooltip } from 'src/components/TextWithTooltip';
-import { GHO_SYMBOL } from 'src/utils/ghoUtilities';
+import { GHO_SYMBOL } from 'src/utils/aienUtilities';
 
 import { DetailsNumberLine } from '../FlowCommons/TxModalDetails';
 
@@ -35,7 +35,7 @@ export const BridgeAmount = ({
     <Typography variant="caption">
       The amount you can bridge is currently reduced because of the rate limit. The limit is raised
       at a rate of{' '}
-      <FormattedNumber variant="caption" value={formatEther(refillRate)} visibleDecimals={2} /> GHO
+      <FormattedNumber variant="caption" value={formatEther(refillRate)} visibleDecimals={2} /> AIEN
       per second, until the maximum amount of{' '}
       <FormattedNumber
         variant="caption"

@@ -3,14 +3,14 @@ import { Box, Paper, Typography, useMediaQuery, useTheme } from '@mui/material';
 import dynamic from 'next/dynamic';
 import { ReserveWithId } from 'src/hooks/app-data-provider/useAppDataProvider';
 import { useRootStore } from 'src/store/root';
-import { displayGhoForMintableMarket } from 'src/utils/ghoUtilities';
+import { displayGhoForMintableMarket } from 'src/utils/aienUtilities';
 
 type ReserveConfigurationProps = {
   reserve: ReserveWithId;
 };
 
-const GhoReserveConfiguration = dynamic(() =>
-  import('./Gho/GhoReserveConfiguration').then((module) => module.GhoReserveConfiguration)
+const AienReserveConfiguration = dynamic(() =>
+  import('./Gho/AienReserveConfiguration').then((module) => module.AienReserveConfiguration)
 );
 
 const ReserveConfiguration = dynamic(() =>
@@ -47,7 +47,7 @@ export const ReserveConfigurationWrapper: React.FC<ReserveConfigurationProps> = 
         </Typography>
       </Box>
       {isGho ? (
-        <GhoReserveConfiguration reserve={reserve} />
+        <AienReserveConfiguration reserve={reserve} />
       ) : (
         <ReserveConfiguration reserve={reserve} />
       )}

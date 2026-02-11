@@ -47,7 +47,7 @@ export const MerklIncentivesTooltipContent = ({
 
       <Typography variant="caption" color="text.secondary" mb={3}>
         <Trans>
-          This is a program initiated by the Aave DAO and implemented by Merkl. Aave Labs does not
+          This is a program initiated by the Zaibots DAO and implemented by Merkl. Zaibots Labs does not
           guarantee the program and accepts no liability.
         </Trans>
       </Typography>
@@ -73,7 +73,7 @@ export const MerklIncentivesTooltipContent = ({
             href={
               merklIncentives.customForumLink
                 ? merklIncentives.customForumLink
-                : 'https://governance.aave.com/t/arfc-set-aci-as-emission-manager-for-liquidity-mining-programs/17898'
+                : 'https://governance.zaibots.com/t/arfc-set-aci-as-emission-manager-for-liquidity-mining-programs/17898'
             }
             sx={{ textDecoration: 'underline' }}
             variant="caption"
@@ -88,7 +88,7 @@ export const MerklIncentivesTooltipContent = ({
             href={
               merklIncentives.customForumLink
                 ? merklIncentives.customForumLink
-                : 'https://governance.aave.com/t/arfc-set-aci-as-emission-manager-for-liquidity-mining-programs/17898'
+                : 'https://governance.zaibots.com/t/arfc-set-aci-as-emission-manager-for-liquidity-mining-programs/17898'
             }
             sx={{ textDecoration: 'underline' }}
             variant="caption"

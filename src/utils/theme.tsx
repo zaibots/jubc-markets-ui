@@ -37,7 +37,7 @@ declare module '@mui/material/styles/createPalette' {
 
   interface Palette {
     gradients: {
-      aaveGradient: string;
+      zaibotsGradient: string;
       newGradient: string;
     };
     other: {
@@ -47,7 +47,7 @@ declare module '@mui/material/styles/createPalette' {
 
   interface PaletteOptions {
     gradients: {
-      aaveGradient: string;
+      zaibotsGradient: string;
       newGradient: string;
     };
   }
@@ -202,7 +202,7 @@ export const getDesignTokens = (mode: 'light' | 'dark') => {
         standardInputLine: getColor('#383D511F', '#EBEBEF6B'),
       },
       gradients: {
-        aaveGradient: 'linear-gradient(248.86deg, #B6509E 10.51%, #2EBAC6 93.41%)',
+        zaibotsGradient: 'linear-gradient(248.86deg, #B6509E 10.51%, #2EBAC6 93.41%)',
         newGradient: 'linear-gradient(79.67deg, #8C3EBC 0%, #007782 95.82%)',
       },
     },
@@ -447,10 +447,10 @@ export function getThemedComponents(theme: Theme) {
             props: { variant: 'gradient' },
             style: {
               color: theme.palette.common.white,
-              background: theme.palette.gradients.aaveGradient,
+              background: theme.palette.gradients.zaibotsGradient,
               transition: 'all 0.2s ease',
               '&:hover, &.Mui-focusVisible': {
-                background: theme.palette.gradients.aaveGradient,
+                background: theme.palette.gradients.zaibotsGradient,
                 opacity: '0.9',
               },
             },
@@ -836,10 +836,10 @@ export function getThemedComponents(theme: Theme) {
       MuiLinearProgress: {
         styleOverrides: {
           bar1Indeterminate: {
-            background: theme.palette.gradients.aaveGradient,
+            background: theme.palette.gradients.zaibotsGradient,
           },
           bar2Indeterminate: {
-            background: theme.palette.gradients.aaveGradient,
+            background: theme.palette.gradients.zaibotsGradient,
           },
         },
       },

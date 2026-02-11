@@ -16,19 +16,19 @@ export const permitByChainAndToken: {
   [ChainId.mainnet]: {
     '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48': true, // usdc
     '0x6b175474e89094c44da98b954eedeac495271d0f': false, // dai
-    '0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9': true, // aave
+    '0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9': true, // zaibots
     '0x514910771af9ca656af840dff83e8264ecf986ca': false, // link
     '0x2260fac5e5542a773aa44fbcfedf7c193bc2c599': false, // wbtc
     '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2': false, // weth
     '0x7f39c581f595b53c5cb19bd0b3f8da6c935e2ca0': true, // wsteth
-    '0x40d16fc0246ad3160ccc09b8d0d3a2cd28ae6c2f': true, // gho
+    '0x40d16fc0246ad3160ccc09b8d0d3a2cd28ae6c2f': true, // aien
     '0x5f98805a4e8be255a32880fdec7f6728c6568ba0': true, // lusd
     '0xdc035d45d973e3ec169d2276ddab16f1e407384f': true, // usds
     '0x14d60e7fdc0d71d8611742720e4c50e7a974020c': true, // uscc superstake underlying_tokenv
-    '0x43415eb6ff9db7e26a15b704e7a3edce97d31c4e': true, // ustb underlying_token (aavev3horizon)
-    '0x5a0f93d040de44e78f251b03c43be9cf317dcf64': true, // jaaa underlying_token janus henderson andmenum (aave v3 horizon)
-    '0x8c213ee79581ff4984583c6a801e5263418c4b86': true, // jtsry underlying_token janus henderson andmenum (aave v3 horizon)
-    '0x136471a34f6ef19fe571effc1ca711fdb8e49f2b': true, // usyc underlying_token us yield coin (aavev3horizon)
+    '0x43415eb6ff9db7e26a15b704e7a3edce97d31c4e': true, // ustb underlying_token (zaibotsv3horizon)
+    '0x5a0f93d040de44e78f251b03c43be9cf317dcf64': true, // jaaa underlying_token janus henderson andmenum (zaibots v3 horizon)
+    '0x8c213ee79581ff4984583c6a801e5263418c4b86': true, // jtsry underlying_token janus henderson andmenum (zaibots v3 horizon)
+    '0x136471a34f6ef19fe571effc1ca711fdb8e49f2b': true, // usyc underlying_token us yield coin (zaibotsv3horizon)
 
     // atokens
     '0xb76cf0f1d2e1a606c14044607c8c44878aae7186': true, // adefault
@@ -44,8 +44,8 @@ export const permitByChainAndToken: {
     '0xaf270c38ff895ea3f95ed488ceace2386f038249': true, // adai_static
     '0x5e8c8a7243651db1384c0ddfdbe39761e8e7e51a': true, // alink
     '0x57bd8c73838d1781b4f6e0d5cf89eb676488d3df': true, // alink_static
-    '0xa700b4eb416be35b2911fd5dee80678ff64ff6c9': true, // aaave
-    '0xfeb859a50f92c6d5ad7c9ef7c2c060d164b3280f': true, // aaave_static
+    '0xa700b4eb416be35b2911fd5dee80678ff64ff6c9': true, // azaibots
+    '0xfeb859a50f92c6d5ad7c9ef7c2c060d164b3280f': true, // azaibots_static
     '0x977b6fc5de62598b08c85ac8cf2b745874e8b78c': true, // acbeth
     '0xe2a6863c8f043457b497667ef3c43073e2d69089': true, // acbeth_static
     '0x23878914efe38d27c4d67ab83ed1b93a74d4086a': true, // ausdt
@@ -70,8 +70,8 @@ export const permitByChainAndToken: {
     '0xb490ff18e55b8881c9527fe7e358dd363780449f': true, // aone_inch_static
     '0xd4e245848d6e1220dbe62e155d89fa327e43cb06': true, // afrax
     '0xee66abd4d0f9908a48e08ae354b0f425de3e237e': true, // afrax_static
-    '0x00907f9921424583e7ffbfedf84f92b7b2be4977': true, // agho
-    '0x048459e4fb3402e58d8900af7283ad574b91d742': true, // agho_static
+    '0x00907f9921424583e7ffbfedf84f92b7b2be4977': true, // aaien
+    '0x048459e4fb3402e58d8900af7283ad574b91d742': true, // aaien_static
     '0xb76cf92076adbf1d9c39294fa8e7a67579fde357': true, // arpl
     '0x95ef7cb3494e65da4926ba330dbf540a13affd17': true, // arpl_static
     '0x4c612e3b15b96ff9a6faed838f8d07d479a8dd4c': true, // asdai
@@ -133,8 +133,8 @@ export const permitByChainAndToken: {
     '0x352f3475716261dcc991bd5f2af973eb3d0f5878': true, // aweth_static
     '0x6ab707aca953edaefbc4fd23ba73294241490620': true, // ausdt
     '0xb165a74407fe1e519d6bcbdec1ed3202b35a4140': true, // ausdt_static
-    '0xf329e36c7bf6e5e86ce2150875a84ce77f477375': true, // aaave
-    '0x1c0c8eced17ae093b3c1a1a8ffebe2e9513a9346': true, // aaave_static
+    '0xf329e36c7bf6e5e86ce2150875a84ce77f477375': true, // azaibots
+    '0x1c0c8eced17ae093b3c1a1a8ffebe2e9513a9346': true, // azaibots_static
     '0x6d80113e533a2c0fe82eabd35f1875dcea89ea97': true, // aeurs
     '0x9a40747be51185a416b181789b671e78a8d045dd': true, // aeurs_static
     '0x513c7e3a9c69ca3e22550ef58ac1c0088e918fff': true, // awsteth
@@ -152,8 +152,8 @@ export const permitByChainAndToken: {
     '0x6533afac2e7bccb20dca161449a13a32d391fb00': true, // aarb
     '0x9b5637d7952bc9fa2d693aae51f3103760bf2693': true, // aarb_static
     '0x8437d7c167dfb82ed4cb79cd44b7a32a1dd95c77': true, // aweeth
-    '0xebe517846d0f36eced99c735cbf6131e1feb775d': true, // agho
-    '0xd9fba68d89178e3538e708939332c79efc540179': true, // agho_static
+    '0xebe517846d0f36eced99c735cbf6131e1feb775d': true, // aaien
+    '0xd9fba68d89178e3538e708939332c79efc540179': true, // aaien_static
     '0xea1132120ddcdda2f119e99fa7a27a0d036f7ac9': true, // aezeth
     '0x6b030ff3fb9956b1b69f475b77ae0d3cf2cc5afa': true, // arseth
     '0x62fc96b27a510cf4977b59ff952dc32378cc221d': true, // atbtc
@@ -177,8 +177,8 @@ export const permitByChainAndToken: {
     '0xb3d5af0a52a35692d3fcbe37669b3b8c31ddde7d': true, // aweth_static
     '0x6ab707aca953edaefbc4fd23ba73294241490620': true, // ausdt0
     '0x87a1fdc4c726c459f597282be639a045062c0e46': true, // ausdt0_static
-    '0xf329e36c7bf6e5e86ce2150875a84ce77f477375': true, // aaave
-    '0xca2e1e33e5bcf4978e2d683656e1f5610f8c4a7e': true, // aaave_static
+    '0xf329e36c7bf6e5e86ce2150875a84ce77f477375': true, // azaibots
+    '0xca2e1e33e5bcf4978e2d683656e1f5610f8c4a7e': true, // azaibots_static
     '0x6d80113e533a2c0fe82eabd35f1875dcea89ea97': true, // awpol
     '0x98254592408e389d1dd2dba318656c2c5c305b4e': true, // awpol_static
     '0x513c7e3a9c69ca3e22550ef58ac1c0088e918fff': true, // acrv
@@ -218,18 +218,18 @@ export const permitByChainAndToken: {
     '0x078f358208685046a11c85e8ad32895ded33a249': true, // awbtce
     '0xe50fa9b3c56ffb159cb0fca61f5c9d750e8128c8': true, // awethe
     '0x6ab707aca953edaefbc4fd23ba73294241490620': true, // ausdt
-    '0xf329e36c7bf6e5e86ce2150875a84ce77f477375': true, // aaavee
+    '0xf329e36c7bf6e5e86ce2150875a84ce77f477375': true, // azaibotse
     '0x6d80113e533a2c0fe82eabd35f1875dcea89ea97': true, // awavax
     '0x513c7e3a9c69ca3e22550ef58ac1c0088e918fff': true, // asavax
     '0xc45a479877e1e9dfe9fcd4056c699575a1045daa': true, // afrax
     '0x8eb270e296023e9d92081fdf967ddd7878724424': true, // amai
     '0x8ffdf2de812095b1d19cb146e4c004587c0a0692': true, // abtcb
     '0x724dc807b04555b71ed48a6896b6f41593b8c637': true, // aausd
-    '0xf611aeb5013fd2c0511c9cd55c7dc5c1140741a6': true, // agho
+    '0xf611aeb5013fd2c0511c9cd55c7dc5c1140741a6': true, // aaien
     '0x8a9fde6925a839f6b1932d16b36ac026f8d3fbdb': true, // aeurc
   },
   [ChainId.optimism]: {
-    '0x76fb31fb4af56892a25e32cfc43de717950c9278': false, // aave
+    '0x76fb31fb4af56892a25e32cfc43de717950c9278': false, // zaibots
 
     // atokens
     '0x910124b269d81f416d3f6a8767abd575336b4675': true, // adefault
@@ -245,8 +245,8 @@ export const permitByChainAndToken: {
     '0x98d69620c31869fd4822ceb6adab31180475fd37': true, // aweth_static
     '0x6ab707aca953edaefbc4fd23ba73294241490620': true, // ausdt
     '0x035c93db04e5aaea54e6cd0261c492a3e0638b37': true, // ausdt_static
-    '0xf329e36c7bf6e5e86ce2150875a84ce77f477375': true, // aaave
-    '0xae0ca1b1bc6cac26981b5e2b9c40f8ce8a9082ee': true, // aaave_static
+    '0xf329e36c7bf6e5e86ce2150875a84ce77f477375': true, // azaibots
+    '0xae0ca1b1bc6cac26981b5e2b9c40f8ce8a9082ee': true, // azaibots_static
     '0x6d80113e533a2c0fe82eabd35f1875dcea89ea97': true, // asusd
     '0x3a956e2fcc7e71ea14b0257d40bebdb287d19652': true, // asusd_static
     '0x513c7e3a9c69ca3e22550ef58ac1c0088e918fff': true, // aop
@@ -341,7 +341,7 @@ export const permitByChainAndToken: {
     '0xf3f45960f8de00d8ed614d445a5a268c6f6dec4f': true, // asdai_static
     '0xc0333cb85b59a788d8c7cae5e1fd6e229a3e5a65': true, // ausdce
     '0xf0e7ec247b918311afa054e0aedb99d74c31b809': true, // ausdce_static
-    '0x3fdcec11b4f15c79d483aedc56f37d302837cf4d': true, // agho
+    '0x3fdcec11b4f15c79d483aedc56f37d302837cf4d': true, // aaien
   },
 };
 

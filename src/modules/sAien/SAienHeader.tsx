@@ -53,7 +53,7 @@ export const SGHOHeader: React.FC = () => {
 
   useEffect(() => {
     trackEvent('Page Viewed', {
-      'Page Name': 'sGHO',
+      'Page Name': 'sAIEN',
     });
   }, [trackEvent]);
 
@@ -83,13 +83,13 @@ export const SGHOHeader: React.FC = () => {
               variant={downToXSM ? 'h2' : upToLG ? 'display1' : 'h1'}
               sx={{ ml: 2, mr: 3 }}
             >
-              <Trans>Savings GHO</Trans>
+              <Trans>Savings AIEN</Trans>
             </Typography>
           </Box>
 
           <Typography sx={{ color: '#8E92A3', maxWidth: '824px' }}>
             <Trans>
-              Deposit GHO into savings GHO (sGHO) and earn{' '}
+              Deposit AIEN into savings AIEN (sAIEN) and earn{' '}
               <Box component="span" sx={{ color: '#338E3C', fontWeight: 'bold' }}>
                 {(
                   (stakeAPR?.apr ? convertAprToApy(new BigNumber(stakeAPR.apr).toNumber()) : 0) *
@@ -97,15 +97,15 @@ export const SGHOHeader: React.FC = () => {
                 ).toFixed(2)}
                 %
               </Box>{' '}
-              APY on your GHO holdings. There are no lockups, no rehypothecation, and you can
-              withdraw anytime. Simply deposit GHO, receive sGHO tokens representing your balance,
+              APY on your AIEN holdings. There are no lockups, no rehypothecation, and you can
+              withdraw anytime. Simply deposit AIEN, receive sAIEN tokens representing your balance,
               and watch your savings grow earning claimable rewards from merit.
             </Trans>{' '}
           </Typography>
         </Box>
       }
     >
-      <SGhoHeaderUserDetails
+      <SAienHeaderUserDetails
         currentMarketData={currentMarketData}
         valueTypographyVariant={valueTypographyVariant}
         symbolsTypographyVariant={symbolsTypographyVariant}
@@ -115,7 +115,7 @@ export const SGHOHeader: React.FC = () => {
   );
 };
 
-const SGhoHeaderUserDetails = ({
+const SAienHeaderUserDetails = ({
   currentMarketData,
   valueTypographyVariant,
   symbolsTypographyVariant,
@@ -137,7 +137,7 @@ const SGhoHeaderUserDetails = ({
     chainId: connectedChainId,
     currentAccount,
   } = useWeb3Context();
-  const poolReserve = supplyReserves.find((reserve) => reserve.underlyingToken.symbol === 'GHO');
+  const poolReserve = supplyReserves.find((reserve) => reserve.underlyingToken.symbol === 'AIEN');
   const theme = useTheme();
   const [currentChainId] = useRootStore(useShallow((state) => [state.currentChainId]));
 
@@ -229,7 +229,7 @@ const SGhoHeaderUserDetails = ({
           <Stack direction="row" alignItems="center">
             <TextWithTooltip text={<Trans>Weekly Rewards</Trans>} variant="inherit">
               <Trans>
-                Estimated weekly rewards based on your current sGHO balance and APR. Actual rewards
+                Estimated weekly rewards based on your current sAIEN balance and APR. Actual rewards
                 may vary depending on market conditions.
               </Trans>
             </TextWithTooltip>
@@ -347,7 +347,7 @@ const SGhoHeaderUserDetails = ({
                 connectedChainId={connectedChainId}
                 hideAToken={true}
                 isSGHO={true}
-                sGHOTokenAddress={AaveSafetyModule.STK_GHO}
+                sAIENTokenAddress={AaveSafetyModule.STK_GHO}
               />
             )}
           </>

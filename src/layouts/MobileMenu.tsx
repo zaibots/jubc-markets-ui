@@ -102,7 +102,7 @@ export const MobileMenu = ({ open, setOpen, headerHeight }: MobileMenuProps) => 
                   onClick={() => setOpen(false)}
                 >
                   <ListItemText>
-                    <Trans>Migrate to Aave V3</Trans>
+                    <Trans>Migrate to Zaibots V3</Trans>
                   </ListItemText>
                 </ListItem>
                 {moreNavigation.map((item, index) => (

@@ -73,7 +73,7 @@ export const DashboardEModeButton = ({ userEmodeCategoryId }: DashboardEModeButt
             right: -1,
             bottom: -1,
             top: -1,
-            background: isEModeDisabled ? 'transparent' : theme.palette.gradients.aaveGradient,
+            background: isEModeDisabled ? 'transparent' : theme.palette.gradients.zaibotsGradient,
             borderRadius: '4px',
           },
         })}
@@ -193,7 +193,7 @@ export const DashboardEModeButton = ({ userEmodeCategoryId }: DashboardEModeButt
             <Trans>
               E-Mode increases your LTV for a selected category of assets.{' '}
               <Link
-                href="https://aave.com/help/borrowing/e-mode"
+                href="https://zaibots.com/help/borrowing/e-mode"
                 sx={{ textDecoration: 'underline' }}
                 variant="caption"
                 color="text.secondary"

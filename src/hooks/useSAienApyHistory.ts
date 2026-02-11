@@ -1,6 +1,6 @@
 import { TimeWindow } from '@aave/react';
 import dayjs from 'dayjs';
-import { sghoConfig } from 'pages/api/SGhoService';
+import { sghoConfig } from 'pages/api/SAienService';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { MeritApyDataItem } from 'src/modules/reserve-overview/graphs/MeritApyGraph';
 
@@ -48,7 +48,7 @@ const timeRangeToDateRange = (timeRange: TimeWindow): { startDate: string; endDa
 };
 
 /**
- * Custom hook to fetch sGHO APY history data from internal API endpoint
+ * Custom hook to fetch sAIEN APY history data from internal API endpoint
  *
  * @param options - Optional parameters for the API call
  * @param options.limit - Number of records to fetch (default: 100)
@@ -56,7 +56,7 @@ const timeRangeToDateRange = (timeRange: TimeWindow): { startDate: string; endDa
  * @param options.endDate - End date for filtering (ISO format)
  * @returns {UseSGhoApyHistoryReturn} Object containing data, loading state, error state, and refetch function
  */
-export const useSGhoApyHistory = (
+export const useSAienApyHistory = (
   options: UseSGhoApyHistoryOptions = {}
 ): UseSGhoApyHistoryReturn => {
   const [data, setData] = useState<MeritApyDataItem[]>([]);
@@ -100,7 +100,7 @@ export const useSGhoApyHistory = (
       }
 
       // Call internal API endpoint
-      const response = await fetch(`/api/sgho-apy?${params.toString()}`);
+      const response = await fetch(`/api/saien-apy?${params.toString()}`);
 
       if (!response.ok) {
         const errorText = await response.text();
@@ -121,7 +121,7 @@ export const useSGhoApyHistory = (
 
       setData(result.data);
     } catch (err) {
-      console.error('Error fetching sGHO APY data:', err);
+      console.error('Error fetching sAIEN APY data:', err);
       setError(true);
       setData([]);
     } finally {

@@ -87,7 +87,7 @@ export function StakingMenu({ isMobile = false, onClose }: StakingMenuProps) {
             height: '2px',
             bottom: '-6px',
             left: '0',
-            background: theme.palette.gradients.aaveGradient,
+            background: theme.palette.gradients.zaibotsGradient,
             transformOrigin: 'bottom right',
             transition: 'transform 0.25s ease-out',
           },

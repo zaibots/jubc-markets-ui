@@ -24,17 +24,17 @@ export const StakingPanelNoWallet: React.FC<StakingPanelNoWalletProps> = ({
 
   const { data: stakeGeneralResult } = useGeneralStakeUiData(currentMarketData);
 
-  let stkAave: StakeTokenFormatted | undefined;
+  let stkZaibots: StakeTokenFormatted | undefined;
   let stkBpt: StakeTokenFormatted | undefined;
   let stkGho: StakeTokenFormatted | undefined;
   let stkBptV2: StakeTokenFormatted | undefined;
   if (stakeGeneralResult && Array.isArray(stakeGeneralResult)) {
-    [stkAave, stkBpt, stkGho, stkBptV2] = stakeGeneralResult;
+    [stkZaibots, stkBpt, stkGho, stkBptV2] = stakeGeneralResult;
   }
 
-  if (stakedToken == 'AAVE') stakingAPY = stkAave?.stakeApy || '0';
+  if (stakedToken == 'ZAIBOTSU') stakingAPY = stkZaibots?.stakeApy || '0';
   if (stakedToken == 'ABPT') stakingAPY = stkBpt?.stakeApy || '0';
-  if (stakedToken == 'GHO') stakingAPY = stkGho?.stakeApy || '0';
+  if (stakedToken == 'AIEN') stakingAPY = stkGho?.stakeApy || '0';
   if (stakedToken == 'ABPT V2') stakingAPY = stkBptV2?.stakeApy || '0';
 
   return (
@@ -85,14 +85,14 @@ export const StakingPanelNoWallet: React.FC<StakingPanelNoWalletProps> = ({
           alignItems: 'center',
         }}
       >
-        {stakedToken !== 'GHO' && (
+        {stakedToken !== 'AIEN' && (
           <Box display={'flex'} alignItems={'center'}>
             <Typography variant="subheader2" color="text.secondary">
               <Trans>Staking APR</Trans>
             </Typography>
           </Box>
         )}
-        {stakedToken !== 'GHO' && (
+        {stakedToken !== 'AIEN' && (
           <FormattedNumber
             value={parseFloat(stakingAPY || '0') / 10000}
             percent
@@ -101,7 +101,7 @@ export const StakingPanelNoWallet: React.FC<StakingPanelNoWalletProps> = ({
           />
         )}
 
-        {stakedToken === 'GHO' && (
+        {stakedToken === 'AIEN' && (
           <Box mt={1} display={'flex'} alignItems={'center'} flexDirection={'column'}>
             <Typography variant="subheader2" color="text.secondary">
               <Trans>Incentives APR</Trans>

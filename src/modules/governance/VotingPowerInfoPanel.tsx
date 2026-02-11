@@ -48,7 +48,7 @@ export function VotingPowerInfoPanel() {
               <>
                 <Typography variant="subheader2">
                   <Trans>
-                    Your voting power is based on your AAVE/stkAAVE balance and received
+                    Your voting power is based on your ZAIBOTSU/stkZAIBOTSU balance and received
                     delegations.
                   </Trans>
                 </Typography>
@@ -80,7 +80,7 @@ export function VotingPowerInfoPanel() {
               <>
                 <Typography variant="subheader2">
                   <Trans>
-                    Your proposition power is based on your AAVE/stkAAVE balance and received
+                    Your proposition power is based on your ZAIBOTSU/stkZAIBOTSU balance and received
                     delegations.
                   </Trans>
                 </Typography>
@@ -90,7 +90,7 @@ export function VotingPowerInfoPanel() {
                     least 80.00K power. If you want to change the core code base, you&apos;ll need
                     320k power.
                     <Link
-                      href="https://docs.aave.com/developers/v/2.0/protocol-governance/governance"
+                      href="https://docs.zaibots.com/developers/v/2.0/protocol-governance/governance"
                       target="_blank"
                       variant="description"
                       sx={{ textDecoration: 'underline', ml: 1 }}

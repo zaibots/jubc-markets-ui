@@ -38,12 +38,12 @@ export const useGovernanceDelegatees = () => {
   }
   return {
     data: {
-      aaveVotingDelegatee: allData[0].votingDelegatee,
-      aavePropositionDelegatee: allData[0].propositionDelegatee,
-      aAaveVotingDelegatee: allData[1].votingDelegatee,
-      aAavePropositionDelegatee: allData[1].propositionDelegatee,
-      stkAaveVotingDelegatee: allData[2].votingDelegatee,
-      stkAavePropositionDelegatee: allData[2].propositionDelegatee,
+      zaibotsVotingDelegatee: allData[0].votingDelegatee,
+      zaibotsPropositionDelegatee: allData[0].propositionDelegatee,
+      aZaibotsVotingDelegatee: allData[1].votingDelegatee,
+      aZaibotsPropositionDelegatee: allData[1].propositionDelegatee,
+      stkZaibotsVotingDelegatee: allData[2].votingDelegatee,
+      stkZaibotsPropositionDelegatee: allData[2].propositionDelegatee,
     },
     refetch,
   };

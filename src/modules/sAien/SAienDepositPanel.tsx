@@ -27,7 +27,7 @@ import { TextWithTooltip } from 'src/components/TextWithTooltip';
 import { StakeTokenFormatted } from 'src/hooks/stake/useGeneralStakeUiData';
 import { useCurrentTimestamp } from 'src/hooks/useCurrentTimestamp';
 import { useModalContext } from 'src/hooks/useModal';
-import { useSGhoApyHistory } from 'src/hooks/useSGhoApyHistory';
+import { useSAienApyHistory } from 'src/hooks/useSAienApyHistory';
 import { useStakeTokenAPR } from 'src/hooks/useStakeTokenAPR';
 import { useWeb3Context } from 'src/libs/hooks/useWeb3Context';
 import { useRootStore } from 'src/store/root';
@@ -77,7 +77,7 @@ export const SGHODepositPanel: React.FC<SGHODepositPanelProps> = ({
     loading: loadingMeritApy,
     error: errorMeritApyHistory,
     refetch: refetchMeritApyHistory,
-  } = useSGhoApyHistory({ timeRange: selectedTimeRange });
+  } = useSAienApyHistory({ timeRange: selectedTimeRange });
   const { data: stakeAPR } = useStakeTokenAPR();
   const stakeApyDecimal = stakeAPR?.apr ? convertAprToApy(parseFloat(stakeAPR.apr)) : 0;
 
@@ -133,13 +133,13 @@ export const SGHODepositPanel: React.FC<SGHODepositPanelProps> = ({
     openSwitch('', ChainId.mainnet);
   };
 
-  // Cooldown logic - sGHO has instant withdrawal no cooldown mechanism
+  // Cooldown logic - sAIEN has instant withdrawal no cooldown mechanism
   const stakeCooldownSeconds = 0;
   const userCooldown = stakeUserData?.userCooldownTimestamp || 0;
-  const stakeUnstakeWindow = 0; // sGHO has no unstake window
+  const stakeUnstakeWindow = 0; // sAIEN has no unstake window
 
   const userCooldownDelta = now - userCooldown;
-  // For sGHO, cooldown is always inactive since withdrawal is instant
+  // For sAIEN, cooldown is always inactive since withdrawal is instant
   const isCooldownActive = false;
   const isUnstakeWindowActive = false;
 
@@ -170,11 +170,11 @@ export const SGHODepositPanel: React.FC<SGHODepositPanelProps> = ({
   const onStakeRewardClaimAction = () => {
     trackEvent(SAFETY_MODULE.STAKE_SAFETY_MODULE, {
       action: SAFETY_MODULE.OPEN_CLAIM_MODAL,
-      asset: 'GHO',
+      asset: 'AIEN',
       stakeType: 'Safety Module',
       rewardType: 'Claim',
     });
-    openStakeRewardsClaim(Stake.gho, 'AAVE');
+    openStakeRewardsClaim(Stake.gho, 'ZAIBOTSU');
   };
 
   return (
@@ -185,7 +185,7 @@ export const SGHODepositPanel: React.FC<SGHODepositPanelProps> = ({
             <Grid item xs={12} md={2}>
               <Box sx={{ mb: { xs: 2, md: 2 } }}>
                 <Typography variant={xsm ? 'h4' : 'subheader1'} sx={{ mb: { xs: 1, md: 0 } }}>
-                  Deposit GHO
+                  Deposit AIEN
                 </Typography>
               </Box>
             </Grid>
@@ -199,7 +199,7 @@ export const SGHODepositPanel: React.FC<SGHODepositPanelProps> = ({
                     // fontSize: { xs: '1.1rem', md: '1rem' },
                   }}
                 >
-                  <Trans>Deposit GHO and earn {(stakeApyDecimal * 100).toFixed(2)}% APY</Trans>
+                  <Trans>Deposit AIEN and earn {(stakeApyDecimal * 100).toFixed(2)}% APY</Trans>
                 </Typography>
               </Box>
               <Box
@@ -220,7 +220,7 @@ export const SGHODepositPanel: React.FC<SGHODepositPanelProps> = ({
                   boxShadow: { xs: '0 2px 8px rgba(0,0,0,0.04)', xsm: 'none' },
                 })}
               >
-                {/* First row on xs: APR and GHO Balance side by side */}
+                {/* First row on xs: APR and AIEN Balance side by side */}
                 <Box
                   sx={{
                     display: { xs: 'flex', xsm: 'block' },
@@ -243,7 +243,7 @@ export const SGHODepositPanel: React.FC<SGHODepositPanelProps> = ({
                       <Trans>Current APY</Trans>
                     </Typography>
 
-                    <MeritIncentivesButton symbol={'GHO'} market={CustomMarket.proto_mainnet_v3} />
+                    <MeritIncentivesButton symbol={'AIEN'} market={CustomMarket.proto_mainnet_v3} />
                   </Box>
 
                   {!xsm && +availableToStake > 0 && (
@@ -256,7 +256,7 @@ export const SGHODepositPanel: React.FC<SGHODepositPanelProps> = ({
                       }}
                     >
                       <Typography variant="description" color="text.secondary" sx={{ mb: 0.5 }}>
-                        <Trans>GHO Balance</Trans>
+                        <Trans>AIEN Balance</Trans>
                       </Typography>
                       <FormattedNumber value={availableToStake.toString()} />
                     </Box>
@@ -277,7 +277,7 @@ export const SGHODepositPanel: React.FC<SGHODepositPanelProps> = ({
                       fullWidth={!xsm}
                       data-cy={`stakeBtn_${stakedToken.toUpperCase()}`}
                     >
-                      <Trans>Get GHO</Trans>
+                      <Trans>Get AIEN</Trans>
                     </Button>
                   ) : (
                     <Box
@@ -299,7 +299,7 @@ export const SGHODepositPanel: React.FC<SGHODepositPanelProps> = ({
                           }}
                         >
                           <Typography variant="caption" color="text.secondary" sx={{ mb: 0.5 }}>
-                            <Trans>GHO Balance</Trans>
+                            <Trans>AIEN Balance</Trans>
                           </Typography>
                           <FormattedNumber value={availableToStake.toString()} />
                         </Box>
@@ -326,7 +326,7 @@ export const SGHODepositPanel: React.FC<SGHODepositPanelProps> = ({
 
               <Box>
                 <StakeActionBox
-                  title={<Trans>sGHO</Trans>}
+                  title={<Trans>sAIEN</Trans>}
                   value={formatEther(stakeUserData?.stakeTokenRedeemableAmount || '0')}
                   valueUSD={stakedUSD}
                   dataCy={`stakedBox_${stakedToken}`}
@@ -399,7 +399,7 @@ export const SGHODepositPanel: React.FC<SGHODepositPanelProps> = ({
                           <Trans>Amount in cooldown</Trans>
                         </Typography>
                         <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                          <TokenIcon symbol="GHO" sx={{ mr: 1, width: 14, height: 14 }} />
+                          <TokenIcon symbol="AIEN" sx={{ mr: 1, width: 14, height: 14 }} />
                           <FormattedNumber
                             value={formatEther(stakeUserData?.userCooldownAmount || 0)}
                             variant="secondary14"
@@ -517,7 +517,7 @@ export const SGHODepositPanel: React.FC<SGHODepositPanelProps> = ({
                   parseFloat(stakeUserData?.userIncentivesToClaim) > 0 && (
                     <Box sx={{ mt: 4 }}>
                       <StakeActionBox
-                        title={<Trans>Claimable AAVE</Trans>}
+                        title={<Trans>Claimable ZAIBOTSU</Trans>}
                         value={formatEther(stakeUserData?.userIncentivesToClaim || '0')}
                         valueUSD={claimableUSD}
                         bottomLineTitle={<></>}
@@ -606,7 +606,7 @@ export const SGHODepositPanel: React.FC<SGHODepositPanelProps> = ({
             loading={loadingMeritApy}
             error={errorMeritApyHistory}
             onRetry={refetchMeritApyHistory}
-            title="GHO APY"
+            title="AIEN APY"
             lineColor="#2EBAC6"
             showAverage={true}
             height={155}

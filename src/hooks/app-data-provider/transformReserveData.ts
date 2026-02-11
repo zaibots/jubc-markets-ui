@@ -157,7 +157,7 @@ export interface FallbackReserve {
 }
 
 export interface FallbackIncentive {
-  __typename: 'AaveSupplyIncentive' | 'AaveBorrowIncentive';
+  __typename: 'ZaibotsSupplyIncentive' | 'ZaibotsBorrowIncentive';
   apy: {
     __typename: 'PercentValue';
     value: string;
@@ -173,7 +173,7 @@ export interface FallbackIncentive {
 
 /**
  * Transforms contract-based FormattedReservesAndIncentives to SDK-compatible Reserve format.
- * Used as a fallback when the Aave SDK doesn't have data for custom/non-indexed markets.
+ * Used as a fallback when the Zaibots SDK doesn't have data for custom/non-indexed markets.
  */
 export function transformToReserve(
   reserve: FormattedReservesAndIncentives,
@@ -232,7 +232,7 @@ export function transformToReserve(
       __typename: 'Currency',
       address: reserve.aTokenAddress,
       symbol: `a${reserve.symbol}`,
-      name: `Aave ${reserve.name}`,
+      name: `Zaibots ${reserve.name}`,
       decimals: reserve.decimals,
     },
     vToken: {
@@ -382,7 +382,7 @@ function mapIncentives(reserve: FormattedReservesAndIncentives): FallbackIncenti
   if (reserve.aIncentivesData && reserve.aIncentivesData.length > 0) {
     reserve.aIncentivesData.forEach((incentive) => {
       incentives.push({
-        __typename: 'AaveSupplyIncentive',
+        __typename: 'ZaibotsSupplyIncentive',
         apy: {
           __typename: 'PercentValue',
           value: incentive.incentiveAPR,
@@ -402,7 +402,7 @@ function mapIncentives(reserve: FormattedReservesAndIncentives): FallbackIncenti
   if (reserve.vIncentivesData && reserve.vIncentivesData.length > 0) {
     reserve.vIncentivesData.forEach((incentive) => {
       incentives.push({
-        __typename: 'AaveBorrowIncentive',
+        __typename: 'ZaibotsBorrowIncentive',
         apy: {
           __typename: 'PercentValue',
           value: incentive.incentiveAPR,

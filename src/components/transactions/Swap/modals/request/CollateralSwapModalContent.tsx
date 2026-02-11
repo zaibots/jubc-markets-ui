@@ -9,7 +9,7 @@ import { TokenInfoWithBalance } from 'src/hooks/generic/useTokensBalance';
 import { ExtendedFormattedUser } from 'src/hooks/pool/useExtendedUserSummaryAndIncentives';
 import { useRootStore } from 'src/store/root';
 import { TOKEN_LIST, TokenInfo } from 'src/ui-config/TokenList';
-import { displayGhoForMintableMarket } from 'src/utils/ghoUtilities';
+import { displayGhoForMintableMarket } from 'src/utils/aienUtilities';
 import { useShallow } from 'zustand/shallow';
 
 import { invalidateAppStateForSwap } from '../../helpers/shared';
@@ -114,14 +114,14 @@ const getDefaultOutputToken = (
     return highestBalanceToken[0];
   }
 
-  // 2. USDT or USDC or AAVE (but not the input token)
-  const usdtOrUsdcOrAaveToken = tokensWithoutInputToken.filter(
+  // 2. USDT or USDC or ZAIBOTSU (but not the input token)
+  const usdtOrUsdcOrZaibotsToken = tokensWithoutInputToken.filter(
     (token) =>
-      (token.symbol === 'USDT' || token.symbol === 'USDC' || token.symbol === 'AAVE') &&
+      (token.symbol === 'USDT' || token.symbol === 'USDC' || token.symbol === 'ZAIBOTSU') &&
       token.symbol !== defaultInputToken?.symbol
   );
-  if (usdtOrUsdcOrAaveToken.length > 0) {
-    return usdtOrUsdcOrAaveToken[0];
+  if (usdtOrUsdcOrZaibotsToken.length > 0) {
+    return usdtOrUsdcOrZaibotsToken[0];
   }
 
   // 3. Other not the default input token

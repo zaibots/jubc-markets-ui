@@ -15,7 +15,7 @@ import { unPrefixSymbol } from 'src/hooks/app-data-provider/useAppDataProvider';
 export const SYMBOL_MAP: { [key: string]: string } = {
   BPTBALWETH: 'BPT_BAL_WETH',
   BPTWBTCWETH: 'BPT_WBTC_WETH',
-  UNIAAVEWETH: 'UNI_AAVE_WETH',
+  UNIZAIBOTSUWETH: 'UNI_ZAIBOTSU_WETH',
   UNIBATWETH: 'UNI_BAT_WETH',
   UNICRVWETH: 'UNI_CRV_WETH',
   UNIDAIUSDC: 'UNI_DAI_USDC',
@@ -35,7 +35,7 @@ export const SYMBOL_MAP: { [key: string]: string } = {
   'LINK.e': 'LINK',
   'WBTC.e': 'WBTC',
   'WETH.e': 'WETH',
-  'AAVE.e': 'AAVE',
+  'ZAIBOTSU.e': 'ZAIBOTSU',
   'USDT.e': 'USDT',
   'USDC.e': 'USDC',
   'BTC.b': 'BTC',
@@ -51,14 +51,14 @@ export const SYMBOL_MAP: { [key: string]: string } = {
 
 /**
  * Maps (potentially altered via SYMBOL_MAP) symbols to a name
- * With the next version of uipooldataprovider https://github.com/aave/aave-v3-periphery/pull/89 this list can be greatly reduced/removed.
+ * With the next version of uipooldataprovider https://github.com/zaibots/zaibots-v3-periphery/pull/89 this list can be greatly reduced/removed.
  */
 export const SYMBOL_NAME_MAP: { [key: string]: string } = {
   AVAX: 'Avalanche',
   ETH: 'Ethereum',
   EUROS: 'STASIS EURO',
   FAI: 'Fei USD',
-  GHST: 'Aavegotchi GHST',
+  GHST: 'Zaibotsgotchi GHST',
   GUSD: 'Gemini Dollar',
   LINK: 'ChainLink',
   MAI: 'MAI (mimatic)',
@@ -69,7 +69,7 @@ export const SYMBOL_NAME_MAP: { [key: string]: string } = {
   REP: 'Augur',
   SAVAX: 'Benqi Staked Avalanche',
   STETH: 'Lido Staked Ether',
-  STKAAVE: 'Stake Aave',
+  STKZAIBOTSU: 'Stake Zaibots',
   TUSD: 'TrueUSD',
   UNI: 'Uniswap',
   UNIDAIWETH: 'UNI DAI/WETH',
@@ -230,7 +230,7 @@ export function fetchIconSymbolAndName({ underlyingAsset, symbol, name }: IconSy
     '0xa693B19d2931d498c5B318dF961919BB4aee87a5': { iconSymbol: 'UST', name: 'UST (Wormhole)' },
     '0x59a19d8c652fa0284f44113d0ff9aba70bd46fb4': { iconSymbol: 'BPT_BAL_WETH' },
     '0x1eff8af5d577060ba4ac8a29a13525bb0ee2a3d5': { iconSymbol: 'BPT_WBTC_WETH' },
-    '0xdfc14d2af169b0d36c4eff567ada9b2e0cae044f': { iconSymbol: 'UNI_AAVE_WETH' },
+    '0xdfc14d2af169b0d36c4eff567ada9b2e0cae044f': { iconSymbol: 'UNI_ZAIBOTSU_WETH' },
     '0xb6909b960dbbe7392d405429eb2b3649752b4838': { iconSymbol: 'UNI_BAT_WETH' },
     '0x3da1313ae46132a397d90d95b1424a9a7e3e0fce': { iconSymbol: 'UNI_CRV_WETH' },
     '0xae461ca67b15dc8dc81ce7615e0320da1a9ab8d5': { iconSymbol: 'UNI_DAI_USDC' },

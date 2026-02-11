@@ -18,7 +18,7 @@ export const getFrozenProposalLink = (
   if (symbol && frozenProposalMap[symbol.toUpperCase() + currentMarket]) {
     return frozenProposalMap[symbol.toUpperCase() + currentMarket];
   } else {
-    return 'https://app.aave.com/governance';
+    return 'https://app.zaibots.com/governance';
   }
 };
 
@@ -28,7 +28,7 @@ export const FrozenTooltip = ({ symbol, currentMarket }: FrozenTooltipProps) => 
       tooltipContent={
         <Box>
           <Trans>
-            This asset is frozen due to an Aave Protocol Governance decision.{' '}
+            This asset is frozen due to an Zaibots Protocol Governance decision.{' '}
             <Link
               href={getFrozenProposalLink(symbol, currentMarket)}
               sx={{ textDecoration: 'underline' }}

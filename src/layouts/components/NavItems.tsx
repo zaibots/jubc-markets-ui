@@ -83,7 +83,7 @@ export const NavItems = ({ setOpen }: NavItemsProps) => {
                     height: '2px',
                     bottom: '-6px',
                     left: '0',
-                    background: theme.palette.gradients.aaveGradient,
+                    background: theme.palette.gradients.zaibotsGradient,
                     transformOrigin: 'bottom right',
                     transition: 'transform 0.25s ease-out',
                   },
@@ -105,19 +105,19 @@ export const NavItems = ({ setOpen }: NavItemsProps) => {
         {md ? (
           <Typography
             component={Link}
-            href={ROUTES.sGHO}
+            href={ROUTES.sAIEN}
             variant="h2"
             color="#F1F1F3"
             sx={{ width: '100%', p: 4 }}
-            onClick={() => handleClick('sGHO', true)}
+            onClick={() => handleClick('sAIEN', true)}
           >
-            <Trans>sGHO</Trans>
+            <Trans>sAIEN</Trans>
           </Typography>
         ) : (
           <Button
             component={Link}
-            onClick={() => handleClick('sGHO', false)}
-            href={ROUTES.sGHO}
+            onClick={() => handleClick('sAIEN', false)}
+            href={ROUTES.sAIEN}
             sx={(theme) => ({
               color: '#F1F1F3',
               p: '6px 8px',
@@ -134,7 +134,7 @@ export const NavItems = ({ setOpen }: NavItemsProps) => {
                 height: '2px',
                 bottom: '-6px',
                 left: '0',
-                background: theme.palette.gradients.aaveGradient,
+                background: theme.palette.gradients.zaibotsGradient,
                 transformOrigin: 'bottom right',
                 transition: 'transform 0.25s ease-out',
               },
